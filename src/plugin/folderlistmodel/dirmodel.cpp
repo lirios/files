@@ -452,9 +452,15 @@ void DirModel::setPathFromCurrentLocation()
     {
         mPathList.append(mCurrentDir);
     }
+
+    emit canGoBackChanged();
     emit pathChanged(mCurLocation->urlPath());
 }
 
+bool DirModel::canGoBack() const
+{
+    return mPathList.count() > 1;
+}
 
 void DirModel::goBack()
 {

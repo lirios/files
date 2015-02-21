@@ -52,6 +52,7 @@ class ExternalFSWatcher;
 class DirModel : public DirItemAbstractListModel
 {
     Q_OBJECT
+
 public:
     enum Roles {
         FileNameRole = Qt::UserRole,
@@ -119,7 +120,12 @@ public:
     Q_INVOKABLE QString     curPathModifiedDateLocaleShort() const;
     Q_INVOKABLE bool        curPathIsWritable() const;
 
+    Q_PROPERTY(bool canGoBack READ canGoBack NOTIFY canGoBackChanged)
+
+    bool canGoBack() const;
+
     Q_PROPERTY(bool awaitingResults READ awaitingResults NOTIFY awaitingResultsChanged)
+
     bool awaitingResults() const;
 
     Q_INVOKABLE void rm(const QStringList &paths);
@@ -150,6 +156,7 @@ public slots:
     void onItemsFetched();
 
 signals:
+    void canGoBackChanged();
     void awaitingResultsChanged();
     void nameFiltersChanged();
     void filterDirectoriesChanged();
