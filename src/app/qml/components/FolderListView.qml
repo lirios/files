@@ -24,13 +24,17 @@ import Material.ListItems 0.1 as ListItem
 Item {
     id: folderListView
 
-    Rectangle {
+    clip: true
+
+    View {
         id: header
 
         visible: listView.count > 0
 
         z: 1
-        color: Theme.backgroundColor
+        backgroundColor: Theme.backgroundColor
+        elevation: 1
+        fullWidth: true
 
         anchors {
             left: parent.left
@@ -39,10 +43,6 @@ Item {
         }
 
         height: units.dp(48)
-
-        ThinDivider {
-            anchors.bottom: parent.bottom
-        }
 
         RowLayout {
             anchors {

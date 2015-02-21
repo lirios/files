@@ -28,7 +28,8 @@ Object {
     property string title: pathTitle(path)
     property string folder: pathName(path)
 
-    property bool busy: model.awaitingResults
+    property alias busy: __model.awaitingResults
+    property alias canGoBack: __model.canGoBack
 
     property bool showHiddenFiles
     property string sortingMethod: "Name" // or "Date"

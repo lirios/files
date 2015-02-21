@@ -25,6 +25,16 @@ Page {
     id: folderPage
 
     title: folderModel.title
+    actionBar.elevation: 0
+
+    backAction: Action {
+        iconName: "navigation/arrow_back"
+        name: "Back"
+        enabled: folderModel.canGoBack
+        visible: true
+
+        onTriggered: folderModel.goBack()
+    }
 
     actions: [
         Action {
