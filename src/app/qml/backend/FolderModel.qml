@@ -37,6 +37,16 @@ Object {
     property alias model: __model
     property alias places: __places
 
+    property var fileTypes: {
+        "application/x-virtualbox-vdi": "disk image",
+        "text/plain": "Text",
+        "application/x-compressed-tar": "Archive",
+        "text/x-qml": "Source code",
+        "text/x-python": "Script",
+        "image/png": "Image",
+        "image/jpeg": "Image",
+    }
+
     onShowHiddenFilesChanged: {
         model.showHiddenFiles = folderListPage.showHiddenFiles
     }
@@ -94,6 +104,17 @@ Object {
     function pathIsWritable() {
         console.log("calling method model.curPathIsWritable()")
         return model.curPathIsWritable()
+    }
+
+    function fileType(type, description) {
+        if (type in fileTypes) {
+            description = fileTypes[type]
+        } else {
+            print(type)
+        }
+
+        return description.substring(0, 1).toUpperCase() +
+               description.substring(1)
     }
 
     function pathTitle(folder) {

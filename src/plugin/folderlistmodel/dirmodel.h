@@ -61,6 +61,8 @@ public:
         FileSizeRole,
         IconSourceRole,
         FilePathRole,
+        MimeTypeRole,
+        MimeTypeDescriptionRole,
         IsDirRole,
         IsFileRole,
         IsReadableRole,
@@ -158,7 +160,7 @@ signals:
     void error(const QString &errorTitle, const QString &errorMessage);
 
 private:
-    QHash<int, QByteArray> buildRoleNames() const;   
+    QHash<int, QByteArray> buildRoleNames() const;
     QHash<int, QByteArray> roleNames() const;
     QStringList mNameFilters;
     bool mFilterDirectories;
@@ -317,7 +319,7 @@ public slots:
      * \brief removeSelection() remove selected items, it handles Trash items
      */
     void  removeSelection();
-    
+
     /*!
      * \brief moveSelectionToTrash() move selected items from Local Disk (only) to Local Trash
      */
@@ -382,7 +384,7 @@ public slots:
     /*!
      * \brief cancelAction() any copy/cut/remove can be cancelled
      */
-    void cancelAction();    
+    void cancelAction();
 
     void setIsRecursive(bool isRecursive);
     void setReadsMediaMetadata(bool readsMediaMetadata);
@@ -455,7 +457,7 @@ private:
     QDir::Filter  currentDirFilter()  const;
     QString       dirItems(const DirItemInfo& fi) const;
     bool          cdInto(const DirItemInfo& fi);
-    bool          openItem(const DirItemInfo& fi);  
+    bool          openItem(const DirItemInfo& fi);
     bool          canReadDir(const QFileInfo& d)   const;
     bool          canReadFile(const QFileInfo& f)  const;
     QFileInfo     setParentIfRelative(const QString &fileOrDir) const;
@@ -464,7 +466,7 @@ private:
 private:
     void          startExternalFsWatcher();
     void          stoptExternalFsWatcher();
-    void          clear();   
+    void          clear();
 
 private slots:
     void          onItemAddedOutsideFm(const DirItemInfo&fi);
@@ -497,7 +499,7 @@ private:
 
 //[0]
 
-#if defined(REGRESSION_TEST_FOLDERLISTMODEL)    
+#if defined(REGRESSION_TEST_FOLDERLISTMODEL)
     ExternalFSWatcher * getExternalFSWatcher() const;
     virtual int columnCount(const QModelIndex &parent = QModelIndex()) const;
     virtual QVariant  headerData(int section, Qt::Orientation orientation, int role) const;

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 20:36-0600\n"
+"POT-Creation-Date: 2015-02-20 21:11-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,34 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../build/po/io.papyros.files.desktop.in.in.h:1
-#: io.papyros.files.desktop.in.in.h:1
-msgid "Files"
-msgstr ""
-
-#: ../build/src/app/qml/backend/FolderModel.qml:101
-#: ../src/app/qml/backend/FolderModel.qml:101
+#: ../src/app/qml/backend/FolderModel.qml:122
 msgid "Home"
 msgstr ""
 
-#: ../build/src/app/qml/backend/FolderModel.qml:103
-#: ../src/app/qml/backend/FolderModel.qml:103
+#: ../src/app/qml/backend/FolderModel.qml:124
 msgid "Device"
 msgstr ""
 
-#: ../src/plugin/folderlistmodel/dirmodel.cpp:418
+#: ../src/app/qml/components/FolderListView.qml:141
+msgid "No files"
+msgstr ""
+
+#: ../src/plugin/folderlistmodel/dirmodel.cpp:424
 msgid "path or url may not exist or cannot be read"
 msgstr ""
 
-#: ../src/plugin/folderlistmodel/dirmodel.cpp:585
+#: ../src/plugin/folderlistmodel/dirmodel.cpp:591
 msgid "Rename error"
 msgstr ""
 
-#: ../src/plugin/folderlistmodel/dirmodel.cpp:610
+#: ../src/plugin/folderlistmodel/dirmodel.cpp:616
 msgid "Error creating new folder"
 msgstr ""
 
-#: ../src/plugin/folderlistmodel/dirmodel.cpp:1252
+#: ../src/plugin/folderlistmodel/dirmodel.cpp:1258
 msgid "items"
 msgstr ""
 
@@ -135,4 +132,8 @@ msgstr ""
 
 #: ../src/plugin/folderlistmodel/filesystemaction.cpp:1507
 msgid "Could not remove the trash info file"
+msgstr ""
+
+#: io.papyros.files.desktop.in.in.h:1
+msgid "Files"
 msgstr ""

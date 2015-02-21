@@ -106,7 +106,7 @@ DirModel::DirModel(QObject *parent)
     , mOnlyAllowedPaths(false)
     , mSortBy(SortByName)
     , mSortOrder(SortAscending)
-    , mCompareFunction(0)  
+    , mCompareFunction(0)
     , mExtFSWatcher(false)
     , mClipboard(new Clipboard(this))
     , mLocationFactory(new LocationsFactory(this))
@@ -130,7 +130,7 @@ DirModel::DirModel(QObject *parent)
             this,     SLOT(onItemRemoved(DirItemInfo)));
 
     connect(m_fsAction, SIGNAL(removed(QString)),
-            this,     SLOT(onItemRemoved(QString)));  
+            this,     SLOT(onItemRemoved(QString)));
 
     connect(m_fsAction, SIGNAL(error(QString,QString)),
             this,     SIGNAL(error(QString,QString)));
@@ -216,6 +216,8 @@ QHash<int, QByteArray> DirModel::buildRoleNames() const
         roles.insert(FileSizeRole, QByteArray("fileSize"));
         roles.insert(IconSourceRole, QByteArray("iconSource"));
         roles.insert(FilePathRole, QByteArray("filePath"));
+        roles.insert(MimeTypeRole, QByteArray("mimeType"));
+        roles.insert(MimeTypeDescriptionRole, QByteArray("mimeTypeDescription"));
         roles.insert(IsDirRole, QByteArray("isDir"));
         roles.insert(IsFileRole, QByteArray("isFile"));
         roles.insert(IsReadableRole, QByteArray("isReadable"));
@@ -265,8 +267,8 @@ QVariant DirModel::data(const QModelIndex &index, int role) const
         return QVariant();
     }
     if (role == Qt::DecorationRole && index.column() == 0)
-    {             
-        QIcon icon;      
+    {
+        QIcon icon;
         QMimeType mime = mDirectoryContents.at(index.row()).mimeType();
         if (mime.isValid())
         {
@@ -354,6 +356,10 @@ QVariant DirModel::data(const QModelIndex &index, int role) const
         }
         case FilePathRole:
             return fi.filePath();
+        case MimeTypeRole:
+            return fi.mimeType().name();
+        case MimeTypeDescriptionRole:
+            return fi.mimeType().comment();
         case IsDirRole:
             return fi.isDir();
         case IsFileRole:
@@ -397,7 +403,7 @@ QVariant DirModel::data(const QModelIndex &index, int role) const
 void DirModel::setPath(const QString &pathName)
 {
     if (pathName.isEmpty())
-        return;   
+        return;
 
    if (mAwaitingResults) {
         // TODO: handle the case where pathName != our current path, cancel old
@@ -430,7 +436,7 @@ void DirModel::setPath(const QString &pathName)
  *  Used in \ref cdUp() and \ref cdIntoIndex()
  */
 void DirModel::setPathFromCurrentLocation()
-{   
+{
     mAwaitingResults = true;
     emit awaitingResultsChanged();
 #if DEBUG_MESSAGES
@@ -441,7 +447,7 @@ void DirModel::setPathFromCurrentLocation()
 
     mCurLocation->fetchItems(currentDirFilter(), mIsRecursive);
 
-    mCurrentDir = mCurLocation->urlPath();    
+    mCurrentDir = mCurLocation->urlPath();
     if (mPathList.count() == 0 || mPathList.last() != mCurrentDir)
     {
         mPathList.append(mCurrentDir);
@@ -469,7 +475,7 @@ void DirModel::onItemsFetched() {
 #endif
         mAwaitingResults = false;
         emit awaitingResultsChanged();
-    }    
+    }
 }
 
 
@@ -847,7 +853,7 @@ void DirModel::paste()
     else
     {
         m_fsAction->copyIntoCurrentPath(items);
-    }   
+    }
 }
 
 void DirModel::clearClipboard()
@@ -925,7 +931,7 @@ void DirModel::onItemRemoved(const QString &pathname)
 
 
 void DirModel::onItemRemoved(const DirItemInfo &fi)
-{  
+{
     int row = rowOfItem(fi);
 #if DEBUG_MESSAGES || DEBUG_EXT_FS_WATCHER
     qDebug() <<  Q_FUNC_INFO << this
@@ -992,7 +998,7 @@ int DirModel::addItem(const DirItemInfo &fi)
         beginInsertRows(QModelIndex(), idx, idx);
         mDirectoryContents.insert(it, fi);
         endInsertRows();
-    }   
+    }
     return idx;
 }
 
@@ -1007,7 +1013,7 @@ void DirModel::onItemChanged(const DirItemInfo &fi)
 {
     int row = rowOfItem(fi);
     if (row >= 0)
-    {       
+    {
         if (mDirectoryContents.at(row).isSelected())
         {
             mSelection->itemGoingToBeReplaced(mDirectoryContents.at(row), fi);
@@ -1403,9 +1409,9 @@ void DirModel::onItemRemovedOutSideFm(const DirItemInfo &fi)
  * A File or a Dir modified by other applications: size,date, permissions
  */
 void DirModel::onItemChangedOutSideFm(const DirItemInfo &fi)
-{   
+{
     if (IS_FILE_MANAGER_IDLE())
-    {       
+    {
         onItemChanged(fi);
 #if DEBUG_EXT_FS_WATCHER
         qDebug() << "[extFsWatcher]" << QDateTime::currentDateTime().toString("hh:mm:ss.zzz")
@@ -1450,7 +1456,7 @@ bool DirModel::getEnabledExternalFSWatcher() const
  * \param enable
  */
 void DirModel::setEnabledExternalFSWatcher(bool enable)
-{   
+{
     emit enabledExternalFSWatcherChanged(enable);
 }
 
@@ -1610,7 +1616,7 @@ void DirModel::registerMetaTypes()
 }
 
 void DirModel::notifyItemChanged(int row)
-{   
+{
     QModelIndex first = index(row,0);
 #if REGRESSION_TEST_FOLDERLISTMODEL
     QModelIndex last  = index(row, columnCount()); //Table only when testing
@@ -1629,7 +1635,7 @@ int DirModel::getIndex(const QString &name)
 
 
 void DirModel:: moveIndexesToTrash(const QList<int>& items)
-{ 
+{
     if (mCurLocation->type() == LocationsFactory::LocalDisk)
     {
         const TrashLocation *trashLocation = static_cast<const TrashLocation*>
@@ -1646,10 +1652,10 @@ void DirModel:: moveIndexesToTrash(const QList<int>& items)
             }
         }
         if (itemsAndTrashPath.count() > 0)
-        {         
+        {
             m_fsAction->moveToTrash(itemsAndTrashPath);
         }
-    }  
+    }
 }
 
 
@@ -1662,7 +1668,7 @@ void DirModel:: moveIndexToTrash(int index)
 
 
 void DirModel::restoreTrash()
-{  
+{
     if ( IS_BROWSING_TRASH_ROOTDIR() )
     {
         QList<int> allItems;
@@ -1676,7 +1682,7 @@ void DirModel::restoreTrash()
 
 
 void DirModel::emptyTrash()
-{  
+{
     if ( IS_BROWSING_TRASH_ROOTDIR() )
     {
         QStringList allItems;
@@ -1701,7 +1707,7 @@ void DirModel::restoreIndexFromTrash(int index)
 
 
 void DirModel::restoreIndexesFromTrash(const QList<int> &items)
-{   
+{
     if ( IS_BROWSING_TRASH_ROOTDIR() )
     {
         TrashLocation *trashLocation = static_cast<TrashLocation*> (mCurLocation);
@@ -1717,10 +1723,10 @@ void DirModel::restoreIndexesFromTrash(const QList<int> &items)
             }
         }
         if (itemsAndOriginalPaths.count() > 0)
-        {           
+        {
             m_fsAction->restoreFromTrash(itemsAndOriginalPaths);
         }
-    }   
+    }
 }
 
 
@@ -1760,7 +1766,7 @@ QVariant DirModel::getAudioMetaData(const QFileInfo& fi, int role) const
     QVariant empty;
     if (!fi.isDir()) {
         TagLib::FileRef f(fi.absoluteFilePath().toStdString().c_str(), true, TagLib::AudioProperties::Fast);
-        TagLib::MPEG::File mp3(fi.absoluteFilePath().toStdString().c_str(), true, TagLib::MPEG::Properties::Fast);        
+        TagLib::MPEG::File mp3(fi.absoluteFilePath().toStdString().c_str(), true, TagLib::MPEG::Properties::Fast);
         TagLib::Tag *tag = f.tag();
         if (tag)
         {

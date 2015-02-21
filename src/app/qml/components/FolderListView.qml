@@ -27,6 +27,8 @@ Item {
     Rectangle {
         id: header
 
+        visible: listView.count > 0
+
         z: 1
         color: Theme.backgroundColor
 
@@ -62,7 +64,7 @@ Item {
 
             Label {
                 Layout.alignment: Qt.AlignVCenter
-                Layout.preferredWidth: units.dp(75)
+                Layout.preferredWidth: units.dp(100)
 
                 text: "Type"
                 color: Theme.light.subTextColor
@@ -79,6 +81,8 @@ Item {
     }
 
     ListView {
+        id: listView
+
         anchors {
             left: parent.left
             right: parent.right
@@ -106,13 +110,17 @@ Item {
 
                     text: folderModel.pathTitle(path)
                     style: "subheading"
+                    elide: Text.ElideRight
                 }
 
                 Label {
                     Layout.alignment: Qt.AlignVCenter
-                    Layout.preferredWidth: units.dp(75)
+                    Layout.preferredWidth: units.dp(100)
 
-                    text: "Type"
+                    elide: Text.ElideRight
+
+                    text: folderModel.fileType(model.mimeType,
+                                               model.mimeTypeDescription)
                     color: Theme.light.subTextColor
                 }
 
@@ -125,5 +133,15 @@ Item {
                 }
             }
         }
+    }
+
+    Label {
+        anchors.centerIn: parent
+
+        text: i18n.tr("No files")
+        color: Theme.light.hintColor
+        font.pixelSize: units.dp(25)
+
+        visible: listView.count == 0
     }
 }
