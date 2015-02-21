@@ -18,17 +18,35 @@
 import QtQuick 2.2
 import Material 0.1
 import Material.ListItems 0.1 as ListItem
+import "backend"
+import "components"
 
-ApplicationWindow {
-    title: "Files"
+Page {
+    id: folderPage
 
-    theme {
-        primaryColor: Palette.colors.blue["500"]
+    title: folderModel.title
+
+    actions: [
+        Action {
+            iconName: "action/search"
+            name: "Search"
+        }
+    ]
+
+    PlacesSidebar {
+        id: placesSidebar
     }
 
-    Component.onCompleted: visible = true
+    FolderListView {
+        anchors {
+            left: placesSidebar.right
+            right: parent.right
+            top: parent.top
+            bottom: parent.bottom
+        }
+    }
 
-    initialPage: FolderPage {
-        id: folderPage
+    FolderModel {
+        id: folderModel
     }
 }

@@ -19,16 +19,28 @@ import QtQuick 2.2
 import Material 0.1
 import Material.ListItems 0.1 as ListItem
 
-ApplicationWindow {
-    title: "Files"
+Sidebar {
+    id: placesSidebar
 
-    theme {
-        primaryColor: Palette.colors.blue["500"]
-    }
+    Column {
+        anchors {
+            left: parent.left
+            right: parent.right
+        }
 
-    Component.onCompleted: visible = true
+        ListItem.Header {
+            text: "Places"
+        }
 
-    initialPage: FolderPage {
-        id: folderPage
+        Repeater {
+            model: folderModel.places
+
+            delegate: ListItem.Standard {
+                text: folderModel.pathTitle(path)
+                selected: folderModel.path == path
+
+                onTriggered: folderModel.goTo(path)
+            }
+        }
     }
 }

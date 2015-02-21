@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:42-0600\n"
+"POT-Creation-Date: 2015-02-20 20:36-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,16 @@ msgstr ""
 #: ../build/po/io.papyros.files.desktop.in.in.h:1
 #: io.papyros.files.desktop.in.in.h:1
 msgid "Files"
+msgstr ""
+
+#: ../build/src/app/qml/backend/FolderModel.qml:101
+#: ../src/app/qml/backend/FolderModel.qml:101
+msgid "Home"
+msgstr ""
+
+#: ../build/src/app/qml/backend/FolderModel.qml:103
+#: ../src/app/qml/backend/FolderModel.qml:103
+msgid "Device"
 msgstr ""
 
 #: ../src/plugin/folderlistmodel/dirmodel.cpp:418
