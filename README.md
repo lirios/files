@@ -18,7 +18,7 @@ Requires Qt 5.3 or higher and [QML Material](https://github.com/papyros/qml-mate
 
 From the root of the repository, run:
 
-    $ qmake
+    $ cmake .
     $ make
     $ make check # Optional, make sure everything is working correctly
     $ sudo make install
