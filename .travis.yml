@@ -25,7 +25,7 @@ before_script:
 
 script:
   - source /opt/qt53/bin/qt53-env.sh
-  - cmake
+  - cmake .
   - make test
 
 notifications:
