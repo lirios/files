@@ -39,13 +39,23 @@ Object {
     property alias places: __places
 
     property var fileTypes: {
+        "application/x-compressed-tar": "archive",
+        "application/x-designer": "source code",
+        "application/x-desktop": "app launcher",
+        "application/x-ruby": "script",
         "application/x-virtualbox-vdi": "disk image",
-        "text/plain": "Text",
-        "application/x-compressed-tar": "Archive",
-        "text/x-qml": "Source code",
-        "text/x-python": "Script",
-        "image/png": "Image",
-        "image/jpeg": "Image",
+        "application/x-yaml": "text",
+        "image/png": "image",
+        "image/jpeg": "image",
+        "text/markdown": "text",
+        "text/plain": "text",
+        "text/x-c++src": "source code",
+        "text/x-chdr": "source code",
+        "text/x-cmake": "build script",
+        "text/x-copying": "license",
+        "text/x-gettext-translation-template": "translations",
+        "text/x-python": "script",
+        "text/x-qml": "source code",
     }
 
     onShowHiddenFilesChanged: {
