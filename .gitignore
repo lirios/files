@@ -1,1 +1,5 @@
+Makefile
+build
 *~
+*.o
+*.moc
