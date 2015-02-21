@@ -40,6 +40,31 @@ Page {
         Action {
             iconName: "action/search"
             name: "Search"
+        },
+
+        Action {
+            iconName: "action/list"
+            name: "List mode"
+        },
+
+        Action {
+            iconName: "content/add"
+            name: "New folder"
+        },
+
+        Action {
+            iconName: "action/visibility"
+            name: "Properties"
+        },
+
+        Action {
+            iconName: "action/open_in_new"
+            name: "Open in Terminal"
+        },
+
+        Action {
+            iconName: "action/settings"
+            name: "Settings"
         }
     ]
 

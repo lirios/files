@@ -72,7 +72,7 @@ Item {
 
             Label {
                 Layout.alignment: Qt.AlignVCenter
-                Layout.preferredWidth: units.dp(120)
+                Layout.preferredWidth: units.dp(100)
 
                 text: "Last modified"
                 color: Theme.light.subTextColor
@@ -131,8 +131,10 @@ Item {
 
                 Label {
                     Layout.alignment: Qt.AlignVCenter
-                    Layout.preferredWidth: units.dp(120)
+                    Layout.preferredWidth: units.dp(100)
 
+                    elide: Text.ElideRight
+                    
                     text: DateUtils.friendlyTime(model.modifiedDate, true)
                     color: Theme.light.subTextColor
                 }
