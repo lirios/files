@@ -92,7 +92,12 @@ Item {
 
         model: folderModel.model
         delegate: ListItem.Standard {
-            property string path: folderModel.path + '/' + model.fileName
+
+            onTriggered: {
+                if (model.isDir) {
+                    folderModel.goTo(model.filePath)
+                }
+            }
 
             RowLayout {
                 anchors {
@@ -108,7 +113,7 @@ Item {
                     Layout.alignment: Qt.AlignVCenter
                     Layout.fillWidth: true
 
-                    text: folderModel.pathTitle(path)
+                    text: folderModel.pathTitle(model.filePath)
                     style: "subheading"
                     elide: Text.ElideRight
                 }
