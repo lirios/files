@@ -135,6 +135,10 @@ Item {
         }
     }
 
+    Scrollbar {
+        flickableItem: listView
+    }
+
     Label {
         anchors.centerIn: parent
 

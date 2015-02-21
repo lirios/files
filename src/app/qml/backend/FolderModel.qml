@@ -117,6 +117,26 @@ Object {
                description.substring(1)
     }
 
+    function pathIcon(folder) {
+        if (folder === places.locationHome) {
+            return "action/home"
+        } else if (folder === places.locationDocuments) {
+            return "content/content_copy"
+        } else if (folder === places.locationDownloads) {
+            return "file/file_download"
+        } else if (folder === places.locationMusic) {
+            return "image/audiotrack"
+        } else if (folder === places.locationPictures) {
+            return "image/image"
+        } else if (folder === places.locationVideos) {
+            return "av/movie"
+        } else if (folder === "/") {
+            return "hardware/computer"
+        } else {
+            return "file/folder"
+        }
+    }
+
     function pathTitle(folder) {
         if (folder === places.locationHome) {
             return i18n.tr("Home")
