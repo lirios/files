@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SimpleList</class>
+ <widget class="QMainWindow" name="SimpleList">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1046</width>
+    <height>608</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QToolButton" name="toolButtonBack">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>back</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/resources/resources/go-previous.png</normaloff>:/resources/resources/go-previous.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButtonUp">
+        <property name="text">
+         <string>Up</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/resources/resources/go-up.png</normaloff>:/resources/resources/go-up.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBoxPath">
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+        <property name="insertPolicy">
+         <enum>QComboBox::NoInsert</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QGroupBox" name="groupBoxPlaces">
+          <property name="title">
+           <string>Places</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QListView" name="listViewPlaces">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxConfig">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Configurations</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="spacing">
+            <number>3</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="checkBoxShowDirs">
+             <property name="text">
+              <string>show Directories</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkBoxShowHidden">
+             <property name="text">
+              <string>show Hidden Files</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkBoxShowMediaInfo">
+             <property name="text">
+              <string>show Multimedia</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkBoxMultiSelection">
+             <property name="text">
+              <string>activate Multiselection</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkBoxExtFsWatcher">
+             <property name="text">
+              <string>activate FS Watcher</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTableView" name="tableViewFM"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1046</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCopy"/>
+   <addaction name="actionCut"/>
+   <addaction name="actionPaste"/>
+   <addaction name="separator"/>
+   <addaction name="actionDelete"/>
+   <addaction name="actionMoveToTrash"/>
+   <addaction name="actionRestoreFromTrash"/>
+   <addaction name="separator"/>
+   <addaction name="actionRename"/>
+   <addaction name="actionNewFolder"/>
+   <addaction name="separator"/>
+   <addaction name="actionUndo"/>
+   <addaction name="separator"/>
+   <addaction name="actionEmptyTrash"/>
+   <addaction name="separator"/>
+   <addaction name="actionTerminnal"/>
+  </widget>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/copy.png</normaloff>:/resources/resources/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy Items into clipbpard</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/cut.png</normaloff>:/resources/resources/cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="toolTip">
+    <string>Cut files into clipboard</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/paste.png</normaloff>:/resources/resources/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="toolTip">
+    <string>paste clibpboard contents</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/remove.png</normaloff>:/resources/resources/remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Del</string>
+   </property>
+  </action>
+  <action name="actionMoveToTrash">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/trash.png</normaloff>:/resources/resources/trash.png</iconset>
+   </property>
+   <property name="text">
+    <string>MoveToTrash</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionGoUp">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/go-up.png</normaloff>:/resources/resources/go-up.png</iconset>
+   </property>
+   <property name="text">
+    <string>Up</string>
+   </property>
+   <property name="toolTip">
+    <string>Go parent folder</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+U</string>
+   </property>
+  </action>
+  <action name="actionGoBack">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/go-previous.png</normaloff>:/resources/resources/go-previous.png</iconset>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+B</string>
+   </property>
+  </action>
+  <action name="actionRename">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/edit-rename.png</normaloff>:/resources/resources/edit-rename.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rename...</string>
+   </property>
+  </action>
+  <action name="actionNewFolder">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/folder-new.png</normaloff>:/resources/resources/folder-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>NewFolder</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/undo.png</normaloff>:/resources/resources/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionEmptyTrash">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/empty_trash.png</normaloff>:/resources/resources/empty_trash.png</iconset>
+   </property>
+   <property name="text">
+    <string>EmptyTrash</string>
+   </property>
+   <property name="toolTip">
+    <string>EmptTrash</string>
+   </property>
+  </action>
+  <action name="actionRestoreFromTrash">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/recyclebin_full.png</normaloff>:/resources/resources/recyclebin_full.png</iconset>
+   </property>
+   <property name="text">
+    <string>RestoreFromTrash</string>
+   </property>
+   <property name="toolTip">
+    <string>restore From Trash</string>
+   </property>
+  </action>
+  <action name="actionTerminnal">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/resources/resources/xterm_48x48.xpm</normaloff>:/resources/resources/xterm_48x48.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Terminnal</string>
+   </property>
+   <property name="toolTip">
+    <string>open a Terminal</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -15,12 +15,33 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <QApplication>
-#include <QQmlApplicationEngine>
+#include <QtGui/QGuiApplication>
+#include <QtQml/QQmlApplicationEngine>
+#include <QLibrary>
+#include <QDir>
+#include <QStandardPaths>
+
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
-    QQmlApplicationEngine engine(QUrl("qrc:/qml/main.qml"));
+    QGuiApplication app(argc, argv);
+
+    QString qmlfile;
+
+    QStringList paths = QStandardPaths::standardLocations(QStandardPaths::DataLocation);
+    paths.prepend(QDir::currentPath());
+    paths.prepend(QCoreApplication::applicationDirPath());
+
+    foreach (const QString &path, paths) {
+        QFileInfo fi(path + "/qml/main.qml");
+        qDebug() << "Trying to load QML from:" << path + "/qml/main.qml";
+        if (fi.exists()) {
+            qmlfile = path +  "/qml/main.qml";
+            break;
+        }
+    }
+
+    QQmlApplicationEngine engine(qmlfile);
     return app.exec();
 }

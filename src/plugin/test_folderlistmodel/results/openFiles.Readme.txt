@@ -1,0 +1,7 @@
+
+On Nemo emulator tried to open files using QDesktopServices::openUrl()
+=======================================================
+
+ mp3 file -> attempted to open in Internet browser and got stuck
+ txt file -> opened in the browser
+ pdf file -> attempted to open in Internet browser and got stuck

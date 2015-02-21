@@ -1,0 +1,2 @@
+module com.ubuntu.PamAuthentication
+plugin PamAuthentication

@@ -1,0 +1,14 @@
+Building and installing
+=======================
+
+qmake [available-defines]
+
+  where available-debug-messages are:
+      DEBUG_MESSAGES         -> enable generic debug messages                  use:  qmake "DEINES+=DEBUG_MESSAGES"
+      DEBUG_EXT_FS_WATCHER   -> enable External File System Watcher messages   use:  qmake "DEINES+=DEBUG_EXT_FS_WATCHER"
+      DEBUG_REMOVE           -> enable message about every remove              use:  qmake "DEINES+=DEBUG_REMOVE"
+      DO_NOT_USE_TAG_LIB     -> disable using TAGLIB and getting metada        use:  qmake "DEINES+=DO_NOT_USE_TAG_LIB"
+
+make
+sudo make install
+

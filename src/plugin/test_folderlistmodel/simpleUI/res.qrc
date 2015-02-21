@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="/resources">
+    <file>resources/xterm_48x48.xpm</file>
+    <file>resources/home-page.png</file>
+    <file>resources/recyclebin_full.png</file>
+    <file>resources/empty_trash.png</file>
+    <file>resources/undo.png</file>
+    <file>resources/go-previous.png</file>
+    <file>resources/go-up.png</file>
+    <file>resources/edit-rename.png</file>
+    <file>resources/folder-new.png</file>
+    <file>resources/copy.png</file>
+    <file>resources/cut.png</file>
+    <file>resources/filenew.png</file>
+    <file>resources/remove.png</file>
+    <file>resources/trash.png</file>
+    <file>resources/paste.png</file>
+    <file>resources/temp_folder.png</file>
+    <file>resources/red_folder.png</file>
+    <file>resources/document_folder.png</file>
+    <file>resources/downloads_folder.png</file>
+  </qresource>
+</RCC>

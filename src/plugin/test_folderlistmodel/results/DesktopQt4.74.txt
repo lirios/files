@@ -1,0 +1,47 @@
+********* Start testing of TestDirModel *********
+Config: Using QTest library 4.7.4, Qt 4.7.4
+PASS   : TestDirModel::initTestCase()
+PASS   : TestDirModel::fsActionRemoveSingleFile()
+PASS   : TestDirModel::fsActionRemoveSingleDir()
+PASS   : TestDirModel::fsActionRemoveOneFileOneDir()
+PASS   : TestDirModel::fsActionRemoveTwoFilesTwoDirs()
+PASS   : TestDirModel::modelRemoveRecursiveDirByIndex()
+PASS   : TestDirModel::modelRemoveMultiItemsByFullPathname()
+PASS   : TestDirModel::modelRemoveMultiItemsByName()
+PASS   : TestDirModel::modelCopyDirPasteIntoAnotherModel()
+PASS   : TestDirModel::modelCopyManyItemsPasteIntoAnotherModel()
+PASS   : TestDirModel::modelCutManyItemsPasteIntoAnotherModel()
+PASS   : TestDirModel::fsActionMoveItemsForcingCopyAndThenRemove()
+PASS   : TestDirModel::modelCancelRemoveAction()
+PASS   : TestDirModel::modelTestFileSize()
+PASS   : TestDirModel::modelRemoveDirWithHiddenFilesAndLinks()
+PASS   : TestDirModel::modelCancelCopyAction()
+PASS   : TestDirModel::modelCopyFileAndDirectoryLinks()
+PASS   : TestDirModel::modelCopyAndPaste3Times()
+PASS   : TestDirModel::modelCutAndPaste3Times()
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type text/plain
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type text/x-c++src
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type text/x-csrc
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type inode/directory
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type application/msword
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type application/octet-stream
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type application/pdf
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type application/postscript
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type application/x-bzip-compressed-tar
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type application/x-executable
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type application/x-gzip
+QWARN  : TestDirModel::getThemeIcons() GOOD icon using QIcon::fromTheme() for mime type application/x-shellscript
+PASS   : TestDirModel::getThemeIcons()
+QWARN  : TestDirModel::fileIconProvider() GOOD icon from QFileIconProvide::icon() for  /tmp/tst_folderlistmodel_test.mp3
+QWARN  : TestDirModel::fileIconProvider() GOOD icon from QFileIconProvide::icon() for  /tmp/tst_folderlistmodel_test.pdf
+QWARN  : TestDirModel::fileIconProvider() GOOD icon from QFileIconProvide::icon() for  /tmp/tst_folderlistmodel_test.asx
+QWARN  : TestDirModel::fileIconProvider() GOOD icon from QFileIconProvide::icon() for  /tmp/tst_folderlistmodel_test.xspf
+PASS   : TestDirModel::fileIconProvider()
+QWARN  : TestDirModel::openMP3() GOOD: QDesktopServices::openUrl() works for MP3 files
+PASS   : TestDirModel::openMP3()
+QWARN  : TestDirModel::openTXT() GOOD: QDesktopServices::openUrl() works for TEXT files
+PASS   : TestDirModel::openTXT()
+PASS   : TestDirModel::openPDF()
+PASS   : TestDirModel::cleanupTestCase()
+Totals: 25 passed, 0 failed, 0 skipped
+********* Finished testing of TestDirModel *********

@@ -1,0 +1,36 @@
+********* Start testing of TestDirModel *********
+Config: Using QTest library 4.8.3, Qt 4.8.3
+PASS   : TestDirModel::initTestCase()
+PASS   : TestDirModel::fsActionRemoveSingleFile()
+PASS   : TestDirModel::fsActionRemoveSingleDir()
+PASS   : TestDirModel::fsActionRemoveOneFileOneDir()
+PASS   : TestDirModel::fsActionRemoveTwoFilesTwoDirs()
+PASS   : TestDirModel::modelRemoveRecursiveDirByIndex()
+PASS   : TestDirModel::modelRemoveMultiItemsByFullPathname()
+PASS   : TestDirModel::modelRemoveMultiItemsByName()
+PASS   : TestDirModel::modelCopyDirPasteIntoAnotherModel()
+PASS   : TestDirModel::modelCopyManyItemsPasteIntoAnotherModel()
+PASS   : TestDirModel::modelCutManyItemsPasteIntoAnotherModel()
+PASS   : TestDirModel::fsActionMoveItemsForcingCopyAndThenRemove()
+PASS   : TestDirModel::modelCancelRemoveAction()
+PASS   : TestDirModel::modelTestFileSize()
+PASS   : TestDirModel::modelRemoveDirWithHiddenFilesAndLinks()
+PASS   : TestDirModel::modelCancelCopyAction()
+PASS   : TestDirModel::modelCopyFileAndDirectoryLinks()
+PASS   : TestDirModel::modelCopyAndPaste3Times()
+PASS   : TestDirModel::modelCutAndPaste3Times()
+SKIP   : TestDirModel::getThemeIcons() invalid QIcon::fromTheme text-plain
+   Loc: [/mnt/mint14kde/home/carlos/ubuntu_work/bazarrepo/test_folderlistmodel/regression/tst_folderlistmodel.cpp(1006)]
+QWARN  : TestDirModel::fileIconProvider() QFileIconProvider::File or a BAD icon from QFileIconProvide::icon() for  /var/tmp/tst_folderlistmodel_test.mp3
+QWARN  : TestDirModel::fileIconProvider() QFileIconProvider::File or a BAD icon from QFileIconProvide::icon() for  /var/tmp/tst_folderlistmodel_test.pdf
+QWARN  : TestDirModel::fileIconProvider() QFileIconProvider::File or a BAD icon from QFileIconProvide::icon() for  /var/tmp/tst_folderlistmodel_test.asx
+QWARN  : TestDirModel::fileIconProvider() QFileIconProvider::File or a BAD icon from QFileIconProvide::icon() for  /var/tmp/tst_folderlistmodel_test.xspf
+PASS   : TestDirModel::fileIconProvider()
+QWARN  : TestDirModel::openMP3() GOOD: QDesktopServices::openUrl() works for MP3 files
+PASS   : TestDirModel::openMP3()
+QWARN  : TestDirModel::openTXT() GOOD: QDesktopServices::openUrl() works for TEXT files
+PASS   : TestDirModel::openTXT()
+PASS   : TestDirModel::openPDF()
+PASS   : TestDirModel::cleanupTestCase()
+Totals: 24 passed, 0 failed, 1 skipped
+********* Finished testing of TestDirModel *********

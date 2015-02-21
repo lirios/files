@@ -1,9 +1,10 @@
 [Desktop Entry]
-Name=Files
+Version=1.0
+_Name=Files
 Comment=Access and organize files
 Keywords=folder;manager;explore;disk;filesystem;
-Exec=papyros-files
-Icon=system-file-manager
+Exec=@EXEC@
+Icon=@ICON@
 Terminal=False
 Type=Application
 Categories=Papyros;Qt;Utility;Core;FileManager;
