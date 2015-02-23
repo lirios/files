@@ -20,6 +20,8 @@ import Material 0.1
 import Material.ListItems 0.1 as ListItem
 
 ApplicationWindow {
+    id: app
+
     title: "Files"
 
     theme {

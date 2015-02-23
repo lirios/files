@@ -24,7 +24,6 @@ import "components"
 Page {
     id: folderPage
 
-    title: folderModel.title
     actionBar.elevation: 0
 
     backAction: Action {
@@ -68,8 +67,34 @@ Page {
         }
     ]
 
-    PlacesSidebar {
-        id: placesSidebar
+    actionBar.customContent: Label {
+        anchors.bottom: parent.bottom
+
+        text: folderModel.title
+
+        style: "title"
+        color: Theme.dark.textColor
+        elide: Text.ElideRight
+
+        width: parent.width
+        height: infoSidebar.showing ? units.dp(72) : actionBar.implicitHeight
+
+        verticalAlignment: Text.AlignVCenter
+
+        Behavior on height {
+            NumberAnimation { duration: MaterialAnimation.pageTransitionDuration }
+        }
+    }
+
+    rightSidebar: InfoSidebar {
+        id: infoSidebar
+    }
+
+    property var selectedFile
+
+    onSelectedFileChanged: {
+        if (selectedFile)
+            app.width = Math.max(app.width, units.dp(1000))
     }
 
     FolderListView {
@@ -81,7 +106,13 @@ Page {
         }
     }
 
+    PlacesSidebar {
+        id: placesSidebar
+    }
+
     FolderModel {
         id: folderModel
     }
+
+    Keys.onEscapePressed: selectedFile = undefined
 }

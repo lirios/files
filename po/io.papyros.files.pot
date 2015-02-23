@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-21 10:23-0600\n"
+"POT-Creation-Date: 2015-02-22 22:34-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,18 +22,18 @@ msgstr ""
 msgid "Files"
 msgstr ""
 
-#: ../build/src/app/qml/backend/FolderModel.qml:151
-#: ../src/app/qml/backend/FolderModel.qml:153
+#: ../build/src/app/qml/backend/FolderModel.qml:167
+#: ../src/app/qml/backend/FolderModel.qml:167
 msgid "Home"
 msgstr ""
 
-#: ../build/src/app/qml/backend/FolderModel.qml:153
-#: ../src/app/qml/backend/FolderModel.qml:155
+#: ../build/src/app/qml/backend/FolderModel.qml:169
+#: ../src/app/qml/backend/FolderModel.qml:169
 msgid "Device"
 msgstr ""
 
-#: ../build/src/app/qml/components/FolderListView.qml:152
-#: ../src/app/qml/components/FolderListView.qml:152
+#: ../build/src/app/qml/components/FolderListView.qml:164
+#: ../src/app/qml/components/FolderListView.qml:164
 msgid "No files"
 msgstr ""
 

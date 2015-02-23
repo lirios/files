@@ -39,15 +39,26 @@ Object {
     property alias places: __places
 
     property var fileTypes: {
+        "application/gzip": "archive",
+        "application/pdf": "document",
         "application/x-compressed-tar": "archive",
         "application/x-designer": "source code",
         "application/x-desktop": "app launcher",
+        "application/x-font-ttf": "font",
         "application/x-ruby": "script",
+        "application/x-shellscript": "script",
         "application/x-virtualbox-vdi": "disk image",
         "application/x-yaml": "text",
+        "application/x-xz-compressed-tar": "archive",
+        "application/vnd.android.package-archive": "Package",
+        "application/zip": "archive",
+        "audio/mpeg": "Audio",
         "image/png": "image",
         "image/jpeg": "image",
-        "text/markdown": "text",
+        "image/x-xcf": "image",
+        "image/vnd.adobe.photoshop": "image",
+        "text/html": "text",
+        "text/markdown": "document",
         "text/plain": "text",
         "text/x-c++src": "source code",
         "text/x-chdr": "source code",
@@ -55,7 +66,10 @@ Object {
         "text/x-copying": "license",
         "text/x-gettext-translation-template": "translations",
         "text/x-python": "script",
+        "text/x-tex": "document",
         "text/x-qml": "source code",
+        "video/mp4": "video",
+        "video/quicktime": "video"
     }
 
     onShowHiddenFilesChanged: {

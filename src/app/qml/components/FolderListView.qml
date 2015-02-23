@@ -93,10 +93,20 @@ Item {
         model: folderModel.model
         delegate: ListItem.Standard {
 
-            onTriggered: {
+            selected: selectedFile != undefined &&
+                      selectedFile.filePath == model.filePath
+
+            onClicked: {
                 if (model.isDir) {
                     folderModel.goTo(model.filePath)
                 }
+            }
+
+            onPressAndHold: {
+                if (selected)
+                    selectedFile = undefined
+                else
+                    selectedFile = model
             }
 
             RowLayout {
@@ -116,6 +126,8 @@ Item {
                     text: folderModel.pathTitle(model.filePath)
                     style: "subheading"
                     elide: Text.ElideRight
+
+                    color: selected ? Theme.primaryColor : Theme.light.textColor
                 }
 
                 Label {
@@ -134,7 +146,7 @@ Item {
                     Layout.preferredWidth: units.dp(100)
 
                     elide: Text.ElideRight
-                    
+
                     text: DateUtils.friendlyTime(model.modifiedDate, true)
                     color: Theme.light.subTextColor
                 }

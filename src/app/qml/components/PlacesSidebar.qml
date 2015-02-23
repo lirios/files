@@ -41,7 +41,7 @@ Sidebar {
 
                 action: Item {
                     anchors.fill: parent
-                    
+
                     Icon {
                         id: icon
                         anchors.centerIn: parent
@@ -58,7 +58,7 @@ Sidebar {
                 text: folderModel.pathTitle(path)
                 selected: folderModel.path == path
 
-                onTriggered: folderModel.goTo(path)
+                onClicked: folderModel.goTo(path)
             }
         }
     }
