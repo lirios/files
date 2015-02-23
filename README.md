@@ -2,7 +2,7 @@ Files app for Papryos
 =====================
 
 [![GitHub release](https://img.shields.io/github/release/papyros/files-app.svg)](https://github.com/papyros/files-app)
-[![Build Status](https://travis-ci.org/papyros/files-app.svg?branch=develop)](https://travis-ci.org/papyros/files-app)
+[![Build Status](https://travis-ci.org/papyros/files-app.svg?branch=master)](https://travis-ci.org/papyros/files-app)
 [![GitHub issues](https://img.shields.io/github/issues/papyros/files-app.svg)](https://github.com/papyros/files-app/issues)
 [![Bountysource](https://img.shields.io/bountysource/team/papyros/activity.svg)](https://www.bountysource.com/teams/papyros)
 
