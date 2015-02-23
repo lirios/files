@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-23 20:20-0600\n"
-"PO-Revision-Date: 2015-02-23 22:37-0500\n"
-"Last-Translator: Weblate Admin <admin@example.com>\n"
+"PO-Revision-Date: 2015-02-23 23:02-0500\n"
+"Last-Translator: Michael Spencer <sonrisesoftware@gmail.com>\n"
 "Language-Team: French <http://example.com/weblate/projects/papyros/files-"
 "app/fr/>\n"
 "Language: fr\n"
@@ -26,8 +26,9 @@ msgstr "Fichiers"
 
 #: ../build/src/app/qml/backend/FolderModel.qml:167
 #: ../src/app/qml/backend/FolderModel.qml:167
+#, fuzzy
 msgid "Home"
-msgstr ""
+msgstr "Maison"
 
 #: ../build/src/app/qml/backend/FolderModel.qml:169
 #: ../src/app/qml/backend/FolderModel.qml:169
