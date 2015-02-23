@@ -8,7 +8,7 @@ Files app for Papryos
 
 This is the file manager app for Papyros. The UI is build with our [Material Design framework](https://github.com/papyros/qml-material), and the backend is based on the [Ubuntu Touch file manager](https://launchpad.net/ubuntu-filemanager-app). The goal is for the app to be cross patform and run on Linux, OS X, and Windows.
 
-Brought to you by the [Papyros development team](https://github.com/papyros/qml-material/graphs/contributors).
+Brought to you by the [Papyros development team](https://github.com/papyros/files-app/graphs/contributors).
 
 ### Dependencies
 
@@ -18,7 +18,8 @@ Requires Qt 5.3 or higher and [QML Material](https://github.com/papyros/qml-mate
 
 From the root of the repository, run:
 
-    $ cmake .
+    $ mkdir build; cd build
+    $ cmake ..
     $ make
     $ make check # Optional, make sure everything is working correctly
     $ sudo make install
