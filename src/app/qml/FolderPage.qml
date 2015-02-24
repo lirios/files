@@ -104,6 +104,10 @@ Page {
             top: parent.top
             bottom: parent.bottom
         }
+
+        Snackbar {
+            id: snackbar
+        }
     }
 
     PlacesSidebar {

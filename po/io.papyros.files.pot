@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-22 22:34-0600\n"
+"POT-Creation-Date: 2015-02-23 20:20-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,8 +32,8 @@ msgstr ""
 msgid "Device"
 msgstr ""
 
-#: ../build/src/app/qml/components/FolderListView.qml:164
-#: ../src/app/qml/components/FolderListView.qml:164
+#: ../build/src/app/qml/components/FolderListView.qml:104
+#: ../src/app/qml/components/FolderListView.qml:104
 msgid "No files"
 msgstr ""
 

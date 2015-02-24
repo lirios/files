@@ -91,67 +91,7 @@ Item {
         }
 
         model: folderModel.model
-        delegate: ListItem.Standard {
-
-            selected: selectedFile != undefined &&
-                      selectedFile.filePath == model.filePath
-
-            onClicked: {
-                if (model.isDir) {
-                    folderModel.goTo(model.filePath)
-                }
-            }
-
-            onPressAndHold: {
-                if (selected)
-                    selectedFile = undefined
-                else
-                    selectedFile = model
-            }
-
-            RowLayout {
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    margins: units.dp(16)
-                }
-
-                height: parent.height - units.dp(1)
-                spacing: units.dp(16)
-
-                Label {
-                    Layout.alignment: Qt.AlignVCenter
-                    Layout.fillWidth: true
-
-                    text: folderModel.pathTitle(model.filePath)
-                    style: "subheading"
-                    elide: Text.ElideRight
-
-                    color: selected ? Theme.primaryColor : Theme.light.textColor
-                }
-
-                Label {
-                    Layout.alignment: Qt.AlignVCenter
-                    Layout.preferredWidth: units.dp(100)
-
-                    elide: Text.ElideRight
-
-                    text: folderModel.fileType(model.mimeType,
-                                               model.mimeTypeDescription)
-                    color: Theme.light.subTextColor
-                }
-
-                Label {
-                    Layout.alignment: Qt.AlignVCenter
-                    Layout.preferredWidth: units.dp(100)
-
-                    elide: Text.ElideRight
-
-                    text: DateUtils.friendlyTime(model.modifiedDate, true)
-                    color: Theme.light.subTextColor
-                }
-            }
-        }
+        delegate: FileListItem {}
     }
 
     Scrollbar {
