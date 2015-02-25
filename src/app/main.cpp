@@ -24,6 +24,7 @@
 #include <QDebug>
 
 #include <KDeclarative/KDeclarative>
+#include <KI18n/KLocalizedString>
 
 int main(int argc, char *argv[])
 {
@@ -45,6 +46,8 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
+
+    KLocalizedString::setApplicationDomain("io.papyros.files");
 
     KDeclarative::KDeclarative kdeclarative;
     //view refers to the QDeclarativeView
