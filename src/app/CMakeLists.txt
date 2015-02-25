@@ -9,6 +9,11 @@ add_executable(papyros-files ${papyros-files_SRCS})
 
 qt5_use_modules(papyros-files Gui Qml Quick)
 
+find_package(KF5I18n)
+find_package(KF5Declarative)
+
+target_link_libraries(papyros-files KF5::Declarative KF5::I18n)
+
 if(NOT "${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
 add_custom_target(papyros-files-qmlfiles ALL
     COMMAND cp -r ${CMAKE_CURRENT_SOURCE_DIR}/qml ${CMAKE_CURRENT_BINARY_DIR}

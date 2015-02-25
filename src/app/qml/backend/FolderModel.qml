@@ -164,9 +164,9 @@ Object {
 
     function pathTitle(folder) {
         if (folder === places.locationHome) {
-            return i18n.tr("Home")
+            return i18n("Home")
         } else if (folder === "/") {
-            return i18n.tr("Device")
+            return i18n("Device")
         } else {
             return basename(folder)
         }
@@ -232,7 +232,7 @@ Object {
         // Properties to emulate a model entry for use by FileDetailsPopover
         property bool isDir: true
         property string fileName: pathName(model.path)
-        //property string fileSize: i18n.tr("%1 file", "%1 files", folderListView.count).arg(folderListView.count)
+        //property string fileSize: i18n("%1 file", "%1 files", folderListView.count).arg(folderListView.count)
         property bool isReadable: true
         property bool isExecutable: true
 

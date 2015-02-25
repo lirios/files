@@ -22,7 +22,7 @@ import Material.ListItems 0.1 as ListItem
 ApplicationWindow {
     id: app
 
-    title: "Files"
+    title: i18n("Files")
 
     theme {
         primaryColor: Palette.colors.blue["500"]

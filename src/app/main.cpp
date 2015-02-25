@@ -23,6 +23,8 @@
 
 #include <QDebug>
 
+#include <KDeclarative/KDeclarative>
+
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
@@ -42,6 +44,16 @@ int main(int argc, char *argv[])
         }
     }
 
-    QQmlApplicationEngine engine(qmlfile);
+    QQmlApplicationEngine engine;
+
+    KDeclarative::KDeclarative kdeclarative;
+    //view refers to the QDeclarativeView
+    kdeclarative.setDeclarativeEngine(&engine);
+    kdeclarative.initialize();
+    //binds things like kconfig and icons
+    kdeclarative.setupBindings();
+
+    engine.load(qmlfile);
+
     return app.exec();
 }

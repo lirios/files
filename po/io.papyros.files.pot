@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-23 20:20-0600\n"
+"Report-Msgid-Bugs-To: support@papyros.io\n"
+"POT-Creation-Date: 2015-02-24 22:27-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../build/po/io.papyros.files.desktop.in.in.h:1
+#: ../build/src/app/qml/main.qml:25 ../src/app/qml/main.qml:25
 #: io.papyros.files.desktop.in.in.h:1
 msgid "Files"
+msgstr ""
+
+#: ../build/src/app/qml/FolderPage.qml:66 ../src/app/qml/FolderPage.qml:66
+msgid "Settings"
 msgstr ""
 
 #: ../build/src/app/qml/backend/FolderModel.qml:167
@@ -35,6 +40,26 @@ msgstr ""
 #: ../build/src/app/qml/components/FolderListView.qml:104
 #: ../src/app/qml/components/FolderListView.qml:104
 msgid "No files"
+msgstr ""
+
+#: ../build/src/app/qml/components/InfoSidebar.qml:110
+#: ../src/app/qml/components/InfoSidebar.qml:110
+msgid "Location"
+msgstr ""
+
+#: ../build/src/app/qml/components/InfoSidebar.qml:121
+#: ../src/app/qml/components/InfoSidebar.qml:121
+msgid "Type"
+msgstr ""
+
+#: ../build/src/app/qml/components/InfoSidebar.qml:142
+#: ../src/app/qml/components/InfoSidebar.qml:142
+msgid "Contents"
+msgstr ""
+
+#: ../build/src/app/qml/components/InfoSidebar.qml:142
+#: ../src/app/qml/components/InfoSidebar.qml:142
+msgid "Size"
 msgstr ""
 
 #: ../src/plugin/folderlistmodel/dirmodel.cpp:424

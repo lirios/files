@@ -107,7 +107,7 @@ PageSidebar {
                 rowSpacing: units.dp(16)
 
                 Label {
-                    text: i18n.tr("Location")
+                    text: i18n("Location")
                 }
 
                 Label {
@@ -118,7 +118,7 @@ PageSidebar {
                 }
 
                 Label {
-                    text: i18n.tr("Type")
+                    text: i18n("Type")
                 }
 
                 Label {
@@ -139,7 +139,7 @@ PageSidebar {
 
                 Label {
                     text: selectedFile != undefined && selectedFile.isDir
-                          ? i18n.tr("Contents") : i18n.tr("Size")
+                          ? i18n("Contents") : i18n("Size")
                 }
 
                 Label {

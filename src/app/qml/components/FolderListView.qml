@@ -101,7 +101,7 @@ Item {
     Label {
         anchors.centerIn: parent
 
-        text: i18n.tr("No files")
+        text: i18n("No files")
         color: Theme.light.hintColor
         font.pixelSize: units.dp(25)
 

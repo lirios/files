@@ -63,7 +63,7 @@ Page {
 
         Action {
             iconName: "action/settings"
-            name: "Settings"
+            name: i18n("Settings")
         }
     ]
 
