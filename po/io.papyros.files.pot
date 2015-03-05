@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: support@papyros.io\n"
-"POT-Creation-Date: 2015-02-24 22:27-0600\n"
+"POT-Creation-Date: 2015-03-01 13:15-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../build/po/io.papyros.files.desktop.in.in.h:1
-#: ../build/src/app/qml/main.qml:25 ../src/app/qml/main.qml:25
+#: ../build/src/app/qml/main.qml:26 ../src/app/qml/main.qml:26
 #: io.papyros.files.desktop.in.in.h:1
 msgid "Files"
 msgstr ""
@@ -42,23 +42,23 @@ msgstr ""
 msgid "No files"
 msgstr ""
 
-#: ../build/src/app/qml/components/InfoSidebar.qml:110
-#: ../src/app/qml/components/InfoSidebar.qml:110
+#: ../build/src/app/qml/components/InfoSidebar.qml:114
+#: ../src/app/qml/components/InfoSidebar.qml:114
 msgid "Location"
 msgstr ""
 
-#: ../build/src/app/qml/components/InfoSidebar.qml:121
-#: ../src/app/qml/components/InfoSidebar.qml:121
+#: ../build/src/app/qml/components/InfoSidebar.qml:125
+#: ../src/app/qml/components/InfoSidebar.qml:125
 msgid "Type"
 msgstr ""
 
-#: ../build/src/app/qml/components/InfoSidebar.qml:142
-#: ../src/app/qml/components/InfoSidebar.qml:142
+#: ../build/src/app/qml/components/InfoSidebar.qml:146
+#: ../src/app/qml/components/InfoSidebar.qml:146
 msgid "Contents"
 msgstr ""
 
-#: ../build/src/app/qml/components/InfoSidebar.qml:142
-#: ../src/app/qml/components/InfoSidebar.qml:142
+#: ../build/src/app/qml/components/InfoSidebar.qml:146
+#: ../src/app/qml/components/InfoSidebar.qml:146
 msgid "Size"
 msgstr ""
 

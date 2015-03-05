@@ -17,6 +17,7 @@
 */
 import QtQuick 2.2
 import Material 0.1
+import Material.Extras 0.1
 import Material.ListItems 0.1 as ListItem
 
 ApplicationWindow {
@@ -28,9 +29,30 @@ ApplicationWindow {
         primaryColor: Palette.colors.blue["500"]
     }
 
+    function confirmAction(title, text, primaryButton, color) {
+        confirmDialog.promise = new Promises.Promise()
+
+        confirmDialog.title = title
+        confirmDialog.text = text
+        confirmDialog.positiveButtonText = primaryButton
+
+        confirmDialog.show()
+
+        return confirmDialog.promise
+    }
+
     Component.onCompleted: visible = true
 
     initialPage: FolderPage {
         id: folderPage
+    }
+
+    Dialog {
+        id: confirmDialog
+
+        property var promise
+
+        onAccepted: promise.resolve()
+        onRejected: promise.reject()
     }
 }
