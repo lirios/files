@@ -24,6 +24,8 @@ import Material.ListItems 0.1 as ListItem
 ListItem.Standard {
     id: listItem
 
+    // TODO : select the right icon for file type.
+    iconName: model.isDir ? "file/folder" : "awesome/file"
     text: folderModel.pathTitle(model.filePath)
     selected: selectedFile != undefined &&
               selectedFile.filePath == model.filePath
@@ -42,13 +44,6 @@ ListItem.Standard {
             selectedFile = undefined
         else
             selectedFile = model
-    }
-
-    action: Icon{
-        anchors.centerIn: parent
-        visible: model.isDir
-        name: "file/folder"
-        color: listItem.selected ? Theme.primaryColor : Theme.light.iconColor
     }
 
     secondaryItem: RowLayout {
