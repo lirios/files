@@ -42,17 +42,17 @@ Item {
             top: parent.top
         }
 
-        height: units.dp(48)
+        height: Units.dp(48)
 
         RowLayout {
             anchors {
                 left: parent.left
                 right: parent.right
-                margins: units.dp(16)
+                margins: Units.dp(16)
             }
 
-            height: parent.height - units.dp(1)
-            spacing: units.dp(16)
+            height: parent.height - Units.dp(1)
+            spacing: Units.dp(16)
 
             Label {
                 Layout.alignment: Qt.AlignVCenter
@@ -64,7 +64,7 @@ Item {
 
             Label {
                 Layout.alignment: Qt.AlignVCenter
-                Layout.preferredWidth: units.dp(100)
+                Layout.preferredWidth: Units.dp(100)
 
                 text: "Type"
                 color: Theme.light.subTextColor
@@ -72,7 +72,7 @@ Item {
 
             Label {
                 Layout.alignment: Qt.AlignVCenter
-                Layout.preferredWidth: units.dp(100)
+                Layout.preferredWidth: Units.dp(100)
 
                 text: "Last modified"
                 color: Theme.light.subTextColor
@@ -103,7 +103,7 @@ Item {
 
         text: i18n("No files")
         color: Theme.light.hintColor
-        font.pixelSize: units.dp(25)
+        font.pixelSize: Units.dp(25)
 
         visible: listView.count == 0
     }

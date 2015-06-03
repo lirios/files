@@ -26,19 +26,19 @@ PageSidebar {
     id: infoSidebar
 
     actionBar.backgroundColor: Palette.colors.blue["600"]
-    width: units.dp(320)
+    width: Units.dp(320)
 
     showing: selectedFile != undefined
 
     actionBar.extendedContent: Item {
-        height: units.dp(72)
+        height: Units.dp(72)
         width: parent.width
 
         ColumnLayout {
             anchors.verticalCenter: parent.verticalCenter
             width: parent.width
 
-            spacing: units.dp(3)
+            spacing: Units.dp(3)
 
             Label {
                 Layout.fillWidth: true
@@ -97,18 +97,18 @@ PageSidebar {
         Item {
             id: infoItem
 
-            height: infoGrid.height + units.dp(16)
+            height: infoGrid.height + Units.dp(16)
             width: parent.width
 
             GridLayout {
                 id: infoGrid
 
                 anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width - units.dp(32)
+                width: parent.width - Units.dp(32)
 
                 columns: 2
-                columnSpacing: units.dp(32)
-                rowSpacing: units.dp(16)
+                columnSpacing: Units.dp(32)
+                rowSpacing: Units.dp(16)
 
                 Label {
                     text: i18n("Location")

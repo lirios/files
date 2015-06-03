@@ -77,7 +77,7 @@ Page {
         elide: Text.ElideRight
 
         width: parent.width
-        height: infoSidebar.showing ? units.dp(72) : actionBar.implicitHeight
+        height: infoSidebar.showing ? Units.dp(72) : actionBar.implicitHeight
 
         verticalAlignment: Text.AlignVCenter
 
@@ -94,7 +94,7 @@ Page {
 
     onSelectedFileChanged: {
         if (selectedFile)
-            app.width = Math.max(app.width, units.dp(1000))
+            app.width = Math.max(app.width, Units.dp(1000))
     }
 
     FolderListView {

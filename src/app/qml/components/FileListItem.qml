@@ -47,12 +47,12 @@ ListItem.Standard {
     }
 
     secondaryItem: RowLayout {
-        height: parent.height - units.dp(1)
-        spacing: units.dp(16)
+        height: parent.height - Units.dp(1)
+        spacing: Units.dp(16)
 
         Label {
             Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: units.dp(100)
+            Layout.preferredWidth: Units.dp(100)
 
             elide: Text.ElideRight
 
@@ -63,7 +63,7 @@ ListItem.Standard {
 
         Label {
             Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: units.dp(100)
+            Layout.preferredWidth: Units.dp(100)
 
             elide: Text.ElideRight
 
