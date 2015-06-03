@@ -90,7 +90,7 @@ PageSidebar {
             source: visible ? selectedFile.filePath : ""
         }
 
-        ListItem.Header {
+        ListItem.Subheader {
             text: "Info"
         }
 

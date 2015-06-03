@@ -29,7 +29,7 @@ Sidebar {
             right: parent.right
         }
 
-        ListItem.Header {
+        ListItem.Subheader {
             text: "Places"
         }
 
