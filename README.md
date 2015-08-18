@@ -14,7 +14,6 @@ Brought to you by the [Papyros development team](https://github.com/papyros/file
 
  * Qt 5.3 or higher
  * [QML Material](https://github.com/papyros/qml-material)
- * [QML Extras](https://github.com/papyros/qml-extras)
 
 ### Installation
 
