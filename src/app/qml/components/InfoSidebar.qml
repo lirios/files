@@ -70,7 +70,7 @@ PageSidebar {
             iconName: "action/delete"
             onTriggered: confirmAction("", "Are you sure you want to delete \"%1\"?"
                     .arg(selectedFile.fileName), "Delete").done(function() {
-                print("Deleting file!")
+                folderModel.model.removeIndex(selectedFile.index)
             })
         }
     ]
