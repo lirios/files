@@ -58,12 +58,12 @@ Page {
 
         Action {
             iconName: "action/open_in_new"
-            name: "Open in Terminal"
+            name: qsTr("Open in Terminal")
         },
 
         Action {
             iconName: "action/settings"
-            name: i18n("Settings")
+            name: qsTr("Settings")
         }
     ]
 

@@ -30,7 +30,7 @@ Sidebar {
         }
 
         ListItem.Subheader {
-            text: "Places"
+            text: qsTr("Places")
         }
 
         Repeater {

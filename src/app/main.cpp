@@ -20,15 +20,27 @@
 #include <QLibrary>
 #include <QDir>
 #include <QStandardPaths>
+#include <QTranslator>
+#include <QLibraryInfo>
 
 #include <QDebug>
 
-#include <KDeclarative/KDeclarative>
-#include <KI18n/KLocalizedString>
+#include "config.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+
+    QString locale = QLocale::system().name();
+
+    QTranslator qtTranslator;
+    qtTranslator.load("qt_" + locale,
+                      QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    app.installTranslator(&qtTranslator);
+
+    QTranslator papyrosFilesTranslator;
+    papyrosFilesTranslator.load(locale, DATA_INSTALL_DIR + QString("/translations"));
+    app.installTranslator(&papyrosFilesTranslator);
 
     QString qmlfile;
 
@@ -46,16 +58,6 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
-
-    KLocalizedString::setApplicationDomain("io.papyros.files");
-
-    KDeclarative::KDeclarative kdeclarative;
-    //view refers to the QDeclarativeView
-    kdeclarative.setDeclarativeEngine(&engine);
-    kdeclarative.initialize();
-    //binds things like kconfig and icons
-    kdeclarative.setupBindings();
-
     engine.load(qmlfile);
 
     return app.exec();

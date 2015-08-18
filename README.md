@@ -15,8 +15,6 @@ Brought to you by the [Papyros development team](https://github.com/papyros/file
  * Qt 5.3 or higher
  * [QML Material](https://github.com/papyros/qml-material)
  * [QML Extras](https://github.com/papyros/qml-extras)
- * [KI18n KDE framework](http://api.kde.org/frameworks-api/frameworks5-apidocs/ki18n/html/index.html) (used for translations)
- * [KDeclarative KDE framework](http://api.kde.org/frameworks-api/frameworks5-apidocs/kdeclarative/html/index.html) (used for translations in QML)
 
 ### Installation
 

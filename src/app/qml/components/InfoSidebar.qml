@@ -55,7 +55,7 @@ PageSidebar {
 
                 elide: Text.ElideRight
                 text: selectedFile != undefined
-                      ? "Edited " + DateUtils.friendlyTime(selectedFile.modifiedDate) : ""
+                      ? qsTr("Edited ") + DateUtils.friendlyTime(selectedFile.modifiedDate) : ""
                 color: Theme.dark.subTextColor
             }
         }
@@ -91,7 +91,7 @@ PageSidebar {
         }
 
         ListItem.Subheader {
-            text: "Info"
+            text: qsTr("Info")
         }
 
         Item {
@@ -111,7 +111,7 @@ PageSidebar {
                 rowSpacing: Units.dp(16)
 
                 Label {
-                    text: i18n("Location")
+                    text: qsTr("Location")
                 }
 
                 Label {
@@ -122,7 +122,7 @@ PageSidebar {
                 }
 
                 Label {
-                    text: i18n("Type")
+                    text: qsTr("Type")
                 }
 
                 Label {
@@ -143,7 +143,7 @@ PageSidebar {
 
                 Label {
                     text: selectedFile != undefined && selectedFile.isDir
-                          ? i18n("Contents") : i18n("Size")
+                          ? qsTr("Contents") : qsTr("Size")
                 }
 
                 Label {

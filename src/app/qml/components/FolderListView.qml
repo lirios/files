@@ -58,7 +58,7 @@ Item {
                 Layout.alignment: Qt.AlignVCenter
                 Layout.fillWidth: true
 
-                text: "Name"
+                text: qsTr("Name")
                 color: Theme.light.subTextColor
             }
 
@@ -66,7 +66,7 @@ Item {
                 Layout.alignment: Qt.AlignVCenter
                 Layout.preferredWidth: Units.dp(100)
 
-                text: "Type"
+                text: qsTr("Type")
                 color: Theme.light.subTextColor
             }
 
@@ -74,7 +74,7 @@ Item {
                 Layout.alignment: Qt.AlignVCenter
                 Layout.preferredWidth: Units.dp(100)
 
-                text: "Last modified"
+                text: qsTr("Last modified")
                 color: Theme.light.subTextColor
             }
         }
@@ -101,7 +101,7 @@ Item {
     Label {
         anchors.centerIn: parent
 
-        text: i18n("No files")
+        text: qsTr("No files")
         color: Theme.light.hintColor
         font.pixelSize: Units.dp(25)
 

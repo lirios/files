@@ -69,7 +69,8 @@ Object {
         "text/x-tex": "document",
         "text/x-qml": "source code",
         "video/mp4": "video",
-        "video/quicktime": "video"
+        "video/quicktime": "video",
+        "inode/directory": "folder"
     }
 
     onShowHiddenFilesChanged: {
@@ -164,9 +165,9 @@ Object {
 
     function pathTitle(folder) {
         if (folder === places.locationHome) {
-            return i18n("Home")
+            return qsTr("Home")
         } else if (folder === "/") {
-            return i18n("Device")
+            return qsTr("Device")
         } else {
             return basename(folder)
         }
@@ -232,7 +233,8 @@ Object {
         // Properties to emulate a model entry for use by FileDetailsPopover
         property bool isDir: true
         property string fileName: pathName(model.path)
-        //property string fileSize: i18n("%1 file", "%1 files", folderListView.count).arg(folderListView.count)
+        property string fileSize: model.count === 1 ? qsTr("%1 file").arg(model.count)
+                                                    : qsTr("%1 files").arg(model.count)
         property bool isReadable: true
         property bool isExecutable: true
 
