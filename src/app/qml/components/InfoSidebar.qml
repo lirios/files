@@ -68,8 +68,8 @@ PageSidebar {
 
         Action {
             iconName: "action/delete"
-            onTriggered: confirmAction("", "Are you sure you want to delete \"%1\"?"
-                    .arg(selectedFile.fileName), "Delete").done(function() {
+            onTriggered: confirmAction("", qsTr("Are you sure you want to delete \"%1\"?")
+                    .arg(selectedFile.fileName), qsTr("Delete")).done(function() {
                 folderModel.model.removeIndex(selectedFile.index)
             })
         }

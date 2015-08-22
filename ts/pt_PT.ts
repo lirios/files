@@ -9,6 +9,13 @@
     </message>
 </context>
 <context>
+    <name>FileListItem</name>
+    <message>
+        <source>Opening </source>
+        <translation>A abrir </translation>
+    </message>
+</context>
+<context>
     <name>FileSystemAction</name>
     <message>
         <source>Cannot copy items</source>
@@ -75,6 +82,34 @@
         <source>Open in Terminal</source>
         <translation>Abrir na consola</translation>
     </message>
+    <message>
+        <source>Back</source>
+        <translation>Voltar</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Procurar</translation>
+    </message>
+    <message>
+        <source>List mode</source>
+        <translation>Modo Lista</translation>
+    </message>
+    <message>
+        <source>New folder</source>
+        <translation>Nova pasta</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation>Propriedades</translation>
+    </message>
+    <message>
+        <source>Create new folder:</source>
+        <translation>Criar nova pasta:</translation>
+    </message>
+    <message>
+        <source>New Folder</source>
+        <translation>Nova Pasta</translation>
+    </message>
 </context>
 <context>
     <name>InfoSidebar</name>
@@ -88,7 +123,7 @@
     </message>
     <message>
         <source>Contents</source>
-        <translation>Conteudo</translation>
+        <translation>Conteúdo</translation>
     </message>
     <message>
         <source>Size</source>
@@ -101,6 +136,14 @@
     <message>
         <source>Edited </source>
         <translation>Alterado </translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation>Tem a certeza que deseja eliminar &quot;%1&quot;?</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Eliminar</translation>
     </message>
 </context>
 <context>

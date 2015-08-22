@@ -28,7 +28,7 @@ Page {
 
     backAction: Action {
         iconName: "navigation/arrow_back"
-        name: "Back"
+        name: qsTr("Back")
         enabled: folderModel.canGoBack
         visible: true
 
@@ -38,22 +38,22 @@ Page {
     actions: [
         Action {
             iconName: "action/search"
-            name: "Search"
+            name: qsTr("Search")
         },
 
         Action {
             iconName: "action/list"
-            name: "List mode"
+            name: qsTr("List mode")
         },
 
         Action {
             iconName: "content/add"
-            name: "New folder"
+            name: qsTr("New folder")
         },
 
         Action {
             iconName: "action/visibility"
-            name: "Properties"
+            name: qsTr("Properties")
         },
 
         Action {
