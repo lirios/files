@@ -52,6 +52,14 @@
         <source>Last modified</source>
         <translation>Última modificação</translation>
     </message>
+    <message>
+        <source>Directories</source>
+        <translation>Directórios</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Ficheiros</translation>
+    </message>
 </context>
 <context>
     <name>FolderModel</name>

@@ -97,7 +97,8 @@ Item {
         section.criteria: ViewSection.FullString
         section.delegate: ListItem.Subheader {
             property var description
-            text: section === "true" ? "Directories" : "Files"
+            text: section === "true" ? qsTr("Directories")
+                                     : qsTr("Files")
         }
     }
 
