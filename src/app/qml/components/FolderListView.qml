@@ -92,6 +92,13 @@ Item {
 
         model: folderModel.model
         delegate: FileListItem {}
+
+        section.property: "isDir"
+        section.criteria: ViewSection.FullString
+        section.delegate: ListItem.Subheader {
+            property var description
+            text: section === "true" ? "Directories" : "Files"
+        }
     }
 
     Scrollbar {
