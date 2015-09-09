@@ -49,6 +49,8 @@ Page {
         Action {
             iconName: "content/add"
             name: qsTr("New folder")
+
+            onTriggered: confirmNewFolder.show()
         },
 
         Action {
@@ -116,6 +118,21 @@ Page {
 
     FolderModel {
         id: folderModel
+    }
+
+    Dialog {
+        id: confirmNewFolder
+        title: qsTr("Create new folder:")
+
+        TextField {
+            id: nameField
+            width: parent.width
+            placeholderText: qsTr("New Folder")
+        }
+
+        onAccepted: folderModel.model.mkdir(nameField.text ||
+                                            nameField.placeholderText)
+        onRejected: nameField.text = ""
     }
 
     Keys.onEscapePressed: selectedFile = undefined
