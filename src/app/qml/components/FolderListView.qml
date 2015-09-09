@@ -24,14 +24,10 @@ import Material.ListItems 0.1 as ListItem
 Item {
     id: folderListView
 
-    clip: true
-
     View {
         id: header
 
         visible: listView.count > 0
-
-        z: 1
         backgroundColor: Theme.backgroundColor
         elevation: 1
         fullWidth: true
@@ -90,13 +86,13 @@ Item {
             bottom: parent.bottom
         }
 
+        clip: true
         model: folderModel.model
         delegate: FileListItem {}
 
         section.property: "isDir"
         section.criteria: ViewSection.FullString
         section.delegate: ListItem.Subheader {
-            property var description
             text: section === "true" ? qsTr("Directories")
                                      : qsTr("Files")
         }
