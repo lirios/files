@@ -24,6 +24,9 @@ import Material.ListItems 0.1 as ListItem
 Item {
     id: folderListView
 
+    property alias model: listView.model
+    property alias delegate: listView.delegate
+
     View {
         id: header
 
@@ -87,8 +90,6 @@ Item {
         }
 
         clip: true
-        model: folderModel.model
-        delegate: FileListItem {}
 
         section.property: "isDir"
         section.criteria: ViewSection.FullString

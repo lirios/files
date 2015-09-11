@@ -107,6 +107,9 @@ Page {
             bottom: parent.bottom
         }
 
+        model: folderModel.model
+        delegate: FileListItem {}
+
         Snackbar {
             id: snackbar
         }
