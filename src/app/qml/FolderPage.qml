@@ -24,6 +24,7 @@ import "components"
 Page {
     id: folderPage
 
+    title: folderModel.title
     actionBar.elevation: 0
 
     backAction: Action {
@@ -69,24 +70,6 @@ Page {
         }
     ]
 
-    actionBar.customContent: Label {
-        anchors.bottom: parent.bottom
-
-        text: folderModel.title
-
-        style: "title"
-        color: Theme.dark.textColor
-        elide: Text.ElideRight
-
-        width: parent.width
-        height: infoSidebar.showing ? Units.dp(72) : actionBar.implicitHeight
-
-        verticalAlignment: Text.AlignVCenter
-
-        Behavior on height {
-            NumberAnimation { duration: MaterialAnimation.pageTransitionDuration }
-        }
-    }
 
     rightSidebar: InfoSidebar {
         id: infoSidebar
