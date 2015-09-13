@@ -15,6 +15,7 @@
 * You should have received a copy of the GNU General Public License
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
+
 import QtQuick 2.2
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
@@ -25,10 +26,19 @@ import Material.ListItems 0.1 as ListItem
 PageSidebar {
     id: infoSidebar
 
+    property var selectedFileIndex
+
     actionBar.backgroundColor: Palette.colors.blue["600"]
     width: Units.dp(320)
 
-    showing: selectedFile != undefined
+    showing: selectionManager.mode == 0 && selectionManager.counter == 1
+
+    Connections {
+        target: selectionManager
+        onSelectionChanged: {
+            selectedFileIndex = selectionManager.selectedIndexes()[0]
+        }
+    }
 
     actionBar.extendedContent: Item {
         height: Units.dp(72)
@@ -45,7 +55,7 @@ PageSidebar {
 
                 elide: Text.ElideRight
 
-                text: selectedFile != undefined ? selectedFile.fileName : ""
+                text: infoSidebar.get_role_info("fileName")
                 style: "subheading"
                 color: Theme.dark.textColor
             }
@@ -54,8 +64,7 @@ PageSidebar {
                 Layout.fillWidth: true
 
                 elide: Text.ElideRight
-                text: selectedFile != undefined
-                      ? qsTr("Edited ") + DateUtils.friendlyTime(selectedFile.modifiedDate) : ""
+                text: qsTr("Edited ") + DateUtils.friendlyTime(infoSidebar.get_role_info("modifiedDate"))
                 color: Theme.dark.subTextColor
             }
         }
@@ -68,9 +77,9 @@ PageSidebar {
 
         Action {
             iconName: "action/delete"
-            onTriggered: confirmAction("", qsTr("Are you sure you want to delete \"%1\"?")
-                    .arg(selectedFile.fileName), qsTr("Delete")).done(function() {
-                folderModel.model.removeIndex(selectedFile.index)
+            onTriggered: confirmAction("", qsTr("Are you sure you want to permanently delete \"%1\"?")
+                    .arg(infoSidebar.get_role_info("fileName")), qsTr("Delete")).done(function() {
+                folderModel.model.removeIndex(selectedFileIndex)
             })
         }
     ]
@@ -85,9 +94,9 @@ PageSidebar {
             height: Math.min(width * sourceSize.height/sourceSize.width,
                              width)
 
-            visible: selectedFile != undefined && selectedFile.mimeType.indexOf("image/") == 0
+            visible: infoSidebar.get_role_info("mimeType").indexOf("image/") == 0
 
-            source: visible ? selectedFile.filePath : ""
+            source: visible ? infoSidebar.get_role_info("filePath") : ""
         }
 
         ListItem.Subheader {
@@ -129,32 +138,38 @@ PageSidebar {
                     Layout.fillWidth: true
 
                     text: {
-                        if (selectedFile != undefined) {
-                            var description = selectedFile.mimeTypeDescription
+                        var description = infoSidebar.get_role_info("mimeTypeDescription")
 
-                            return description.substring(0, 1).toUpperCase() +
-                                   description.substring(1)
-                        } else {
-                            return ""
-                        }
+                        return description.substring(0, 1).toUpperCase() +
+                               description.substring(1)
                     }
                     color: Theme.light.subTextColor
                 }
 
                 Label {
-                    text: selectedFile != undefined && selectedFile.isDir
+                    text: infoSidebar.get_role_info("isDir")
                           ? qsTr("Contents") : qsTr("Size")
                 }
 
                 Label {
                     Layout.fillWidth: true
 
-                    text: selectedFile != undefined ? selectedFile.fileSize : ""
+                    text:  infoSidebar.get_role_info("fileSize")
                     color: Theme.light.subTextColor
                 }
             }
         }
 
         ThinDivider {}
+
+    }
+
+    function get_role_info(role) {
+        return folderModel.model.data(infoSidebar.selectedFileIndex, role)
+    }
+
+    onShowingChanged: {
+        if (showing)
+            app.width = Math.max(app.width, Units.dp(1000))
     }
 }

@@ -27,9 +27,21 @@ ListItem.Standard {
     id: listItem
 
     // TODO : select the right icon for file type.
-    iconName: isDir ? "file/folder" : "awesome/file"
     text: folderModel.pathTitle(filePath)
-    selected: isSelected
+
+    onClicked: {
+        selectionManager.toggleIndex(index);
+    }
+
+    action: CheckBox {
+        id: checkBox
+        anchors {
+            verticalCenter: parent.verticalCenter
+            left: parent.left
+        }
+        checked: isSelected
+        enabled: false
+    }
 
     secondaryItem: RowLayout {
         height: parent.height - Units.dp(1)
@@ -41,7 +53,8 @@ ListItem.Standard {
 
             elide: Text.ElideRight
 
-            text: folderModel.fileType(mimeType, mimeTypeDescription)
+            text: folderModel.fileType(mimeType,
+                mimeTypeDescription)
                 color: Theme.light.subTextColor
         }
 
@@ -54,30 +67,5 @@ ListItem.Standard {
             text: DateUtils.friendlyTime(modifiedDate, true)
             color: Theme.light.subTextColor
         }
-    }
-
-    MouseArea {
-        anchors.fill: parent
-
-        acceptedButtons: Qt.LeftButton | Qt.RightButton
-
-        onClicked: {
-            if (mouse.button == Qt.RightButton){
-                selectionManager.toggleIndex(index);
-                return;
-            }
-            if (isDir) {
-                folderModel.goTo(filePath)
-            } else {
-                snackbar.open("Opening " + fileName)
-                Qt.openUrlExternally(filePath)
-            }
-        }
-
-        onPressAndHold: {
-            pageStack.push(Qt.resolvedUrl("../SelectionPage.qml"));
-            selectionManager.toggleIndex(index);
-        }
-
     }
 }

@@ -1,6 +1,7 @@
 /*
 * Files app - File manager for Papyros
 * Copyright (C) 2015 Michael Spencer <sonrisesoftware@gmail.com>
+*               2015 Ricardo Vieira <ricardo.vieira@tecnico.ulisboa.pt>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,15 +16,23 @@
 * You should have received a copy of the GNU General Public License
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
+
 import QtQuick 2.2
 import Material 0.1
 import Material.Extras 0.1
-import Material.ListItems 0.1 as ListItem
+import org.nemomobile.folderlistmodel 1.0
+import "backend"
 
 ApplicationWindow {
     id: app
 
+    property FolderListSelection selectionManager: folderModel.model.selectionObject()
+
     title: qsTr("Files")
+
+    initialPage: FolderPage {
+        id: folderPage
+    }
 
     theme {
         primaryColor: Palette.colors.blue["500"]
@@ -43,8 +52,8 @@ ApplicationWindow {
 
     Component.onCompleted: visible = true
 
-    initialPage: FolderPage {
-        id: folderPage
+    FolderModel {
+        id: folderModel
     }
 
     Dialog {
