@@ -260,8 +260,8 @@ bool FileSystemAction::populateEntry(Action* action, ActionEntry* entry)
     DirItemInfo info(entry->itemPaths.source());
     if (!info.exists())
     {
-        emit error(QObject::tr("File or Directory does not exist"),
-                   info.absoluteFilePath() + QObject::tr(" does not exist")
+        emit error(tr("File or Directory does not exist"),
+                   info.absoluteFilePath() + tr(" does not exist")
                   );
         return false;
     }
@@ -587,7 +587,7 @@ void FileSystemAction::removeEntry(ActionEntry *entry)
 #endif
         if (m_cancelCurrentAction)
         {
-            m_errorTitle = QObject::tr("Could not remove the item ") +
+            m_errorTitle = tr("Could not remove the item ") +
                                        fi.absoluteFilePath();
             m_errorMsg   = ::strerror(errno);
         }
@@ -628,7 +628,7 @@ void  FileSystemAction::processCopyEntry()
             if (!makeBackupNameForCurrentItem(entry) )
             {
                 m_cancelCurrentAction = true;
-                m_errorTitle = QObject::tr("Could not find a suitable name to backup");
+                m_errorTitle = tr("Could not find a suitable name to backup");
                 m_errorMsg   = entry->reversedOrder.at(
                             entry->reversedOrder.count() -1
                             ).absoluteFilePath();
@@ -682,7 +682,7 @@ void  FileSystemAction::processCopyEntry()
         if (!d.exists() && !d.mkpath(path))
         {
             m_cancelCurrentAction = true;
-            m_errorTitle = QObject::tr("Could not create the directory");
+            m_errorTitle = tr("Could not create the directory");
             m_errorMsg   = path;
         }
         else
@@ -691,7 +691,7 @@ void  FileSystemAction::processCopyEntry()
             m_cancelCurrentAction = ! copySymLink(target,fi.diskFileInfo());
             if (m_cancelCurrentAction)
             {
-                m_errorTitle = QObject::tr("Could not create link to");
+                m_errorTitle = tr("Could not create link to");
                 m_errorMsg   = target;
             }
             m_curAction->bytesWritten += COMMON_SIZE_ITEM;
@@ -703,7 +703,7 @@ void  FileSystemAction::processCopyEntry()
                  QFile(target).setPermissions(fi.permissions());
             if (m_cancelCurrentAction)
             {
-                m_errorTitle = QObject::tr("Could not set permissions to dir");
+                m_errorTitle = tr("Could not set permissions to dir");
                 m_errorMsg   = target;
             }
             m_curAction->bytesWritten += COMMON_SIZE_ITEM;
@@ -717,7 +717,7 @@ void  FileSystemAction::processCopyEntry()
             m_cancelCurrentAction = !m_curAction->copyFile.source->open(QFile::ReadOnly);
             if (m_cancelCurrentAction)
             {               
-                m_errorTitle = QObject::tr("Could not open file");
+                m_errorTitle = tr("Could not open file");
                 m_errorMsg   = orig;
             }
             else
@@ -736,7 +736,7 @@ void  FileSystemAction::processCopyEntry()
                 if (needsSize > 0 && !isThereDiskSpace(entry, needsSize ))
                 {
                     m_cancelCurrentAction = true;
-                    m_errorTitle = QObject::tr("There is no space on disk to copy");
+                    m_errorTitle = tr("There is no space on disk to copy");
                     m_errorMsg   =  m_curAction->copyFile.target->fileName();
                 }
             }
@@ -746,7 +746,7 @@ void  FileSystemAction::processCopyEntry()
                         !m_curAction->copyFile.target->open(QFile::WriteOnly | QFile::Truncate);
                 if (m_cancelCurrentAction)
                 {
-                    m_errorTitle = QObject::tr("Could not create file");
+                    m_errorTitle = tr("Could not create file");
                     m_errorMsg   =  m_curAction->copyFile.target->fileName();
                 }
             }
@@ -810,7 +810,7 @@ void FileSystemAction::moveEntry(ActionEntry *entry)
                 if (!QFile::remove(targetInfo.absoluteFilePath()))
                 {
                     m_cancelCurrentAction = true;
-                    m_errorTitle = QObject::tr("Could not remove the directory/file ") +
+                    m_errorTitle = tr("Could not remove the directory/file ") +
                                       targetInfo.absoluteFilePath();
                     m_errorMsg   = ::strerror(errno);
                 }
@@ -826,7 +826,7 @@ void FileSystemAction::moveEntry(ActionEntry *entry)
         if (!m_cancelCurrentAction && !file.rename(entry->itemPaths.target()))
         {
             m_cancelCurrentAction = true;
-            m_errorTitle = QObject::tr("Could not move the directory/file ") +
+            m_errorTitle = tr("Could not move the directory/file ") +
                                      targetInfo.absoluteFilePath();
             m_errorMsg   = ::strerror(errno);
         }
@@ -1101,7 +1101,7 @@ bool FileSystemAction::processCopySingleFile()
                   m_curAction->copyFile.source->close();
                   m_curAction->copyFile.target->close();
                   m_cancelCurrentAction = true;
-                  m_errorTitle = QObject::tr("Write error in ")
+                  m_errorTitle = tr("Write error in ")
                                   + m_curAction->copyFile.targetName,
                   m_errorMsg   = ::strerror(errno);
                   break;
@@ -1117,7 +1117,7 @@ bool FileSystemAction::processCopySingleFile()
         if (in < 0)
         {
            m_cancelCurrentAction = true;
-           m_errorTitle = QObject::tr("Read error in ")
+           m_errorTitle = tr("Read error in ")
                            + m_curAction->copyFile.source->fileName();
            m_errorMsg   = ::strerror(errno);
            break;
@@ -1351,7 +1351,7 @@ bool FileSystemAction::makeBackupNameForCurrentItem(ActionEntry *entry)
         QString name;
         do
         {
-            QString copy(QObject::tr(" Copy"));
+            QString copy(tr(" Copy"));
             if(++counter > 0)
             {
                 copy += QLatin1Char('(') +
@@ -1407,7 +1407,7 @@ bool FileSystemAction::endCopySingleFile()
                                  m_curAction->copyFile.source->permissions());
     if (m_cancelCurrentAction)
     {
-        m_errorTitle = QObject::tr("Set permissions error in ")
+        m_errorTitle = tr("Set permissions error in ")
                         + m_curAction->copyFile.targetName,
         m_errorMsg   = ::strerror(errno);
         ret          = false;
@@ -1491,7 +1491,7 @@ void FileSystemAction::createTrashInfoFileFromEntry(ActionEntry *entry)
     if (!trashUtil.createTrashInfoFile(entry->itemPaths.source()))
     {
         m_cancelCurrentAction = true;
-        m_errorTitle = QObject::tr("Could not create trash info file");
+        m_errorTitle = tr("Could not create trash info file");
         m_errorMsg   = trashUtil.absInfo;
     }
 }
@@ -1504,7 +1504,7 @@ void FileSystemAction::removeTrashInfoFileFromEntry(ActionEntry *entry)
     if (!trashUtil.removeTrashInfoFile())
     {
          m_cancelCurrentAction = true;
-         m_errorTitle = QObject::tr("Could not remove the trash info file");
+         m_errorTitle = tr("Could not remove the trash info file");
          m_errorMsg   = trashUtil.absInfo;
     }
 }

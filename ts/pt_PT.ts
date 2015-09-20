@@ -7,6 +7,18 @@
         <source>path or url may not exist or cannot be read</source>
         <translation>Caminho ou url não existe ou não pode ser lido</translation>
     </message>
+    <message>
+        <source>Rename error</source>
+        <translation>Erro ao renomear</translation>
+    </message>
+    <message>
+        <source>Error creating new folder</source>
+        <translation>Erro ao criar nova pasta</translation>
+    </message>
+    <message>
+        <source>items</source>
+        <translation>items</translation>
+    </message>
 </context>
 <context>
     <name>FileListItem</name>
@@ -32,6 +44,78 @@
     <message>
         <source>origin and destination folders are the same</source>
         <translation>Origem e destino das pastas são os mesmos</translation>
+    </message>
+    <message>
+        <source>File or Directory does not exist</source>
+        <translation>Ficheiro ou pasta inexistente</translation>
+    </message>
+    <message>
+        <source> does not exist</source>
+        <translation> não existe</translation>
+    </message>
+    <message>
+        <source>Could not remove the item </source>
+        <translation>Não foi possivel remover</translation>
+    </message>
+    <message>
+        <source>Could not find a suitable name to backup</source>
+        <translation>Não foi possivel encontrar nome para arquivar</translation>
+    </message>
+    <message>
+        <source>Could not create the directory</source>
+        <translation>Não foi possivel criar diretório</translation>
+    </message>
+    <message>
+        <source>Could not create link to</source>
+        <translation>Não foi possivel criar atalho para</translation>
+    </message>
+    <message>
+        <source>Could not set permissions to dir</source>
+        <translation>Não foi possivel definir permissões para diretório</translation>
+    </message>
+    <message>
+        <source>Could not open file</source>
+        <translation>Não foi possivel abrir o ficheiro</translation>
+    </message>
+    <message>
+        <source>There is no space on disk to copy</source>
+        <translation>Não existe espaço em disco para copiar</translation>
+    </message>
+    <message>
+        <source>Could not create file</source>
+        <translation>Não foi possivel criar ficheiro</translation>
+    </message>
+    <message>
+        <source>Could not remove the directory/file </source>
+        <translation>Não foi possivel remover diretório/ficheiro</translation>
+    </message>
+    <message>
+        <source>Could not move the directory/file </source>
+        <translation>Não foi possivel mover diretório/ficheiro</translation>
+    </message>
+    <message>
+        <source>Write error in </source>
+        <translation>Erro a escrever em </translation>
+    </message>
+    <message>
+        <source>Read error in </source>
+        <translation>Erro a ler em </translation>
+    </message>
+    <message>
+        <source> Copy</source>
+        <translation>Copiar</translation>
+    </message>
+    <message>
+        <source>Set permissions error in </source>
+        <translation>Definir erro de permissões em </translation>
+    </message>
+    <message>
+        <source>Could not create trash info file</source>
+        <translation>Não foi possivel criar ficheiro de informação do lixo</translation>
+    </message>
+    <message>
+        <source>Could not remove the trash info file</source>
+        <translation>Não foi possivel remover ficheiro de informação do lixo</translation>
     </message>
 </context>
 <context>
@@ -108,7 +192,7 @@
     </message>
     <message>
         <source>Properties</source>
-        <translation>Propriedades</translation>
+        <translation type="vanished">Propriedades</translation>
     </message>
     <message>
         <source>Create new folder:</source>
@@ -117,6 +201,10 @@
     <message>
         <source>New Folder</source>
         <translation>Nova Pasta</translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation>Colar</translation>
     </message>
 </context>
 <context>
@@ -147,11 +235,15 @@
     </message>
     <message>
         <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation>Tem a certeza que deseja eliminar &quot;%1&quot;?</translation>
+        <translation type="vanished">Tem a certeza que deseja eliminar &quot;%1&quot;?</translation>
     </message>
     <message>
         <source>Delete</source>
         <translation>Eliminar</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to permanently delete &quot;%1&quot;?</source>
+        <translation>Tem a certeza que pretende eliminar &quot;%1&quot;?</translation>
     </message>
 </context>
 <context>
@@ -160,92 +252,63 @@
         <source>Places</source>
         <translation>Lugares</translation>
     </message>
+    <message>
+        <source>Trash</source>
+        <translation>Lixo</translation>
+    </message>
 </context>
 <context>
-    <name>QObject</name>
+    <name>SelectionPage</name>
     <message>
-        <source>Rename error</source>
-        <translation type="unfinished"></translation>
+        <source>Select files...</source>
+        <translation>Escolher ficheiros...</translation>
     </message>
     <message>
-        <source>Error creating new folder</source>
-        <translation type="unfinished"></translation>
+        <source>Back</source>
+        <translation>Voltar</translation>
     </message>
     <message>
-        <source>items</source>
-        <translation type="unfinished"></translation>
+        <source>Cut</source>
+        <translation>Cortar</translation>
     </message>
     <message>
-        <source>File or Directory does not exist</source>
-        <translation type="unfinished"></translation>
+        <source>Copy</source>
+        <translation>Copiar</translation>
     </message>
     <message>
-        <source> does not exist</source>
-        <translation type="unfinished"></translation>
+        <source>Paste</source>
+        <translation>Colar</translation>
     </message>
     <message>
-        <source>Could not remove the item </source>
-        <translation type="unfinished"></translation>
+        <source>Move to Trash</source>
+        <translation>Mover para o lixo</translation>
     </message>
     <message>
-        <source>Could not find a suitable name to backup</source>
-        <translation type="unfinished"></translation>
+        <source>Select all</source>
+        <translation>Selecionar todos</translation>
     </message>
     <message>
-        <source>Could not create the directory</source>
-        <translation type="unfinished"></translation>
+        <source>Clear selection</source>
+        <translation>Limpar seleção</translation>
+    </message>
+</context>
+<context>
+    <name>TrashPage</name>
+    <message>
+        <source>Trash</source>
+        <translation>Lixo</translation>
     </message>
     <message>
-        <source>Could not create link to</source>
-        <translation type="unfinished"></translation>
+        <source>Back</source>
+        <translation>Voltar</translation>
     </message>
     <message>
-        <source>Could not set permissions to dir</source>
-        <translation type="unfinished"></translation>
+        <source>Empty trash</source>
+        <translation>Esvaziar lixo</translation>
     </message>
     <message>
-        <source>Could not open file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There is no space on disk to copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not create file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not remove the directory/file </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not move the directory/file </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Write error in </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Read error in </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> Copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set permissions error in </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not create trash info file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not remove the trash info file</source>
-        <translation type="unfinished"></translation>
+        <source>Restore trash</source>
+        <translation>Restaurar lixo</translation>
     </message>
 </context>
 <context>

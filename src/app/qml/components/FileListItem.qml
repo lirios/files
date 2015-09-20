@@ -69,7 +69,7 @@ ListItem.Standard {
             if (isDir) {
                 folderModel.goTo(filePath)
             } else {
-                snackbar.open("Opening " + fileName)
+                snackbar.open(qsTr("Opening ") + fileName)
                 Qt.openUrlExternally(filePath)
             }
         }

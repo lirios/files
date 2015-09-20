@@ -594,7 +594,7 @@ bool DirModel::rename(int row, const QString &newName)
     if (!retval)
     {
         qDebug() << Q_FUNC_INFO << this << "Rename returned error code: " << f.error() << f.errorString();
-        emit(QObject::tr("Rename error"), f.errorString());
+        emit(tr("Rename error"), f.errorString());
     }
     else
     {
@@ -619,7 +619,7 @@ void DirModel::mkdir(const QString &newDir)
     if (!retval) {
         const char *errorStr = strerror(errno);
         qDebug() << Q_FUNC_INFO << this << "Error creating new directory: " << errno << " (" << errorStr << ")";
-        emit error(QObject::tr("Error creating new folder"), errorStr);
+        emit error(tr("Error creating new folder"), errorStr);
     } else {
         onItemAdded(dir.filePath(newDir));
     }
@@ -1261,7 +1261,7 @@ QString DirModel::dirItems(const DirItemInfo& fi) const
         counter = 0;
     }
     QString ret (QString::number(counter) + QLatin1Char(' '));
-    ret += QObject::tr("items");
+    ret += tr("items");
     return ret;
 }
 
