@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     app.installTranslator(&qtTranslator);
 
     QTranslator papyrosFilesTranslator;
-    papyrosFilesTranslator.load(locale, DATA_INSTALL_DIR + QString("/translations"));
+    papyrosFilesTranslator.load(locale, DATA_INSTALL_DIR "/translations");
     app.installTranslator(&papyrosFilesTranslator);
 
     QString qmlfile;
