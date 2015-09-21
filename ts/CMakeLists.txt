@@ -1,6 +1,6 @@
 find_package (Qt5LinguistTools)
 
-file(GLOB TRANSLATIONS *.ts)
+file(GLOB TRANSLATIONS pt_PT.ts)
 file(GLOB_RECURSE TO_BE_TRANSLATED ${CMAKE_SOURCE_DIR}/src/*.qml
                                    ${CMAKE_SOURCE_DIR}/src/*.cpp
                                    ${CMAKE_SOURCE_DIR}/src/*.h)
