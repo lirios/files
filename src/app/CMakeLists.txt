@@ -5,10 +5,6 @@ set(papyros-files_SRCS
     ${QML_SRCS}
 )
 
-# ECM setup
-find_package(ECM 1.4.0 REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} "${CMAKE_SOURCE_DIR}/cmake")
-
 add_executable(papyros-files ${papyros-files_SRCS})
 
 qt5_use_modules(papyros-files Gui Qml Quick)
