@@ -1,3 +1,18 @@
+option(USE_TAG_LIB "Use TAGLIB for getting metada" on)
+
+if(USE_TAG_LIB)
+    pkg_check_modules(TAGLIB OPTIONAL)
+    if(TAGLIB_FOUND)
+        message("${TAGLIB_LIBRARIES}")
+        set(CMAKE_REQUIRED_INCLUDES "${TAGLIB_INCLUDE_DIRS}")
+        set(CMAKE_REQUIRED_LIBRARIES "${TAGLIB_LIBRARIES}")
+    else(TAGLIB_FOUND)
+        add_definitions(-DDO_NOT_USE_TAG_LIB)
+    endif(TAGLIB_FOUND)
+else(USE_TAG_LIB)
+    add_definitions(-DDO_NOT_USE_TAG_LIB)
+endif(USE_TAG_LIB)
+
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     disk
