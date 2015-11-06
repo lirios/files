@@ -3,32 +3,28 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
 
 install:
-  - sudo add-apt-repository -y ppa:beineri/opt-qt532
+  - sudo add-apt-repository -y ppa:beineri/opt-qt542
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+  - export CXX="g++-4.8"
+  - sudo apt-get -y install g++-4.8
+  - sudo apt-get -y install qt54quickcontrols qt54declarative
+  - sudo apt-get -y install qt54graphicaleffects qt54tools
+  - sudo apt-get -y install libtag1-dev
+
   - sudo add-apt-repository -y ppa:kalakris/cmake
   - sudo apt-get update
   - sudo dpkg -r cmake cmake-data
   - sudo apt-get -y install cmake
-  - sudo apt-get -y install pep8 pyflakes
-  - sudo apt-get -y install qt53quickcontrols qt53graphicaleffects
-  - sudo apt-get -y install qt53tools qt53declarative
 
 before_script:
-  - source /opt/qt53/bin/qt53-env.sh
-  - git clone git://github.com/papyros/qml-extras.git
   - git clone git://github.com/papyros/qml-material.git
-  - pushd qml-extras
-  - qmake
-  - sudo make install
-  - popd
-  - pushd qml-material
-  - qmake
-  - sudo make install
-  - popd
+  - cd qml-material; qmake .; make; sudo make install; cd ..
 
 script:
-  - source /opt/qt53/bin/qt53-env.sh
+  - source /opt/qt54/bin/qt54-env.sh
   - cmake .
-  - make test
+  - make
 
 notifications:
   slack: papyros:gI5qeLsvC7CWBzwiZvpbN4Z5
