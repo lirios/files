@@ -42,7 +42,7 @@
 #include <QQmlContext>
 #include <QQmlExtensionPlugin>
 
-#define PLUGIN_URI "org.nemomobile.folderlistmodel"
+#define PLUGIN_URI "io.papyros.folderlistmodel"
 
 #define PLUGIN_CLASS_EXPORT Q_DECL_EXPORT
 #define PLUGIN_CLASS_EXTERNAL_EXPORT

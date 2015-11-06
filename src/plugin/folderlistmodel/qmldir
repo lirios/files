@@ -1,2 +1,2 @@
-module org.nemomobile.folderlistmodel
-plugin nemofolderlistmodel
+module io.papyros.folderlistmodel
+plugin folderlistmodel

@@ -19,7 +19,7 @@ include_directories(
     trash
 )
 
-set(PLUGIN_DIR org/nemomobile/folderlistmodel)
+set(PLUGIN_DIR io/papyros/folderlistmodel)
 
 set(folderlistmodel_SRCS
     clipboard.cpp
@@ -67,25 +67,25 @@ set(folderlistmodel_SRCS
     trash/trashlocation.h
 )
 
-add_library(nemofolderlistmodel MODULE
+add_library(folderlistmodel MODULE
     ${folderlistmodel_SRCS}
 )
 
-qt5_use_modules(nemofolderlistmodel Gui Qml Quick Widgets)
+qt5_use_modules(folderlistmodel Gui Qml Quick Widgets)
 
 # Copy the plugin, the qmldir file and other assets to the build dir for running in QtCreator
 if(NOT "${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
-    add_custom_command(TARGET nemofolderlistmodel POST_BUILD
+    add_custom_command(TARGET folderlistmodel POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/../${PLUGIN_DIR}
         COMMENT "Creating plugin directory layout in the build directory"
         COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/qmldir ${CMAKE_CURRENT_BINARY_DIR}/../${PLUGIN_DIR}
         COMMENT "Copying the qmldir file to the build directory"
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:nemofolderlistmodel> ${CMAKE_CURRENT_BINARY_DIR}/../${PLUGIN_DIR}
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:folderlistmodel> ${CMAKE_CURRENT_BINARY_DIR}/../${PLUGIN_DIR}
         COMMENT "Copying the plugin binary to the build directory"
     )
 endif(NOT "${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
 
 # Install plugin file
-install(TARGETS nemofolderlistmodel DESTINATION ${QT_IMPORTS_DIR}/org/nemomobile/folderlistmodel/)
-install(FILES qmldir DESTINATION ${QT_IMPORTS_DIR}/org/nemomobile/folderlistmodel/)
+install(TARGETS folderlistmodel DESTINATION ${QT_IMPORTS_DIR}/io/papyros/folderlistmodel/)
+install(FILES qmldir DESTINATION ${QT_IMPORTS_DIR}/io/papyros/folderlistmodel/)
 

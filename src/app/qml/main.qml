@@ -20,7 +20,7 @@
 import QtQuick 2.2
 import Material 0.1
 import Material.Extras 0.1
-import org.nemomobile.folderlistmodel 1.0
+import io.papyros.folderlistmodel 1.0
 import "backend"
 
 ApplicationWindow {
