@@ -1,9 +1,8 @@
-option(USE_TAG_LIB "Use TAGLIB for getting metada" on)
+option(USE_TAG_LIB "Use TAGLIB for getting metada" ON)
 
 if(USE_TAG_LIB)
-    pkg_check_modules(TAGLIB OPTIONAL)
+    pkg_check_modules(TAGLIB taglib)
     if(TAGLIB_FOUND)
-        message("${TAGLIB_LIBRARIES}")
         set(CMAKE_REQUIRED_INCLUDES "${TAGLIB_INCLUDE_DIRS}")
         set(CMAKE_REQUIRED_LIBRARIES "${TAGLIB_LIBRARIES}")
     else(TAGLIB_FOUND)
@@ -58,7 +57,7 @@ set(folderlistmodel_SRCS
     disk/disklocation.cpp
     disk/disklocation.h
     trash/qtrashdir.cpp
-    trash/qtrashdir.h   
+    trash/qtrashdir.h
     trash/qtrashutilinfo.cpp
     trash/qtrashutilinfo.h
     trash/trashiteminfo.cpp
