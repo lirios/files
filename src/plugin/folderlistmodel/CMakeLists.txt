@@ -16,6 +16,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     disk
     trash
+    ${TAGLIB_INCLUDE_DIRS}
 )
 
 set(PLUGIN_DIR io/papyros/folderlistmodel)
@@ -69,6 +70,8 @@ set(folderlistmodel_SRCS
 add_library(folderlistmodel MODULE
     ${folderlistmodel_SRCS}
 )
+
+target_link_libraries(folderlistmodel ${TAGLIB_LIBRARIES})
 
 qt5_use_modules(folderlistmodel Gui Qml Quick Widgets)
 
