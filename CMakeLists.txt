@@ -40,6 +40,16 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}
 
 configure_file(${DESKTOP_FILE}.in ${DESKTOP_FILE})
 
+# Uninstall target
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+    IMMEDIATE @ONLY
+)
+
+add_custom_target(uninstall
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+
 # Tests
 enable_testing()
 
