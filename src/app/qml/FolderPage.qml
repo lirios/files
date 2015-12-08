@@ -41,6 +41,7 @@ Page {
         Action {
             iconName: "action/search"
             name: qsTr("Search")
+            shortcut: StandardKey.Find
             onTriggered: searchCard.visible ^= 1
         },
         Action {
@@ -115,6 +116,11 @@ Page {
                         // TODO: add code to translate user input to regex
                         folderModel.model.nameFilters = [text]
                         folderModel.model.filterDirectories = true
+                    }
+                    Keys.onPressed: {
+                        if (event.key == Qt.Key_Escape) {
+                            searchCard.visible = false;
+                        }
                     }
                 }
 
