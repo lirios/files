@@ -88,6 +88,10 @@ Page {
 
         Snackbar {
             id: snackbar
+            Connections {
+                target: folderModel.model
+                onError: snackbar.open(errorTitle.capitalize())
+            }
         }
 
         Card {
