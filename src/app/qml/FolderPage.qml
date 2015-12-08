@@ -96,7 +96,7 @@ Page {
             id: snackbar
             Connections {
                 target: folderModel.model
-                onError: snackbar.open(errorTitle.capitalize())
+                onError: snackbar.open(errorTitle)
             }
         }
 
