@@ -17,6 +17,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 import QtQuick 2.2
+import QtQuick.Layouts 1.2
 import Material 0.1
 import Material.ListItems 0.1 as ListItem
 import "components"
@@ -40,6 +41,7 @@ Page {
         Action {
             iconName: "action/search"
             name: qsTr("Search")
+            onTriggered: searchCard.visible ^= 1
         },
         Action {
             iconName: "action/list"
@@ -85,6 +87,50 @@ Page {
 
         Snackbar {
             id: snackbar
+        }
+
+        Card {
+            // TODO: Add animations on show/hiding search card
+            id: searchCard
+            width: Units.dp(300)
+            height: Units.dp(60)
+            anchors.bottom: parent.bottom
+            anchors.margins: Units.dp(8)
+            anchors.horizontalCenter: parent.horizontalCenter
+            visible: false
+
+            RowLayout {
+                anchors.fill: parent
+                anchors.margins: Units.dp(16)
+                spacing: Units.dp(16)
+                Icon {
+                    name: "action/search"
+                }
+                TextField {
+                    id: searchField
+                    Layout.fillWidth: true
+                    placeholderText: qsTr("Search")
+                    text: folderModel.model.nameFilters
+                    onAccepted: {
+                        // TODO: add code to translate user input to regex
+                        folderModel.model.nameFilters = [text]
+                        folderModel.model.filterDirectories = true
+                    }
+                }
+
+                IconButton {
+                    iconName: "navigation/close"
+                    onClicked: searchCard.visible = false
+                }
+            }
+            onVisibleChanged: {
+                if (visible) {
+                    searchField.forceActiveFocus();
+                } else {
+                    folderModel.model.nameFilters = "*";
+                    searchField.focus = false;
+                }
+            }
         }
     }
 
