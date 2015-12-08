@@ -32,6 +32,7 @@ Page {
         iconName: "navigation/arrow_back"
         name: qsTr("Back")
         enabled: folderModel.canGoBack
+        shortcut: StandardKey.Back
         visible: true
 
         onTriggered: folderModel.goBack()
@@ -60,6 +61,11 @@ Page {
             shortcut: StandardKey.Paste
             enabled: folderModel.model.clipboardUrlsCounter
             onTriggered: folderModel.model.paste()
+        },
+        Action {
+            visible: false
+            shortcut: "Alt+Up"
+            onTriggered: folderModel.model.cdUp()
         },
         Action {
             iconName: "action/open_in_new"
