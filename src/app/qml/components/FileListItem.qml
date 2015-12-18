@@ -69,16 +69,10 @@ ListItem.Standard {
         acceptedButtons: Qt.LeftButton | Qt.RightButton
 
         onClicked: {
-            if (mouse.button == Qt.RightButton){
+            if (mouse.button == Qt.RightButton)
                 selectionManager.toggleIndex(index);
-                return;
-            }
-            if (isDir) {
-                folderModel.goTo(filePath)
-            } else {
-                snackbar.open(qsTr("Opening ") + fileName)
-                Qt.openUrlExternally(filePath)
-            }
+            else
+                folderModel.model.openIndex(index)
         }
 
         onPressAndHold: {
