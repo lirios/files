@@ -22,6 +22,7 @@ import Material 0.1
 import Material.Extras 0.1
 import io.papyros.folderlistmodel 1.0
 import "backend"
+import "dialogs"
 
 ApplicationWindow {
     id: app
@@ -54,6 +55,10 @@ ApplicationWindow {
 
     FolderModel {
         id: folderModel
+    }
+
+    SettingsDialog {
+        id: settings
     }
 
     Dialog {

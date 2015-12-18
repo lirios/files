@@ -68,12 +68,18 @@ Page {
             onTriggered: folderModel.model.cdUp()
         },
         Action {
+            visible: false
+            shortcut: "Ctrl+H"
+            onTriggered: folderModel.model.toggleShowHiddenFiles();
+        },
+        Action {
             iconName: "action/open_in_new"
             name: qsTr("Open in Terminal")
         },
         Action {
             iconName: "action/settings"
             name: qsTr("Settings")
+            onTriggered: settings.show()
         }
     ]
 
