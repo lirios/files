@@ -31,13 +31,6 @@ ListItem.Standard {
     text: folderModel.pathTitle(filePath)
     selected: isSelected
 
-    action: CircleImage{
-        visible: mimeType === "audio/mpeg"
-        height: listItem.height - Units.dp(8)
-        width: height
-        source: visible ? "image://cover-art/" + filePath : ""
-    }
-
     secondaryItem: RowLayout {
         height: parent.height - Units.dp(1)
         spacing: Units.dp(16)
