@@ -36,7 +36,7 @@ ApplicationWindow {
     }
 
     theme {
-        primaryColor: Palette.colors.blue["500"]
+        primaryColor: "blue"
     }
 
     function confirmAction(title, text, primaryButton, color) {
