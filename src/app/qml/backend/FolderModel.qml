@@ -139,8 +139,7 @@ Object {
             print(type)
         }
 
-        return description.substring(0, 1).toUpperCase() +
-               description.substring(1)
+        return capitalize(description)
     }
 
     function pathIcon(folder) {
@@ -157,7 +156,7 @@ Object {
         } else if (folder === places.locationVideos) {
             return "av/movie"
         } else if (folder === "/") {
-            return "hardware/computer"
+            return Device.iconName
         } else {
             return "file/folder"
         }
@@ -167,7 +166,7 @@ Object {
         if (folder === places.locationHome) {
             return qsTr("Home")
         } else if (folder === "/") {
-            return qsTr("Device")
+            return capitalize(Device.name)
         } else {
             return basename(folder)
         }
@@ -221,6 +220,10 @@ Object {
         } else {
             return ""
         }
+    }
+
+    function capitalize(string) {
+        return string.substring(0, 1).toUpperCase() + string.substring(1)
     }
 
     // TODO: Set onlyAllowedPaths for restricted user accounts
