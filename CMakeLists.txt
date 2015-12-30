@@ -11,7 +11,7 @@ include(GNUInstallDirs)
 option(INSTALL_TESTS "Install the tests on make install" on)
 
 set(APP_NAME papyros-files)
-set(DESKTOP_FILE "${PROJECT_NAME}.desktop")
+set(DESKTOP_FILE "papyros-files.desktop")
 # set(LP_PROJECT ubuntu-filemanager-app)
 # set(ICON_FILE system-file-manager)
 # set(AUTOPILOT_DIR ${APP_NAME})
