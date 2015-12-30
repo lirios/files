@@ -52,7 +52,8 @@ Page {
 
     actionBar {
         elevation: 0
-        backgroundColor: Palette.colors["green"]["900"]
+        backgroundColor: Palette.colors["green"]["500"]
+        decorationColor: Palette.colors["green"]["700"]
     }
 
     FolderListView {
