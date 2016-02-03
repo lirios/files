@@ -51,8 +51,9 @@ Page {
         //    name: qsTr("List mode")
         //},
         Action {
-            iconName: "content/add"
+            iconName: "file/create_new_folder"
             name: qsTr("New folder")
+            shortcut: StandardKey.New
             onTriggered: confirmNewFolder.show()
         },
         Action {
