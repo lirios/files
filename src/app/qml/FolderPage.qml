@@ -45,14 +45,14 @@ Page {
             shortcut: StandardKey.Find
             onTriggered: searchCard.visible ^= 1
         },
-        Action {
-            iconName: "action/list"
-            name: qsTr("List mode")
-        },
+        // TODO enable when we have other views - ricardomv
+        //Action {
+        //    iconName: "action/list"
+        //    name: qsTr("List mode")
+        //},
         Action {
             iconName: "content/add"
             name: qsTr("New folder")
-
             onTriggered: confirmNewFolder.show()
         },
         Action {
@@ -72,10 +72,10 @@ Page {
             shortcut: "Ctrl+H"
             onTriggered: folderModel.model.toggleShowHiddenFiles();
         },
-        Action {
-            iconName: "action/open_in_new"
-            name: qsTr("Open in Terminal")
-        },
+        //Action {
+        //    iconName: "action/open_in_new"
+        //    name: qsTr("Open in Terminal")
+        //},
         Action {
             iconName: "action/settings"
             name: qsTr("Settings")
