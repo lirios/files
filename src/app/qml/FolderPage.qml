@@ -110,7 +110,7 @@ Page {
             // TODO: Add animations on show/hiding search card
             id: searchCard
             width: Units.dp(300)
-            height: Units.dp(60)
+            height: Units.dp(50)
             anchors.bottom: parent.bottom
             anchors.margins: Units.dp(8)
             anchors.horizontalCenter: parent.horizontalCenter
@@ -118,7 +118,7 @@ Page {
 
             RowLayout {
                 anchors.fill: parent
-                anchors.margins: Units.dp(16)
+                anchors.margins: Units.dp(8)
                 spacing: Units.dp(16)
                 Icon {
                     name: "action/search"
@@ -127,10 +127,8 @@ Page {
                     id: searchField
                     Layout.fillWidth: true
                     placeholderText: qsTr("Search")
-                    text: folderModel.model.nameFilters
                     onAccepted: {
-                        // TODO: add code to translate user input to regex
-                        folderModel.model.nameFilters = [text]
+                        folderModel.model.nameFilters = [ "*" + text + "*" ]
                         folderModel.model.filterDirectories = true
                     }
                     Keys.onPressed: {
