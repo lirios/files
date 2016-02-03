@@ -61,6 +61,7 @@ Page {
             name: qsTr("Paste")
             shortcut: StandardKey.Paste
             enabled: folderModel.model.clipboardUrlsCounter
+            visible: enabled
             onTriggered: folderModel.model.paste()
         },
         Action {
