@@ -23,7 +23,6 @@ import Material.ListItems 0.1 as ListItem
 
 Dialog {
     title: "Settings"
-    height: parent.height * 0.7
 
     Column {
         id: settingsList
