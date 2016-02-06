@@ -24,7 +24,7 @@
     <name>FileListItem</name>
     <message>
         <source>Opening </source>
-        <translation>A abrir </translation>
+        <translation type="vanished">A abrir </translation>
     </message>
 </context>
 <context>
@@ -153,7 +153,7 @@
     </message>
     <message>
         <source>Device</source>
-        <translation>Dispositivo</translation>
+        <translation type="vanished">Dispositivo</translation>
     </message>
     <message>
         <source>%1 file</source>
@@ -172,7 +172,7 @@
     </message>
     <message>
         <source>Open in Terminal</source>
-        <translation>Abrir na consola</translation>
+        <translation type="vanished">Abrir na consola</translation>
     </message>
     <message>
         <source>Back</source>
@@ -184,7 +184,7 @@
     </message>
     <message>
         <source>List mode</source>
-        <translation>Modo Lista</translation>
+        <translation type="vanished">Modo Lista</translation>
     </message>
     <message>
         <source>New folder</source>
@@ -290,6 +290,41 @@
     <message>
         <source>Clear selection</source>
         <translation>Limpar seleção</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Settings</source>
+        <translation>Definições</translation>
+    </message>
+    <message>
+        <source>Show hidden files</source>
+        <translation>Mostrar ficheiros ocultos</translation>
+    </message>
+    <message>
+        <source>Sort by:</source>
+        <translation>Ordenar por:</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Sort order:</source>
+        <translation>Ordenação:</translation>
+    </message>
+    <message>
+        <source>Ascending</source>
+        <translation>Ascendente</translation>
+    </message>
+    <message>
+        <source>Descending</source>
+        <translation>Descendente</translation>
     </message>
 </context>
 <context>

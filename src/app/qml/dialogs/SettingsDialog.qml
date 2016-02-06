@@ -22,7 +22,7 @@ import Material.Extras 0.1
 import Material.ListItems 0.1 as ListItem
 
 Dialog {
-    title: "Settings"
+    title: qsTr("Settings")
 
     Column {
         id: settingsList
@@ -44,8 +44,8 @@ Dialog {
         }
         ListItem.SimpleMenu {
             id: sortByMenu
-            text: "Sort by:"
-            model: ["Name", "Date"]
+            text: qsTr("Sort by:")
+            model: [qsTr("Name"), qsTr("Date")]
             selectedIndex: folderModel.model.sortBy
             // Here we can't just toggle, we need to set the selected option
             onSelectedIndexChanged: folderModel.model.sortBy = selectedIndex
@@ -58,8 +58,8 @@ Dialog {
         }
         ListItem.SimpleMenu {
             id: sortOrderMenu
-            text: "Sort order:"
-            model: ["Ascending", "Descending"]
+            text: qsTr("Sort order:")
+            model: [qsTr("Ascending"), qsTr("Descending")]
             onSelectedIndexChanged: folderModel.model.sortOrder = selectedIndex
 
             Connections {
