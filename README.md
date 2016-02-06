@@ -3,7 +3,6 @@ Files app for Papryos
 
 [![GitHub release](https://img.shields.io/github/release/papyros/files-app.svg)](https://github.com/papyros/files-app)
 [![Build Status](https://travis-ci.org/papyros/files-app.svg?branch=master)](https://travis-ci.org/papyros/files-app)
-[![GitHub issues](https://img.shields.io/github/issues/papyros/files-app.svg)](https://github.com/papyros/files-app/issues)
 [![Bountysource](https://img.shields.io/bountysource/team/papyros/activity.svg)](https://www.bountysource.com/teams/papyros)
 
 This is the file manager app for Papyros. The UI is build with our [Material Design framework](https://github.com/papyros/qml-material), and the backend is based on the [Ubuntu Touch file manager](https://launchpad.net/ubuntu-filemanager-app). The goal is for the app to be cross patform and run on Linux, OS X, and Windows.
@@ -22,7 +21,6 @@ From the root of the repository, run:
     $ mkdir build; cd build
     $ cmake ..
     $ make
-    $ make check # Optional, make sure everything is working correctly
     $ sudo make install
 
 ### Licensing
