@@ -55,6 +55,8 @@ ApplicationWindow {
 
     FolderModel {
         id: folderModel
+
+        path: places.locationHome
     }
 
     SettingsDialog {

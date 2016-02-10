@@ -24,7 +24,7 @@ import com.ubuntu.PlacesModel 0.1
 Object {
     id: folderModel
 
-    property string path: places.locationHome
+    property alias path: __model.path
     property string title: pathTitle(path)
     property string folder: pathName(path)
 
@@ -230,7 +230,6 @@ Object {
     FolderListModel {
         id: __model
 
-        path: folderModel.path
         enableExternalFSWatcher: true
 
         // Properties to emulate a model entry for use by FileDetailsPopover
