@@ -57,8 +57,12 @@ PlacesModel::PlacesModel(QObject *parent) :
         m_locations = m_settings->value("storedLocations").toStringList();
     }
 
-    foreach (const QString &location, m_locations) {
-        qDebug() << "Location: " << location;
+    // Make sure the directories exist
+    foreach(const auto& location, m_locations) {
+        if(!location.isEmpty() && QDir(location).exists())
+            qDebug() << "Location: " << location;
+        else
+            m_locations.removeOne(location);
     }
 
     initNewUserMountsWatcher();
