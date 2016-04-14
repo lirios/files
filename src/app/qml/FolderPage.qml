@@ -28,6 +28,7 @@ Page {
     title: folderModel.title
     actionBar.elevation: 0
 
+
     backAction: Action {
         iconName: "navigation/arrow_back"
         name: qsTr("Back")
@@ -43,8 +44,9 @@ Page {
             iconName: "action/search"
             name: qsTr("Search")
             shortcut: StandardKey.Find
-            onTriggered: searchCard.visible ^= 1
+            onTriggered: searchCard.state = (searchCard.state == "active" ? "inactive" : "active")
         },
+
         // TODO enable when we have other views - ricardomv
         //Action {
         //    iconName: "action/list"
@@ -111,12 +113,66 @@ Page {
         Card {
             // TODO: Add animations on show/hiding search card
             id: searchCard
-            width: Units.dp(300)
+            width:  Units.dp(300)
             height: Units.dp(50)
-            anchors.bottom: parent.bottom
+            anchors.top: parent.bottom
             anchors.margins: Units.dp(8)
             anchors.horizontalCenter: parent.horizontalCenter
-            visible: false
+
+
+            states: [
+                State {
+                    name: "active"
+                    AnchorChanges {
+                        target: searchCard
+                        anchors.top: undefined
+                        anchors.bottom: parent.bottom
+                    }
+
+
+
+                },
+                State {
+                    name: "inactive"
+                    AnchorChanges {
+                        target: searchCard
+                        anchors.top: parent.bottom
+                        anchors.bottom: undefined
+                    }
+                }
+            ]
+
+            transitions: [
+                Transition {
+                    to: "active"
+
+                    AnchorAnimation {
+                        duration: 150
+                        easing: Easing.OutQuad
+                    }
+
+                    onRunningChanged: {
+                        if(running)
+                            searchField.forceActiveFocus()
+                    }
+                },
+                Transition {
+                    to: "inactive"
+                    AnchorAnimation {
+                        duration: 250
+                        easing: Easing.InQuad
+                    }
+
+                    onRunningChanged: {
+                        if(running) {
+                            searchField.text = ""
+                            folderModel.model.nameFilters = "*"
+                            searchField.focus = false
+                        }
+                    }
+                }
+            ]
+
 
             RowLayout {
                 anchors.fill: parent
@@ -135,22 +191,14 @@ Page {
                     }
                     Keys.onPressed: {
                         if (event.key == Qt.Key_Escape) {
-                            searchCard.visible = false;
+                            searchCard.state = "inactive"
                         }
                     }
                 }
 
                 IconButton {
                     iconName: "navigation/close"
-                    onClicked: searchCard.visible = false
-                }
-            }
-            onVisibleChanged: {
-                if (visible) {
-                    searchField.forceActiveFocus();
-                } else {
-                    folderModel.model.nameFilters = "*";
-                    searchField.focus = false;
+                    onClicked: searchCard.state = "inactive"
                 }
             }
         }
