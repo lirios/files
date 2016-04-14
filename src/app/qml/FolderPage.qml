@@ -28,7 +28,6 @@ Page {
     title: folderModel.title
     actionBar.elevation: 0
 
-
     backAction: Action {
         iconName: "navigation/arrow_back"
         name: qsTr("Back")
@@ -46,7 +45,6 @@ Page {
             shortcut: StandardKey.Find
             onTriggered: searchCard.state = (searchCard.state == "active" ? "inactive" : "active")
         },
-
         // TODO enable when we have other views - ricardomv
         //Action {
         //    iconName: "action/list"
@@ -111,14 +109,12 @@ Page {
         }
 
         Card {
-            // TODO: Add animations on show/hiding search card
             id: searchCard
             width:  Units.dp(300)
             height: Units.dp(50)
             anchors.top: parent.bottom
             anchors.margins: Units.dp(8)
             anchors.horizontalCenter: parent.horizontalCenter
-
 
             states: [
                 State {
@@ -128,9 +124,6 @@ Page {
                         anchors.top: undefined
                         anchors.bottom: parent.bottom
                     }
-
-
-
                 },
                 State {
                     name: "inactive"
