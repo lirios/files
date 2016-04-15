@@ -124,6 +124,18 @@ Page {
                         anchors.top: undefined
                         anchors.bottom: parent.bottom
                     }
+
+                    PropertyChanges {
+                        target: searchField
+                        focus: true
+                    }
+
+                    PropertyChanges {
+                        target: folderModel.model
+                        nameFilters: "*"
+                        filterDirectories: true
+
+                    }
                 },
                 State {
                     name: "inactive"
@@ -132,36 +144,37 @@ Page {
                         anchors.top: parent.bottom
                         anchors.bottom: undefined
                     }
+
+                    PropertyChanges {
+                        target: searchField
+                        text: ""
+                        focus: false
+
+                    }
+
+                    PropertyChanges {
+                        target: folderModel.model
+                        nameFilters: "*"
+                        filterDirectories: false
+                    }
                 }
             ]
 
             transitions: [
                 Transition {
                     to: "active"
-
                     AnchorAnimation {
+                        targets: [searchCard]
                         duration: 150
                         easing: Easing.OutQuad
-                    }
-
-                    onRunningChanged: {
-                        if(running)
-                            searchField.forceActiveFocus()
                     }
                 },
                 Transition {
                     to: "inactive"
                     AnchorAnimation {
+                        targets: [searchCard]
                         duration: 250
                         easing: Easing.InQuad
-                    }
-
-                    onRunningChanged: {
-                        if(running) {
-                            searchField.text = ""
-                            folderModel.model.nameFilters = "*"
-                            searchField.focus = false
-                        }
                     }
                 }
             ]
@@ -180,7 +193,6 @@ Page {
                     placeholderText: qsTr("Search")
                     onAccepted: {
                         folderModel.model.nameFilters = [ "*" + text + "*" ]
-                        folderModel.model.filterDirectories = true
                     }
                     Keys.onPressed: {
                         if (event.key == Qt.Key_Escape) {
