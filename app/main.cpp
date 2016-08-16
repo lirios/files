@@ -25,10 +25,17 @@
 
 #include <QDebug>
 
+#include "config.h"
+
 int main(int argc, char *argv[])
 {
     // Setup application
     QGuiApplication app(argc, argv);
+    app.setApplicationName(QLatin1String("Files"));
+    app.setApplicationVersion(QLatin1String(FILES_VERSION_STRING));
+    app.setOrganizationDomain(QLatin1String("papyros.io"));
+    app.setOrganizationName(QLatin1String("Papyros"));
+    app.setDesktopFileName(QLatin1String("io.papyros.Files.desktop"));
 
 #if 0
     QString locale = QLocale::system().name();
