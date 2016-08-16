@@ -17,5 +17,5 @@ target_link_libraries(papyros-files
 
 install(TARGETS papyros-files
         DESTINATION ${BIN_INSTALL_DIR})
-install(FILES papyros-files.desktop
+install(FILES io.papyros.Files.desktop
         DESTINATION ${XDG_APPS_INSTALL_DIR})
