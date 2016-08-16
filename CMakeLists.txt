@@ -1,58 +1,56 @@
-project(io.papyros.files C CXX)
+project(Files)
 
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
+cmake_policy(VERSION 3.4.1)
 
+# Instruct CMake to run moc and rrc automatically when needed
 set(CMAKE_AUTOMOC ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-permissive -pedantic -Wall -Wextra -fPIC")
+set(CMAKE_AUTORCC ON)
 
-# Standard install paths
-include(GNUInstallDirs)
+# Apple-specific configuration
+set(APPLE_SUPPRESS_X11_WARNING ON)
 
-option(INSTALL_TESTS "Install the tests on make install" on)
+# Set version
+set(PROJECT_VERSION "0.0.0")
+set(PROJECT_VERSION_MAJOR 0)
+set(PROJECT_SOVERSION 0)
 
-set(APP_NAME papyros-files)
-set(DESKTOP_FILE "papyros-files.desktop")
-# set(LP_PROJECT ubuntu-filemanager-app)
-# set(ICON_FILE system-file-manager)
-# set(AUTOPILOT_DIR ${APP_NAME})
-set(EXEC "${APP_NAME}")
+# Set up packaging
+set(CPACK_PACKAGE_NAME "qmlos-files")
+set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
+set(CPACK_GENERATOR "TGZ")
+set(CPACK_SET_DESTDIR FALSE)
+set(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
+set(CPACK_SOURCE_IGNORE_FILES "/build/;/.git;/.tx/;~$;${CPACK_SOURCE_IGNORE_FILES}")
+include(CPack)
+add_custom_target(dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 
-execute_process(
-    COMMAND qmake -query QT_INSTALL_QML
-    OUTPUT_VARIABLE QT_IMPORTS_DIR
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-)
-set(DATA_DIR ${CMAKE_INSTALL_DATADIR}/${APP_NAME})
-# set(ICON ${CMAKE_INSTALL_PREFIX}/${DATA_DIR}/${ICON_FILE})
-set(ICON system-file-manager)
-set(DESKTOP_DIR ${CMAKE_INSTALL_DATADIR}/applications)
+# ECM
+find_package(ECM 1.7.0 REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
-configure_file(${CMAKE_SOURCE_DIR}/config.h.in ${CMAKE_BINARY_DIR}/config.h)
-include_directories( ${CMAKE_BINARY_DIR} )
+# Macros
+include(FeatureSummary)
+include(KDEInstallDirs)
+include(KDECompilerSettings)
+include(KDECMakeSettings)
 
-file(GLOB SRC_FILES
-     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
-     *.qml *.js *.png *.svg *.json)
-install(FILES ${SRC_FILES}  DESTINATION ${DATA_DIR})
+# Build flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden -fvisibility-inlines-hidden -Wall -Wextra -Wno-unused-parameter -std=c++11")
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}
-		DESTINATION ${DESKTOP_DIR})
+# Assume release build by default
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "" FORCE)
+endif()
 
-configure_file(${DESKTOP_FILE}.in ${DESKTOP_FILE})
+# Find Qt5
+set(REQUIRED_QT_VERSION "5.7.0")
+find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED COMPONENTS
+             Core Gui Qml Quick LinguistTools QuickControls2)
 
-# Uninstall target
-configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
-    IMMEDIATE @ONLY
-)
+# Subdirectories
+add_subdirectory(app)
+add_subdirectory(imports)
 
-add_custom_target(uninstall
-    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
-
-# Tests
-enable_testing()
-
-add_subdirectory(ts)
-add_subdirectory(tests)
-add_subdirectory(src)
+# Display featute summary
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
