@@ -23,12 +23,17 @@
 #include <QTranslator>
 #include <QLibraryInfo>
 
+#include <QtQuickControls2/QQuickStyle>
+
 #include <QDebug>
 
 #include "config.h"
 
 int main(int argc, char *argv[])
 {
+    // HiDPI support
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
     // Setup application
     QGuiApplication app(argc, argv);
     app.setApplicationName(QLatin1String("Files"));
@@ -36,6 +41,10 @@ int main(int argc, char *argv[])
     app.setOrganizationDomain(QLatin1String("papyros.io"));
     app.setOrganizationName(QLatin1String("Papyros"));
     app.setDesktopFileName(QLatin1String("io.papyros.Files.desktop"));
+
+    // Set default style
+    if (QQuickStyle::name().isEmpty())
+        QQuickStyle::setStyle(QLatin1String("Material"));
 
 #if 0
     QString locale = QLocale::system().name();
