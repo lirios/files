@@ -1,13 +1,13 @@
-file(GLOB_RECURSE QML_SOURCES *.qml *.js)
-
 set(SOURCES
     main.cpp
 )
 
-add_executable(papyros-files ${SOURCES} ${QML_SOURCES})
+qt5_add_resources(RESOURCES files.qrc)
+
+add_executable(papyros-files ${SOURCES} ${RESOURCES})
 target_link_libraries(papyros-files
                       Qt5::Qml
-                      Qt5::Quick)
+                      Qt5::QuickControls2)
 
 install(TARGETS papyros-files
         DESTINATION ${BIN_INSTALL_DIR})

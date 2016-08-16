@@ -27,8 +27,10 @@
 
 int main(int argc, char *argv[])
 {
+    // Setup application
     QGuiApplication app(argc, argv);
 
+#if 0
     QString locale = QLocale::system().name();
 
     QTranslator qtTranslator;
@@ -39,24 +41,10 @@ int main(int argc, char *argv[])
     QTranslator papyrosFilesTranslator;
     papyrosFilesTranslator.load(locale, DATA_INSTALL_DIR "/translations");
     app.installTranslator(&papyrosFilesTranslator);
+#endif
 
-    QString qmlfile;
-
-    QStringList paths = QStandardPaths::standardLocations(QStandardPaths::DataLocation);
-    paths.prepend(QDir::currentPath());
-    paths.prepend(QCoreApplication::applicationDirPath());
-
-    foreach (const QString &path, paths) {
-        QFileInfo fi(path + "/qml/main.qml");
-        qDebug() << "Trying to load QML from:" << path + "/qml/main.qml";
-        if (fi.exists()) {
-            qmlfile = path +  "/qml/main.qml";
-            break;
-        }
-    }
-
-    QQmlApplicationEngine engine;
-    engine.load(qmlfile);
+    // Setup QML engine and show the main window
+    QQmlApplicationEngine engine(QUrl(QLatin1String("qrc:/qml/main.qml")));
 
     return app.exec();
 }
