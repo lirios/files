@@ -4,13 +4,17 @@ configure_file(
     "${CMAKE_CURRENT_BINARY_DIR}/config.h" @ONLY
 )
 
+file(GLOB_RECURSE QML_SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/qml/*.qml"
+    "${CMAKE_CURRENT_SOURCE_DIR}/qml/*.js")
+
 set(SOURCES
     main.cpp
 )
 
 qt5_add_resources(RESOURCES files.qrc)
 
-add_executable(papyros-files ${SOURCES} ${RESOURCES})
+add_executable(papyros-files ${SOURCES} ${QML_SOURCES} ${RESOURCES})
 target_link_libraries(papyros-files
                       Qt5::Qml
                       Qt5::QuickControls2)
