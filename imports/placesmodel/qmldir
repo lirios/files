@@ -1,2 +1,2 @@
-module com.ubuntu.PlacesModel
-plugin PlacesModel
+module Papyros.Files.PlacesModel
+plugin placesmodelplugin

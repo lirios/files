@@ -17,9 +17,9 @@
 */
 import QtQuick 2.2
 import Material 0.1
-import io.papyros.folderlistmodel 1.0
-import com.ubuntu.Archives 0.1
-import com.ubuntu.PlacesModel 0.1
+import Papyros.Files.Archives 0.1
+import Papyros.Files.FolderListModel 1.0
+import Papyros.Files.PlacesModel 0.1
 
 Object {
     id: folderModel

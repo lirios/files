@@ -1,2 +1,2 @@
-module io.papyros.folderlistmodel
-plugin folderlistmodel
+module Papyros.Files.FolderListModel
+plugin folderlistmodelplugin

@@ -46,7 +46,7 @@ endif()
 # Find Qt5
 set(REQUIRED_QT_VERSION "5.7.0")
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED COMPONENTS
-             Core Gui Qml Quick LinguistTools QuickControls2)
+             Core Gui Widgets Qml Quick LinguistTools QuickControls2)
 
 # Subdirectories
 add_subdirectory(app)

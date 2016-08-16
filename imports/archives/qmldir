@@ -1,2 +1,2 @@
-module com.ubuntu.Archives
-plugin Archives
+module Papyros.Files.Archives
+plugin archivesplugin
