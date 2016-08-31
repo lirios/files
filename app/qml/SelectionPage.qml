@@ -18,7 +18,8 @@
 */
 
 import QtQuick 2.2
-import Material 0.1
+import QtQuick.Controls.Material 2.0
+import Fluid.Controls 1.0
 import "components"
 
 Page {
@@ -26,9 +27,9 @@ Page {
 
     title: qsTr("Select files...")
 
-    backAction: Action {
+    leftAction: Action {
         iconName: "navigation/arrow_back"
-        name: qsTr("Back")
+        text: qsTr("Back")
 
         onTriggered: {
             selectionManager.clear()
@@ -40,47 +41,47 @@ Page {
     actions: [
         Action {
             iconName: "content/content_cut"
-            name: qsTr("Cut")
+            text: qsTr("Cut")
             shortcut: StandardKey.Cut
             onTriggered: folderModel.model.cutSelection()
         },
         Action {
             iconName: "content/content_copy"
-            name: qsTr("Copy")
+            text: qsTr("Copy")
             shortcut: StandardKey.Copy
             onTriggered: folderModel.model.copySelection()
         },
         Action {
             iconName: "content/content_paste"
-            name: qsTr("Paste")
+            text: qsTr("Paste")
             shortcut: StandardKey.Paste
             onTriggered: folderModel.model.paste()
             enabled: folderModel.model.clipboardUrlsCounter
         },
         Action {
             iconName: "action/delete"
-            name: qsTr("Move to Trash")
+            text: qsTr("Move to Trash")
             shortcut: StandardKey.Delete
             onTriggered: folderModel.model.moveSelectionToTrash()
         },
         Action {
             iconName: "content/select_all"
-            name: qsTr("Select all")
+            text: qsTr("Select all")
             shortcut: StandardKey.SelectAll
             onTriggered: selectionManager.selectAll()
         },
         Action {
             iconName: "content/clear"
-            name: qsTr("Clear selection")
+            text: qsTr("Clear selection")
             shortcut: StandardKey.Deselect
             onTriggered: selectionManager.clear()
         }
     ]
 
-    actionBar {
+    appBar {
         elevation: 0
-        backgroundColor: Palette.colors["grey"]["700"]
-        decorationColor: Palette.colors["grey"]["800"]
+        //backgroundColor: Material.color(Material.Grey, Material.Shade700)
+        //decorationColor: Material.color(Material.Grey, Material.Shade800)
     }
 
     FolderListView {

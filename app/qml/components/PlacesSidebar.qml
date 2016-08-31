@@ -18,9 +18,9 @@
 */
 
 import QtQuick 2.2
+import QtQuick.Controls.Material 2.0
 import QtGraphicalEffects 1.0
-import Material 0.1
-import Material.ListItems 0.1 as ListItem
+import Fluid.Controls 1.0
 
 Sidebar {
     id: placesSidebar
@@ -31,52 +31,29 @@ Sidebar {
             right: parent.right
         }
 
-        ListItem.Subheader {
+        Subheader {
             text: qsTr("Places")
         }
 
         Repeater {
             model: folderModel.places
 
-            delegate: ListItem.Standard {
+            delegate: ListItem {
                 id: listItem
 
-                action: Item {
-                    anchors.fill: parent
-
-                    Icon {
-                        id: icon
-                        anchors.centerIn: parent
-                        name: folderModel.pathIcon(path)
-                    }
-
-                    ColorOverlay {
-                        anchors.fill: icon
-                        source: icon
-                        color: Theme.primaryColor
-                        visible: listItem.selected
-                    }
-                }
+                iconName: folderModel.pathIcon(path)
                 text: folderModel.pathTitle(path)
-                selected: folderModel.path == path
+                highlighted: folderModel.path == path
 
                 onClicked: folderModel.goTo(path)
             }
         }
 
-        ListItem.Standard {
+        ListItem {
             id: trashItem
 
+            iconName: "action/delete"
             text: qsTr("Trash")
-            action: Item {
-                anchors.fill: parent
-
-                Icon {
-                    id: icon
-                    anchors.centerIn: parent
-                    name: "action/delete"
-                }
-            }
 
             onClicked: pageStack.push(Qt.resolvedUrl("../TrashPage.qml"));
         }

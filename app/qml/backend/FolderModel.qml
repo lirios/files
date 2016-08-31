@@ -15,8 +15,9 @@
 * You should have received a copy of the GNU General Public License
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
+
 import QtQuick 2.2
-import Material 0.1
+import Fluid.Core 1.0
 import Papyros.Files.Archives 0.1
 import Papyros.Files.FolderListModel 1.0
 import Papyros.Files.PlacesModel 0.1

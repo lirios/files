@@ -18,26 +18,29 @@
 */
 
 import QtQuick 2.2
-import Material 0.1
-import Material.Extras 0.1
+import QtQuick.Controls 2.0
+import QtQuick.Controls.Material 2.0
+import Fluid.Controls 1.0
 import Papyros.Files.FolderListModel 1.0
 import "backend"
 import "dialogs"
 
-ApplicationWindow {
+FluidWindow {
     id: app
 
     property FolderListSelection selectionManager: folderModel.model.selectionObject()
 
     title: qsTr("Files")
+    width: 800
+    height: 800
+    visible: true
 
     initialPage: FolderPage {
         id: folderPage
     }
 
-    theme {
-        primaryColor: "blue"
-    }
+    Material.primary: Material.Blue
+    Material.accent: Material.LightBlue
 
     function confirmAction(title, text, primaryButton, color) {
         confirmDialog.promise = new Promises.Promise()
@@ -50,8 +53,6 @@ ApplicationWindow {
 
         return confirmDialog.promise
     }
-
-    Component.onCompleted: visible = true
 
     FolderModel {
         id: folderModel

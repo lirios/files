@@ -17,7 +17,8 @@
 */
 
 import QtQuick 2.2
-import Material 0.1
+import QtQuick.Controls.Material 2.0
+import Fluid.Controls 1.0
 import "components"
 
 Page {
@@ -25,9 +26,9 @@ Page {
 
     title: qsTr("Trash")
 
-    backAction: Action {
+    leftAction: Action {
         iconName: "navigation/arrow_back"
-        name: qsTr("Back")
+        text: qsTr("Back")
 
         onTriggered: {
             selectionManager.clear()
@@ -40,20 +41,20 @@ Page {
     actions: [
         Action {
             iconName: "content/remove_circle"
-            name: qsTr("Empty trash")
+            text: qsTr("Empty trash")
             onTriggered: folderModel.model.emptyTrash()
         },
         Action {
             iconName: "action/restore"
-            name: qsTr("Restore trash")
+            text: qsTr("Restore trash")
             onTriggered: folderModel.model.restoreTrash()
         }
     ]
 
-    actionBar {
+    appBar {
         elevation: 0
-        backgroundColor: Palette.colors["green"]["500"]
-        decorationColor: Palette.colors["green"]["700"]
+        //backgroundColor: Material.color(Material.Green, Material.Shade500)
+        //decorationColor: Material.color(Material.Green, Material.Shade700)
     }
 
     FolderListView {

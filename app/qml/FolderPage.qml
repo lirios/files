@@ -16,21 +16,22 @@
 * You should have received a copy of the GNU General Public License
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
+
 import QtQuick 2.2
+import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.2
-import Material 0.1
-import Material.ListItems 0.1 as ListItem
+import Fluid.Controls 1.0
 import "components"
 
 Page {
     id: folderPage
 
     title: folderModel.title
-    actionBar.elevation: 0
+    appBar.elevation: 0
 
-    backAction: Action {
+    leftAction: Action {
         iconName: "navigation/arrow_back"
-        name: qsTr("Back")
+        text: qsTr("Back")
         enabled: folderModel.canGoBack
         shortcut: StandardKey.Back
         visible: true
@@ -41,24 +42,24 @@ Page {
     actions: [
         Action {
             iconName: "action/search"
-            name: qsTr("Search")
+            text: qsTr("Search")
             shortcut: StandardKey.Find
-            onTriggered: searchCard.state = (searchCard.state == "active" ? "inactive" : "active")
+            onTriggered: searchCard.state = (searchCard.state === "active" ? "inactive" : "active")
         },
         // TODO enable when we have other views - ricardomv
         //Action {
         //    iconName: "action/list"
-        //    name: qsTr("List mode")
+        //    text: qsTr("List mode")
         //},
         Action {
             iconName: "file/create_new_folder"
-            name: qsTr("New folder")
+            text: qsTr("New folder")
             shortcut: StandardKey.New
-            onTriggered: confirmNewFolder.show()
+            onTriggered: confirmNewFolder.open()
         },
         Action {
             iconName: "content/content_paste"
-            name: qsTr("Paste")
+            text: qsTr("Paste")
             shortcut: StandardKey.Paste
             enabled: folderModel.model.clipboardUrlsCounter
             visible: enabled
@@ -76,18 +77,20 @@ Page {
         },
         //Action {
         //    iconName: "action/open_in_new"
-        //    name: qsTr("Open in Terminal")
+        //    text: qsTr("Open in Terminal")
         //},
         Action {
             iconName: "action/settings"
-            name: qsTr("Settings")
-            onTriggered: settings.show()
+            text: qsTr("Settings")
+            onTriggered: settings.open()
         }
     ]
 
+    /*
     rightSidebar: InfoSidebar {
         id: infoSidebar
     }
+    */
 
     FolderListView {
         anchors {
@@ -100,7 +103,7 @@ Page {
         model: folderModel.model
         delegate: FileListItem {}
 
-        Snackbar {
+        InfoBar {
             id: snackbar
             Connections {
                 target: folderModel.model
@@ -110,10 +113,10 @@ Page {
 
         Card {
             id: searchCard
-            width:  Units.dp(300)
-            height: Units.dp(50)
+            width:  300
+            height: 50
             anchors.top: parent.bottom
-            anchors.margins: Units.dp(8)
+            anchors.margins: 8
             anchors.horizontalCenter: parent.horizontalCenter
 
             states: [
@@ -182,8 +185,8 @@ Page {
 
             RowLayout {
                 anchors.fill: parent
-                anchors.margins: Units.dp(8)
-                spacing: Units.dp(16)
+                anchors.margins: 8
+                spacing: 16
                 Icon {
                     name: "action/search"
                 }
@@ -195,7 +198,7 @@ Page {
                         folderModel.model.nameFilters = [ "*" + text + "*" ]
                     }
                     Keys.onPressed: {
-                        if (event.key == Qt.Key_Escape) {
+                        if (event.key === Qt.Key_Escape) {
                             searchCard.state = "inactive"
                         }
                     }
@@ -221,6 +224,7 @@ Page {
             id: nameField
             width: parent.width
             placeholderText: qsTr("New Folder")
+            focus: true
         }
 
         onAccepted: folderModel.model.mkdir(nameField.text ||

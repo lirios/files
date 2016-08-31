@@ -15,11 +15,12 @@
 * You should have received a copy of the GNU General Public License
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
+
 import QtQuick 2.2
+import QtQuick.Controls 2.0
+import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.1
-import Material 0.1
-import Material.Extras 0.1
-import Material.ListItems 0.1 as ListItem
+import Fluid.Controls 1.0
 
 Item {
     id: folderListView
@@ -27,13 +28,14 @@ Item {
     property alias model: listView.model
     property alias delegate: listView.delegate
 
-    View {
+    Pane {
         id: header
 
         visible: listView.count > 0
-        backgroundColor: Theme.backgroundColor
-        elevation: 1
-        fullWidth: true
+        //backgroundColor: Theme.backgroundColor
+        //fullWidth: true
+
+        Material.elevation: 1
 
         anchors {
             left: parent.left
@@ -41,40 +43,40 @@ Item {
             top: parent.top
         }
 
-        height: Units.dp(48)
+        height: 48
 
         RowLayout {
             anchors {
                 left: parent.left
                 right: parent.right
-                margins: Units.dp(16)
+                margins: 16
             }
 
-            height: parent.height - Units.dp(1)
-            spacing: Units.dp(16)
+            height: parent.height - 1
+            spacing: 16
 
             Label {
                 Layout.alignment: Qt.AlignVCenter
                 Layout.fillWidth: true
 
                 text: qsTr("Name")
-                color: Theme.light.subTextColor
+                //color: Theme.light.subTextColor
             }
 
             Label {
                 Layout.alignment: Qt.AlignVCenter
-                Layout.preferredWidth: Units.dp(100)
+                Layout.preferredWidth: 100
 
                 text: qsTr("Type")
-                color: Theme.light.subTextColor
+                //color: Theme.light.subTextColor
             }
 
             Label {
                 Layout.alignment: Qt.AlignVCenter
-                Layout.preferredWidth: Units.dp(100)
+                Layout.preferredWidth: 100
 
                 text: qsTr("Last modified")
-                color: Theme.light.subTextColor
+                //color: Theme.light.subTextColor
             }
         }
     }
@@ -93,22 +95,21 @@ Item {
 
         section.property: "isDir"
         section.criteria: ViewSection.FullString
-        section.delegate: ListItem.Subheader {
+        section.delegate: Subheader {
             text: section === "true" ? qsTr("Directories")
                                      : qsTr("Files")
         }
-    }
 
-    Scrollbar {
-        flickableItem: listView
+        ScrollBar.horizontal: ScrollBar {}
+        ScrollBar.vertical: ScrollBar {}
     }
 
     Label {
         anchors.centerIn: parent
 
         text: qsTr("No files")
-        color: Theme.light.hintColor
-        font.pixelSize: Units.dp(25)
+        //color: Theme.light.hintColor
+        font.pixelSize: 25
 
         visible: listView.count == 0
     }

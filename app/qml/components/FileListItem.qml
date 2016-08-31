@@ -18,43 +18,20 @@
 */
 
 import QtQuick 2.2
+import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.1
-import Material 0.1
-import Material.Extras 0.1
-import Material.ListItems 0.1 as ListItem
+import Fluid.Core 1.0
+import Fluid.Controls 1.0
 
-ListItem.Standard {
+ListItem {
     id: listItem
 
     // TODO : select the right icon for file type.
     iconName: isDir ? "file/folder" : "awesome/file"
     text: folderModel.pathTitle(filePath)
-    selected: isSelected
-
-    secondaryItem: RowLayout {
-        height: parent.height - Units.dp(1)
-        spacing: Units.dp(16)
-
-        Label {
-            Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: Units.dp(100)
-
-            elide: Text.ElideRight
-
-            text: folderModel.fileType(mimeType, mimeTypeDescription)
-                color: Theme.light.subTextColor
-        }
-
-        Label {
-            Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: Units.dp(100)
-
-            elide: Text.ElideRight
-
-            text: DateUtils.friendlyTime(modifiedDate, true)
-            color: Theme.light.subTextColor
-        }
-    }
+    subText: folderModel.fileType(mimeType, mimeTypeDescription)
+    valueText: DateUtils.friendlyTime(modifiedDate, true)
+    highlighted: isSelected
 
     MouseArea {
         anchors.fill: parent
@@ -62,7 +39,7 @@ ListItem.Standard {
         acceptedButtons: Qt.LeftButton | Qt.RightButton
 
         onClicked: {
-            if (mouse.button == Qt.RightButton)
+            if (mouse.button === Qt.RightButton)
                 selectionManager.toggleIndex(index);
             else
                 folderModel.model.openIndex(index)

@@ -19,9 +19,8 @@
 
 import QtQuick 2.2
 import QtQuick.Layouts 1.1
-import Material 0.1
-import Material.Extras 0.1
-import Material.ListItems 0.1 as ListItem
+import Fluid.Core 1.0
+import Fluid.Controls 1.0
 
 ListItem.Standard {
     id: listItem
@@ -44,28 +43,28 @@ ListItem.Standard {
     }
 
     secondaryItem: RowLayout {
-        height: parent.height - Units.dp(1)
-        spacing: Units.dp(16)
+        height: parent.height - 1
+        spacing: 16
 
         Label {
             Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: Units.dp(100)
+            Layout.preferredWidth: 100
 
             elide: Text.ElideRight
 
             text: folderModel.fileType(mimeType,
                 mimeTypeDescription)
-                color: Theme.light.subTextColor
+                //color: Theme.light.subTextColor
         }
 
         Label {
             Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: Units.dp(100)
+            Layout.preferredWidth: 100
 
             elide: Text.ElideRight
 
-            text: DateUtils.friendlyTime(modifiedDate, true)
-            color: Theme.light.subTextColor
+            //text: DateUtils.friendlyTime(modifiedDate, true)
+            //color: Theme.light.subTextColor
         }
     }
 }

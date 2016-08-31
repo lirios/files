@@ -17,9 +17,8 @@
 */
 
 import QtQuick 2.2
-import Material 0.1
-import Material.Extras 0.1
-import Material.ListItems 0.1 as ListItem
+import QtQuick.Controls 2.0
+import Fluid.Controls 1.0
 
 Dialog {
     title: qsTr("Settings")
@@ -42,30 +41,24 @@ Dialog {
                     hiddenCheck.checked = folderModel.model.showHiddenFiles
             }
         }
-        ListItem.SimpleMenu {
-            id: sortByMenu
+        ListItem {
             text: qsTr("Sort by:")
-            model: [qsTr("Name"), qsTr("Date")]
-            selectedIndex: folderModel.model.sortBy
-            // Here we can't just toggle, we need to set the selected option
-            onSelectedIndexChanged: folderModel.model.sortBy = selectedIndex
-
-            Connections {
-                target: folderModel.model
-                onSortByChanged:
-                    sortByMenu.selectedIndex = folderModel.model.sortBy
+            rightItem: ComboBox {
+                id: sortByMenu
+                anchors.centerIn: parent
+                model: [qsTr("Name"), qsTr("Date")]
+                currentIndex: folderModel.model.sortBy
+                onCurrentIndexChanged: folderModel.model.sortBy = currentIndex
             }
         }
-        ListItem.SimpleMenu {
-            id: sortOrderMenu
+        ListItem {
             text: qsTr("Sort order:")
-            model: [qsTr("Ascending"), qsTr("Descending")]
-            onSelectedIndexChanged: folderModel.model.sortOrder = selectedIndex
-
-            Connections {
-                target: folderModel.model
-                onSortOrderChanged:
-                    sortOrderMenu.selectedIndex = folderModel.model.sortOrder
+            rightItem: ComboBox {
+                id: sortOrderMenu
+                anchors.centerIn: parent
+                model: [qsTr("Ascending"), qsTr("Descending")]
+                currentIndex: folderModel.model.sortOrder
+                onCurrentIndexChanged: folderModel.model.sortOrder = currentIndex
             }
         }
     }

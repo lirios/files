@@ -17,19 +17,19 @@
 */
 
 import QtQuick 2.2
+import QtQuick.Controls 2.0
+import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
-import Material 0.1
-import Material.Extras 0.1
-import Material.ListItems 0.1 as ListItem
+import Fluid.Controls 1.0
 
 PageSidebar {
     id: infoSidebar
 
     property var selectedFileIndex
 
-    actionBar.backgroundColor: Palette.colors.blue["600"]
-    width: Units.dp(320)
+    actionBar.backgroundColor: Material.color(Material.Blue, Material.Shade600)
+    width: 320
 
     showing: selectionManager.mode == 0 && selectionManager.counter == 1
 
@@ -41,23 +41,22 @@ PageSidebar {
     }
 
     actionBar.extendedContent: Item {
-        height: Units.dp(72)
+        height: 72
         width: parent.width
 
         ColumnLayout {
             anchors.verticalCenter: parent.verticalCenter
             width: parent.width
 
-            spacing: Units.dp(3)
+            spacing: 3
 
-            Label {
+            SubheadingLabel {
                 Layout.fillWidth: true
 
                 elide: Text.ElideRight
 
                 text: infoSidebar.get_role_info("fileName")
-                style: "subheading"
-                color: Theme.dark.textColor
+                //color: Theme.dark.textColor
             }
 
             Label {
@@ -65,7 +64,7 @@ PageSidebar {
 
                 elide: Text.ElideRight
                 text: qsTr("Edited ") + DateUtils.friendlyTime(infoSidebar.get_role_info("modifiedDate"))
-                color: Theme.dark.subTextColor
+                //color: Theme.dark.subTextColor
             }
         }
     }
@@ -99,25 +98,25 @@ PageSidebar {
             source: visible ? infoSidebar.get_role_info("filePath") : ""
         }
 
-        ListItem.Subheader {
+        Subheader {
             text: qsTr("Info")
         }
 
         Item {
             id: infoItem
 
-            height: infoGrid.height + Units.dp(16)
+            height: infoGrid.height + 16
             width: parent.width
 
             GridLayout {
                 id: infoGrid
 
                 anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width - Units.dp(32)
+                width: parent.width - 32
 
                 columns: 2
-                columnSpacing: Units.dp(32)
-                rowSpacing: Units.dp(16)
+                columnSpacing: 32
+                rowSpacing: 16
 
                 Label {
                     text: qsTr("Location")
@@ -127,7 +126,7 @@ PageSidebar {
                     Layout.fillWidth: true
 
                     text: folderModel.path
-                    color: Theme.light.subTextColor
+                    //color: Theme.light.subTextColor
                 }
 
                 Label {
@@ -143,7 +142,7 @@ PageSidebar {
                         return description.substring(0, 1).toUpperCase() +
                                description.substring(1)
                     }
-                    color: Theme.light.subTextColor
+                    //color: Theme.light.subTextColor
                 }
 
                 Label {
@@ -155,7 +154,7 @@ PageSidebar {
                     Layout.fillWidth: true
 
                     text:  infoSidebar.get_role_info("fileSize")
-                    color: Theme.light.subTextColor
+                    //color: Theme.light.subTextColor
                 }
             }
         }
@@ -170,6 +169,6 @@ PageSidebar {
 
     onShowingChanged: {
         if (showing)
-            app.width = Math.max(app.width, Units.dp(1000))
+            app.width = Math.max(app.width, 1000)
     }
 }
