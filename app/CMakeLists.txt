@@ -14,12 +14,12 @@ set(SOURCES
 
 qt5_add_resources(RESOURCES files.qrc)
 
-add_executable(papyros-files ${SOURCES} ${QML_SOURCES} ${RESOURCES})
-target_link_libraries(papyros-files
+add_executable(liri-files ${SOURCES} ${QML_SOURCES} ${RESOURCES})
+target_link_libraries(liri-files
                       Qt5::Qml
                       Qt5::QuickControls2)
 
-install(TARGETS papyros-files
+install(TARGETS liri-files
         DESTINATION ${BIN_INSTALL_DIR})
-install(FILES io.papyros.Files.desktop
+install(FILES io.liri.Files.desktop
         DESTINATION ${XDG_APPS_INSTALL_DIR})

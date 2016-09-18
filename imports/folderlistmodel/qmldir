@@ -1,2 +1,2 @@
-module Papyros.Files.FolderListModel
+module Liri.Files.FolderListModel
 plugin folderlistmodelplugin

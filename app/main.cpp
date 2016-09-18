@@ -1,5 +1,6 @@
 /*
- * Files app - File manager for Papyros
+ * This file is part of Liri.
+ *
  * Copyright (C) 2015 Michael Spencer <sonrisesoftware@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -38,9 +39,9 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     app.setApplicationName(QLatin1String("Files"));
     app.setApplicationVersion(QLatin1String(FILES_VERSION_STRING));
-    app.setOrganizationDomain(QLatin1String("papyros.io"));
-    app.setOrganizationName(QLatin1String("Papyros"));
-    app.setDesktopFileName(QLatin1String("io.papyros.Files.desktop"));
+    app.setOrganizationDomain(QLatin1String("liri.io"));
+    app.setOrganizationName(QLatin1String("Liri"));
+    app.setDesktopFileName(QLatin1String("io.liri.Files.desktop"));
 
     // Set default style
     if (QQuickStyle::name().isEmpty())
@@ -54,9 +55,9 @@ int main(int argc, char *argv[])
                       QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     app.installTranslator(&qtTranslator);
 
-    QTranslator papyrosFilesTranslator;
-    papyrosFilesTranslator.load(locale, DATA_INSTALL_DIR "/translations");
-    app.installTranslator(&papyrosFilesTranslator);
+    QTranslator liriFilesTranslator;
+    liriFilesTranslator.load(locale, DATA_INSTALL_DIR "/translations");
+    app.installTranslator(&liriFilesTranslator);
 #endif
 
     // Setup QML engine and show the main window

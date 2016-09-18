@@ -1,5 +1,6 @@
 /*
-* Files app - File manager for Papyros
+* This file is part of Liri.
+ *
 * Copyright (C) 2015 Michael Spencer <sonrisesoftware@gmail.com>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -18,9 +19,9 @@
 
 import QtQuick 2.2
 import Fluid.Core 1.0
-import Papyros.Files.Archives 0.1
-import Papyros.Files.FolderListModel 1.0
-import Papyros.Files.PlacesModel 0.1
+import Liri.Files.Archives 0.1
+import Liri.Files.FolderListModel 1.0
+import Liri.Files.PlacesModel 0.1
 
 Object {
     id: folderModel

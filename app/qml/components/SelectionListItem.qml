@@ -1,5 +1,6 @@
 /*
-* Files app - File manager for Papyros
+* This file is part of Liri.
+ *
 * Copyright (C) 2015 Michael Spencer <sonrisesoftware@gmail.com>
 *               2015 Ricardo Vieira <ricardo.vieira@tecnico.ulisboa.pt>
 *

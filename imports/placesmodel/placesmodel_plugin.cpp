@@ -23,7 +23,7 @@
 
 void BackendPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("Papyros.Files.PlacesModel"));
+    Q_ASSERT(uri == QLatin1String("Liri.Files.PlacesModel"));
 
     qmlRegisterType<PlacesModel>(uri, 0, 1, "PlacesModel");
 }

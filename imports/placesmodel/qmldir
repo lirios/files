@@ -1,2 +1,2 @@
-module Papyros.Files.PlacesModel
+module Liri.Files.PlacesModel
 plugin placesmodelplugin

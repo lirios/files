@@ -35,7 +35,7 @@ public:
 
 void ArchivesPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("Papyros.Files.Archives"));
+    Q_ASSERT(uri == QLatin1String("Liri.Files.Archives"));
 
     qmlRegisterType<Archives>(uri, 0, 1, "Archives");
 }

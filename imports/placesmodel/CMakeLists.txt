@@ -14,6 +14,6 @@ target_link_libraries(placesmodelplugin
                       Qt5::Quick)
 
 install(TARGETS placesmodelplugin
-        DESTINATION ${QML_INSTALL_DIR}/Papyros/Files/PlacesModel)
+        DESTINATION ${QML_INSTALL_DIR}/Liri/Files/PlacesModel)
 install(FILES qmldir
-        DESTINATION ${QML_INSTALL_DIR}/Papyros/Files/PlacesModel)
+        DESTINATION ${QML_INSTALL_DIR}/Liri/Files/PlacesModel)

@@ -8,8 +8,7 @@ sudo: required
 
 arch:
   repos:
-    - fluid=https://dl.bintray.com/qmlos/archlinux-develop/$arch/
-    - libqmlos=https://dl.bintray.com/qmlos/archlinux-develop/$arch/
+    - fluid=https://dl.bintray.com/lirios/archlinux-develop/$arch/
   packages:
     - qt5-tools
     - extra-cmake-modules
@@ -30,4 +29,4 @@ script:
 
 notifications:
   email: false
-  slack: qmlos:fdUqVmPzqPskEL1UBhqapZ0w
+  slack: lirios:fdUqVmPzqPskEL1UBhqapZ0w

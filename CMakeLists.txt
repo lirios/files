@@ -17,7 +17,7 @@ set(PROJECT_SOVERSION 0)
 
 if(NOT USE_SUPERBUILD)
     # Set up packaging
-    set(CPACK_PACKAGE_NAME "qmlos-files")
+    set(CPACK_PACKAGE_NAME "liri-files")
     set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
     set(CPACK_GENERATOR "TGZ")
     set(CPACK_SET_DESTDIR FALSE)

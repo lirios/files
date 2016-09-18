@@ -10,6 +10,6 @@ target_link_libraries(archivesplugin
                       Qt5::Quick)
 
 install(TARGETS archivesplugin
-        DESTINATION ${QML_INSTALL_DIR}/Papyros/Files/Archives)
+        DESTINATION ${QML_INSTALL_DIR}/Liri/Files/Archives)
 install(FILES qmldir
-        DESTINATION ${QML_INSTALL_DIR}/Papyros/Files/Archives)
+        DESTINATION ${QML_INSTALL_DIR}/Liri/Files/Archives)

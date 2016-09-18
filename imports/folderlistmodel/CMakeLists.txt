@@ -74,6 +74,6 @@ if(USE_TAG_LIB)
 endif()
 
 install(TARGETS folderlistmodelplugin
-        DESTINATION ${QML_INSTALL_DIR}/Papyros/Files/FolderListModel)
+        DESTINATION ${QML_INSTALL_DIR}/Liri/Files/FolderListModel)
 install(FILES qmldir
-        DESTINATION ${QML_INSTALL_DIR}/Papyros/Files/FolderListModel)
+        DESTINATION ${QML_INSTALL_DIR}/Liri/Files/FolderListModel)
