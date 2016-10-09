@@ -25,6 +25,10 @@ The following modules and their dependencies are required:
  * [ECM >= 1.7.0](http://quickgit.kde.org/?p=extra-cmake-modules.git)
  * [fluid](https://github.com/lirios/fluid)
 
+Optional dependencies:
+
+ * [taglib](https://github.com/taglib/taglib)
+
 ## Installation
 
 From the root of the repository, run:
