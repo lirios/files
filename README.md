@@ -9,7 +9,7 @@ Files
 [![GitHub issues](https://img.shields.io/github/issues/lirios/files.svg)](https://github.com/lirios/files/issues)
 [![Maintained](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/lirios/files/commits/develop)
 
-File manager for Liri OS.
+File manager.
 
 ## Dependencies
 
