@@ -1,5 +1,2 @@
-Makefile
-build
-*~
-*.o
-*.moc
+build/
+*.user

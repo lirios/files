@@ -1,0 +1,2 @@
+module Liri.Files.FolderListModel
+plugin folderlistmodelplugin

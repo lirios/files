@@ -1,7 +1,0 @@
-
-#ifndef CONFIG_H
-#define CONFIG_H
-
-#define DATA_INSTALL_DIR "@CMAKE_INSTALL_PREFIX@/@DATA_DIR@"
-
-#endif // CONFIG_H
