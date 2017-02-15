@@ -33,6 +33,7 @@ Page {
     leftAction: Action {
         iconName: "navigation/arrow_back"
         text: qsTr("Back")
+        toolTip: qsTr("Go back")
         enabled: folderModel.canGoBack
         shortcut: StandardKey.Back
         visible: true
@@ -44,6 +45,7 @@ Page {
         Action {
             iconName: "action/search"
             text: qsTr("Search")
+            toolTip: qsTr("Search files or folders")
             shortcut: StandardKey.Find
             onTriggered: searchCard.state = (searchCard.state === "active" ? "inactive" : "active")
         },
@@ -55,12 +57,14 @@ Page {
         Action {
             iconName: "file/create_new_folder"
             text: qsTr("New folder")
+            toolTip: qsTr("Create a new folder")
             shortcut: StandardKey.New
             onTriggered: confirmNewFolder.open()
         },
         Action {
             iconName: "content/content_paste"
             text: qsTr("Paste")
+            toolTip: qsTr("Paste")
             shortcut: StandardKey.Paste
             enabled: folderModel.model.clipboardUrlsCounter
             visible: enabled
@@ -83,6 +87,7 @@ Page {
         Action {
             iconName: "action/settings"
             text: qsTr("Settings")
+            toolTip: qsTr("Settings")
             onTriggered: settings.open()
         }
     ]
