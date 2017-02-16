@@ -18,11 +18,18 @@
 */
 
 import QtQuick 2.2
-import QtQuick.Controls 2.0
+import QtQuick.Controls 2.1
 import Fluid.Controls 1.0
 
 Dialog {
     title: qsTr("Settings")
+    modal: true
+    focus: true
+
+    x: (parent.width - width) / 2
+    y: (parent.height - height) / 2
+
+    width: 400
 
     Column {
         id: settingsList

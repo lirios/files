@@ -19,7 +19,7 @@
 */
 
 import QtQuick 2.2
-import QtQuick.Controls 2.0
+import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.2
 import Fluid.Controls 1.0
 import "components"
@@ -225,6 +225,14 @@ Page {
     Dialog {
         id: confirmNewFolder
         title: qsTr("Create new folder:")
+        modal: true
+        focus: true
+        standardButtons: Dialog.Ok | Dialog.Cancel
+
+        x: (parent.width - width) / 2
+        y: (parent.height - height) / 2
+
+        width: 280
 
         TextField {
             id: nameField
