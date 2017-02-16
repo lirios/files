@@ -120,7 +120,7 @@ Page {
         Card {
             id: searchCard
             width:  300
-            height: 50
+            height: 48 + 2 * Units.smallSpacing
             anchors.top: parent.bottom
             anchors.margins: 8
             anchors.horizontalCenter: parent.horizontalCenter
@@ -176,6 +176,9 @@ Page {
                         targets: [searchCard]
                         duration: 150
                         easing: Easing.OutQuad
+                    }
+                    ScriptAction {
+                        script: searchField.forceActiveFocus()
                     }
                 },
                 Transition {
