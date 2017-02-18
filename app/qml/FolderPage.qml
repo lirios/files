@@ -29,6 +29,7 @@ Page {
 
     title: folderModel.title
     appBar.elevation: 0
+    appBar.maxActionCount: 0
 
     leftAction: Action {
         iconName: "navigation/arrow_back"
