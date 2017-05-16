@@ -28,8 +28,6 @@
 
 #include <QDebug>
 
-#include "config.h"
-
 int main(int argc, char *argv[])
 {
     // HiDPI support
@@ -38,7 +36,7 @@ int main(int argc, char *argv[])
     // Setup application
     QGuiApplication app(argc, argv);
     app.setApplicationName(QLatin1String("Files"));
-    app.setApplicationVersion(QLatin1String(FILES_VERSION_STRING));
+    app.setApplicationVersion(QLatin1String(FILES_VERSION));
     app.setOrganizationDomain(QLatin1String("liri.io"));
     app.setOrganizationName(QLatin1String("Liri"));
     app.setDesktopFileName(QLatin1String("io.liri.Files.desktop"));
