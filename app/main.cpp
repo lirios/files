@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
     app.setOrganizationDomain(QLatin1String("liri.io"));
     app.setOrganizationName(QLatin1String("Liri"));
     app.setDesktopFileName(QLatin1String("io.liri.Files.desktop"));
+    app.setQuitOnLastWindowClosed(true);
 
     // Set default style
     if (QQuickStyle::name().isEmpty())
