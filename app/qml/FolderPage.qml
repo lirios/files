@@ -21,17 +21,17 @@
 import QtQuick 2.2
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.2
-import Fluid.Controls 1.0
+import Fluid.Controls 1.0 as FluidControls
 import "components"
 
-Page {
+FluidControls.Page {
     id: folderPage
 
     title: folderModel.title
     appBar.elevation: 0
     appBar.maxActionCount: 0
 
-    leftAction: Action {
+    leftAction: FluidControls.Action {
         iconName: "navigation/arrow_back"
         text: qsTr("Back")
         toolTip: qsTr("Go back")
@@ -43,7 +43,7 @@ Page {
     }
 
     actions: [
-        Action {
+        FluidControls.Action {
             iconName: "action/search"
             text: qsTr("Search")
             toolTip: qsTr("Search files or folders")
@@ -51,18 +51,18 @@ Page {
             onTriggered: searchCard.state = (searchCard.state === "active" ? "inactive" : "active")
         },
         // TODO enable when we have other views - ricardomv
-        //Action {
+        //FluidControls.Action {
         //    iconName: "action/list"
         //    text: qsTr("List mode")
         //},
-        Action {
+        FluidControls.Action {
             iconName: "file/create_new_folder"
             text: qsTr("New folder")
             toolTip: qsTr("Create a new folder")
             shortcut: StandardKey.New
             onTriggered: confirmNewFolder.open()
         },
-        Action {
+        FluidControls.Action {
             iconName: "content/content_paste"
             text: qsTr("Paste")
             toolTip: qsTr("Paste")
@@ -71,21 +71,21 @@ Page {
             visible: enabled
             onTriggered: folderModel.model.paste()
         },
-        Action {
+        FluidControls.Action {
             visible: false
             shortcut: "Alt+Up"
             onTriggered: folderModel.model.cdUp()
         },
-        Action {
+        FluidControls.Action {
             visible: false
             shortcut: "Ctrl+H"
             onTriggered: folderModel.model.toggleShowHiddenFiles();
         },
-        //Action {
+        //FluidControls.Action {
         //    iconName: "action/open_in_new"
         //    text: qsTr("Open in Terminal")
         //},
-        Action {
+        FluidControls.Action {
             iconName: "action/settings"
             text: qsTr("Settings")
             toolTip: qsTr("Settings")
@@ -110,7 +110,7 @@ Page {
         model: folderModel.model
         delegate: FileListItem {}
 
-        InfoBar {
+        FluidControls.InfoBar {
             id: snackbar
             Connections {
                 target: folderModel.model
@@ -118,10 +118,10 @@ Page {
             }
         }
 
-        Card {
+        FluidControls.Card {
             id: searchCard
             width:  300
-            height: 48 + 2 * Units.smallSpacing
+            height: 48 + 2 * FluidControls.Units.smallSpacing
             anchors.top: parent.bottom
             anchors.margins: 8
             anchors.horizontalCenter: parent.horizontalCenter
@@ -197,7 +197,7 @@ Page {
                 anchors.fill: parent
                 anchors.margins: 8
                 spacing: 16
-                Icon {
+                FluidControls.Icon {
                     name: "action/search"
                 }
                 TextField {
@@ -214,7 +214,7 @@ Page {
                     }
                 }
 
-                IconButton {
+                FluidControls.IconButton {
                     iconName: "navigation/close"
                     onClicked: searchCard.state = "inactive"
                 }

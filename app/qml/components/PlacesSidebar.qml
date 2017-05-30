@@ -21,9 +21,9 @@
 import QtQuick 2.2
 import QtQuick.Controls.Material 2.0
 import QtGraphicalEffects 1.0
-import Fluid.Controls 1.0
+import Fluid.Controls 1.0 as FluidControls
 
-Sidebar {
+FluidControls.Sidebar {
     id: placesSidebar
 
     Column {
@@ -32,14 +32,14 @@ Sidebar {
             right: parent.right
         }
 
-        Subheader {
+        FluidControls.Subheader {
             text: qsTr("Places")
         }
 
         Repeater {
             model: folderModel.places
 
-            delegate: ListItem {
+            delegate: FluidControls.ListItem {
                 id: listItem
 
                 iconName: folderModel.pathIcon(path)
@@ -50,7 +50,7 @@ Sidebar {
             }
         }
 
-        ListItem {
+        FluidControls.ListItem {
             id: trashItem
 
             iconName: "action/delete"

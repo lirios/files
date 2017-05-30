@@ -19,7 +19,7 @@
 
 import QtQuick 2.2
 import QtQuick.Controls 2.1
-import Fluid.Controls 1.0
+import Fluid.Controls 1.0 as FluidControls
 
 Dialog {
     title: qsTr("Settings")
@@ -49,7 +49,7 @@ Dialog {
                     hiddenCheck.checked = folderModel.model.showHiddenFiles
             }
         }
-        ListItem {
+        FluidControls.ListItem {
             text: qsTr("Sort by:")
             rightItem: ComboBox {
                 id: sortByMenu
@@ -59,7 +59,7 @@ Dialog {
                 onCurrentIndexChanged: folderModel.model.sortBy = currentIndex
             }
         }
-        ListItem {
+        FluidControls.ListItem {
             text: qsTr("Sort order:")
             rightItem: ComboBox {
                 id: sortOrderMenu

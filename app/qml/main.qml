@@ -21,12 +21,12 @@
 import QtQuick 2.2
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Material 2.1
-import Fluid.Controls 1.0
+import Fluid.Controls 1.0 as FluidControls
 import Liri.Files.FolderListModel 1.0
 import "backend"
 import "dialogs"
 
-FluidWindow {
+FluidControls.ApplicationWindow {
     id: app
 
     property FolderListSelection selectionManager: folderModel.model.selectionObject()
@@ -65,7 +65,7 @@ FluidWindow {
         id: settings
     }
 
-    Dialog {
+    FluidControls.AlertDialog {
         id: confirmDialog
 
         property var promise

@@ -20,15 +20,15 @@
 
 import QtQuick 2.2
 import QtQuick.Controls.Material 2.0
-import Fluid.Controls 1.0
+import Fluid.Controls 1.0 as FluidControls
 import "components"
 
-Page {
+FluidControls.Page {
     id: folderPage
 
     title: qsTr("Select files...")
 
-    leftAction: Action {
+    leftAction: FluidControls.Action {
         iconName: "navigation/arrow_back"
         text: qsTr("Back")
 
@@ -40,38 +40,38 @@ Page {
     }
 
     actions: [
-        Action {
+        FluidControls.Action {
             iconName: "content/content_cut"
             text: qsTr("Cut")
             shortcut: StandardKey.Cut
             onTriggered: folderModel.model.cutSelection()
         },
-        Action {
+        FluidControls.Action {
             iconName: "content/content_copy"
             text: qsTr("Copy")
             shortcut: StandardKey.Copy
             onTriggered: folderModel.model.copySelection()
         },
-        Action {
+        FluidControls.Action {
             iconName: "content/content_paste"
             text: qsTr("Paste")
             shortcut: StandardKey.Paste
             onTriggered: folderModel.model.paste()
             enabled: folderModel.model.clipboardUrlsCounter
         },
-        Action {
+        FluidControls.Action {
             iconName: "action/delete"
             text: qsTr("Move to Trash")
             shortcut: StandardKey.Delete
             onTriggered: folderModel.model.moveSelectionToTrash()
         },
-        Action {
+        FluidControls.Action {
             iconName: "content/select_all"
             text: qsTr("Select all")
             shortcut: StandardKey.SelectAll
             onTriggered: selectionManager.selectAll()
         },
-        Action {
+        FluidControls.Action {
             iconName: "content/clear"
             text: qsTr("Clear selection")
             shortcut: StandardKey.Deselect

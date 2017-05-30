@@ -19,15 +19,15 @@
 
 import QtQuick 2.2
 import QtQuick.Controls.Material 2.0
-import Fluid.Controls 1.0
+import Fluid.Controls 1.0 as FluidControls
 import "components"
 
-Page {
+FluidControls.Page {
     id: folderPage
 
     title: qsTr("Trash")
 
-    leftAction: Action {
+    leftAction: FluidControls.Action {
         iconName: "navigation/arrow_back"
         text: qsTr("Back")
 
@@ -40,12 +40,12 @@ Page {
     }
 
     actions: [
-        Action {
+        FluidControls.Action {
             iconName: "content/remove_circle"
             text: qsTr("Empty trash")
             onTriggered: folderModel.model.emptyTrash()
         },
-        Action {
+        FluidControls.Action {
             iconName: "action/restore"
             text: qsTr("Restore trash")
             onTriggered: folderModel.model.restoreTrash()

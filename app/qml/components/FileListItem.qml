@@ -21,17 +21,17 @@
 import QtQuick 2.2
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.1
-import Fluid.Core 1.0
-import Fluid.Controls 1.0
+import Fluid.Core 1.0 as FluidCore
+import Fluid.Controls 1.0 as FluidControls
 
-ListItem {
+FluidControls.ListItem {
     id: listItem
 
     // TODO : select the right icon for file type.
     iconName: isDir ? "file/folder" : "awesome/file"
     text: folderModel.pathTitle(filePath)
     subText: folderModel.fileType(mimeType, mimeTypeDescription)
-    valueText: DateUtils.friendlyTime(modifiedDate, true)
+    valueText: FluidCore.DateUtils.friendlyTime(modifiedDate, true)
     highlighted: isSelected
 
     MouseArea {
