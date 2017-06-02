@@ -36,6 +36,9 @@ int main(int argc, char *argv[])
     // Set default style
     QQuickStyle::setStyle(QLatin1String("Material"));
 
+    // Set the X11 WML_CLASS so X11 desktops can find the desktop file
+    qputenv("RESOURCE_NAME", QByteArrayLiteral("io.liri.Files"));
+
     // Setup application
     QGuiApplication app(argc, argv);
     app.setApplicationName(QLatin1String("Files"));
