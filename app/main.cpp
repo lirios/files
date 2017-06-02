@@ -33,6 +33,9 @@ int main(int argc, char *argv[])
     // HiDPI support
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
+    // Set default style
+    QQuickStyle::setStyle(QLatin1String("Material"));
+
     // Setup application
     QGuiApplication app(argc, argv);
     app.setApplicationName(QLatin1String("Files"));
@@ -41,10 +44,6 @@ int main(int argc, char *argv[])
     app.setOrganizationName(QLatin1String("Liri"));
     app.setDesktopFileName(QLatin1String("io.liri.Files.desktop"));
     app.setQuitOnLastWindowClosed(true);
-
-    // Set default style
-    if (QQuickStyle::name().isEmpty())
-        QQuickStyle::setStyle(QLatin1String("Material"));
 
 #if 0
     QString locale = QLocale::system().name();
