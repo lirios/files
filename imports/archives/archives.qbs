@@ -1,8 +1,8 @@
 import qbs 1.0
 
-LiriDynamicLibrary {
-    name: "Liri.Files.Archives"
-    targetName: "archivesplugin"
+LiriQmlPlugin {
+    name: "archivesplugin"
+    pluginPath: "Liri/Files/Archives"
 
     Depends { name: "lirideployment" }
     Depends { name: "cpp" }
@@ -10,20 +10,5 @@ LiriDynamicLibrary {
 
     cpp.defines: []
 
-    files: ["*.cpp", "*.h"]
-
-    Group {
-        name: "QML Files"
-        files: [
-            "*.qml",
-            "qmldir"
-        ]
-        fileTags: ["qml"]
-    }
-
-    Group {
-        qbs.install: true
-        qbs.installDir: lirideployment.qmlDir + "/Liri/Files/Archives"
-        fileTagsFilter: ["dynamiclibrary", "qml"]
-    }
+    files: ["*.cpp", "*.h", "qmldir", "*.qml"]
 }
