@@ -1,7 +1,7 @@
 import qbs 1.0
 
 Project {
-    name: "Liri Files"
+    name: "Files"
 
     readonly property string version: "0.1.0"
 
