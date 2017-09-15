@@ -20,6 +20,7 @@ env:
 
 arch:
   artifacts:
+    - qbs-shared-artifacts.tar.gz
     - fluid-artifacts.tar.gz
   packages:
     - qbs

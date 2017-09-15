@@ -7,7 +7,7 @@ Project {
 
     minimumQbsVersion: "1.8.0"
 
-    qbsSearchPaths: ["qbs/shared", "qbs/local"]
+    qbsSearchPaths: ["qbs/local"]
 
     references: [
         "app/app.qbs",
