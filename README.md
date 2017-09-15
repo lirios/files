@@ -61,7 +61,7 @@ for more deployment-related parameters.
 
 You can also specify the following options:
 
- * `qbsbuildconfig:enableTaglib=false` to not use taglib to extract tags
+ * `projects.Files.enableTaglib:false` to not use taglib to extract tags
 
 If you specify `qbs.installRoot` you might need to prefix the entire line with `sudo`,
 depending on whether you have permissions to write there or not.
