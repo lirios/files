@@ -5,6 +5,8 @@ Project {
 
     readonly property string version: "0.1.0"
 
+    property bool useStaticAnalyzer: false
+
     property bool enableTaglib: true
 
     minimumQbsVersion: "1.8.0"
