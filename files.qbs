@@ -11,8 +11,6 @@ Project {
 
     minimumQbsVersion: "1.8.0"
 
-    qbsSearchPaths: ["qbs/local"]
-
     references: [
         "app/app.qbs",
         "imports/archives/archives.qbs",
