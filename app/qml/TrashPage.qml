@@ -28,7 +28,7 @@ FluidControls.Page {
     title: qsTr("Trash")
 
     leftAction: FluidControls.Action {
-        iconName: "navigation/arrow_back"
+        icon.name: "navigation/arrow_back"
         text: qsTr("Back")
 
         onTriggered: {
@@ -41,12 +41,12 @@ FluidControls.Page {
 
     actions: [
         FluidControls.Action {
-            iconName: "content/remove_circle"
+            icon.name: "content/remove_circle"
             text: qsTr("Empty trash")
             onTriggered: folderModel.model.emptyTrash()
         },
         FluidControls.Action {
-            iconName: "action/restore"
+            icon.name: "action/restore"
             text: qsTr("Restore trash")
             onTriggered: folderModel.model.restoreTrash()
         }

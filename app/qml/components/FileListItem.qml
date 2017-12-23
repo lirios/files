@@ -28,7 +28,7 @@ FluidControls.ListItem {
     id: listItem
 
     // TODO : select the right icon for file type.
-    iconName: isDir ? "file/folder" : "awesome/file"
+    icon.name: isDir ? "file/folder" : "awesome/file"
     text: folderModel.pathTitle(filePath)
     subText: folderModel.fileType(mimeType, mimeTypeDescription)
     valueText: FluidCore.DateUtils.friendlyTime(modifiedDate, true)

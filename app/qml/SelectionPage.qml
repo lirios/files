@@ -29,7 +29,7 @@ FluidControls.Page {
     title: qsTr("Select files...")
 
     leftAction: FluidControls.Action {
-        iconName: "navigation/arrow_back"
+        icon.name: "navigation/arrow_back"
         text: qsTr("Back")
 
         onTriggered: {
@@ -41,38 +41,38 @@ FluidControls.Page {
 
     actions: [
         FluidControls.Action {
-            iconName: "content/content_cut"
+            icon.name: "content/content_cut"
             text: qsTr("Cut")
             shortcut: StandardKey.Cut
             onTriggered: folderModel.model.cutSelection()
         },
         FluidControls.Action {
-            iconName: "content/content_copy"
+            icon.name: "content/content_copy"
             text: qsTr("Copy")
             shortcut: StandardKey.Copy
             onTriggered: folderModel.model.copySelection()
         },
         FluidControls.Action {
-            iconName: "content/content_paste"
+            icon.name: "content/content_paste"
             text: qsTr("Paste")
             shortcut: StandardKey.Paste
             onTriggered: folderModel.model.paste()
             enabled: folderModel.model.clipboardUrlsCounter
         },
         FluidControls.Action {
-            iconName: "action/delete"
+            icon.name: "action/delete"
             text: qsTr("Move to Trash")
             shortcut: StandardKey.Delete
             onTriggered: folderModel.model.moveSelectionToTrash()
         },
         FluidControls.Action {
-            iconName: "content/select_all"
+            icon.name: "content/select_all"
             text: qsTr("Select all")
             shortcut: StandardKey.SelectAll
             onTriggered: selectionManager.selectAll()
         },
         FluidControls.Action {
-            iconName: "content/clear"
+            icon.name: "content/clear"
             text: qsTr("Clear selection")
             shortcut: StandardKey.Deselect
             onTriggered: selectionManager.clear()

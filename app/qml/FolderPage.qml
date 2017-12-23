@@ -32,7 +32,7 @@ FluidControls.Page {
     appBar.maxActionCount: 0
 
     leftAction: FluidControls.Action {
-        iconName: "navigation/arrow_back"
+        icon.name: "navigation/arrow_back"
         text: qsTr("Back")
         toolTip: qsTr("Go back")
         enabled: folderModel.canGoBack
@@ -44,7 +44,7 @@ FluidControls.Page {
 
     actions: [
         FluidControls.Action {
-            iconName: "action/search"
+            icon.name: "action/search"
             text: qsTr("Search")
             toolTip: qsTr("Search files or folders")
             shortcut: StandardKey.Find
@@ -52,18 +52,18 @@ FluidControls.Page {
         },
         // TODO enable when we have other views - ricardomv
         //FluidControls.Action {
-        //    iconName: "action/list"
+        //    icon.name: "action/list"
         //    text: qsTr("List mode")
         //},
         FluidControls.Action {
-            iconName: "file/create_new_folder"
+            icon.name: "file/create_new_folder"
             text: qsTr("New folder")
             toolTip: qsTr("Create a new folder")
             shortcut: StandardKey.New
             onTriggered: confirmNewFolder.open()
         },
         FluidControls.Action {
-            iconName: "content/content_paste"
+            icon.name: "content/content_paste"
             text: qsTr("Paste")
             toolTip: qsTr("Paste")
             shortcut: StandardKey.Paste
@@ -82,11 +82,11 @@ FluidControls.Page {
             onTriggered: folderModel.model.toggleShowHiddenFiles();
         },
         //FluidControls.Action {
-        //    iconName: "action/open_in_new"
+        //    icon.name: "action/open_in_new"
         //    text: qsTr("Open in Terminal")
         //},
         FluidControls.Action {
-            iconName: "action/settings"
+            icon.name: "action/settings"
             text: qsTr("Settings")
             toolTip: qsTr("Settings")
             onTriggered: settings.open()
@@ -214,8 +214,8 @@ FluidControls.Page {
                     }
                 }
 
-                FluidControls.IconButton {
-                    iconName: "navigation/close"
+                ToolButton {
+                    icon.name: "navigation/close"
                     onClicked: searchCard.state = "inactive"
                 }
             }

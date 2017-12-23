@@ -42,7 +42,7 @@ FluidControls.Sidebar {
             delegate: FluidControls.ListItem {
                 id: listItem
 
-                iconName: folderModel.pathIcon(path)
+                icon.name: folderModel.pathIcon(path)
                 text: folderModel.pathTitle(path)
                 highlighted: folderModel.path == path
 
@@ -53,7 +53,7 @@ FluidControls.Sidebar {
         FluidControls.ListItem {
             id: trashItem
 
-            iconName: "action/delete"
+            icon.name: "action/delete"
             text: qsTr("Trash")
 
             onClicked: pageStack.push(Qt.resolvedUrl("../TrashPage.qml"));
