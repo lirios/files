@@ -7,7 +7,7 @@ Files
 [![GitHub release](https://img.shields.io/github/release/lirios/files.svg)](https://github.com/lirios/files)
 [![Build Status](https://travis-ci.org/lirios/files.svg?branch=develop)](https://travis-ci.org/lirios/files)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/files.svg)](https://github.com/lirios/files/issues)
-[![Maintained](https://img.shields.io/maintenance/yes/2017.svg)](https://github.com/lirios/files/commits/develop)
+[![Maintained](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/lirios/files/commits/develop)
 
 File manager.
 
