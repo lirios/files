@@ -26,6 +26,7 @@ arch:
     - qbs
     - qt5-quickcontrols2
     - qt5-tools
+    - taglib
     - desktop-file-utils
     - xorg-server-xvfb
     - clang
