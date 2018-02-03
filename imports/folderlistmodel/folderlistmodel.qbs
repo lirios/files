@@ -7,18 +7,9 @@ LiriQmlPlugin {
     Depends { name: "Qt"; submodules: ["widgets"] }
     Depends { name: "taglib"; condition: project.enableTaglib; required: false }
 
-    condition: {
-        if (project.enableTaglib && !taglib.present) {
-            console.error("taglib is required");
-            return false;
-        }
-
-        return true;
-    }
-
     cpp.defines: {
         var defines = [];
-        if (project.enableTaglib && !taglib.present)
+        if (project.enableTaglib && !taglib.found)
             defines.push("DO_NOT_USE_TAG_LIB");
         return defines;
     }
