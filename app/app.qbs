@@ -9,11 +9,15 @@ QtGuiApplication {
 
     cpp.defines: base.concat(['FILES_VERSION="' + project.version + '"'])
 
-    files: ["*.cpp", "*.h", "*.qrc"]
+    Qt.core.resourcePrefix: "/"
+    Qt.core.resourceSourceBase: sourceDirectory
+
+    files: ["*.cpp", "*.h"]
 
     Group {
-        name: "QML Files"
-        files: ["qml/*.qml"]
+        name: "Resource Data"
+        files: ["qml/**"]
+        fileTags: ["qt.core.resource_data"]
     }
 
     Group {
