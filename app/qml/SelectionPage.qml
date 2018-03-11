@@ -29,7 +29,7 @@ FluidControls.Page {
     title: qsTr("Select files...")
 
     leftAction: FluidControls.Action {
-        icon.name: "navigation/arrow_back"
+        icon.source: FluidControls.Utils.iconUrl("navigation/arrow_back")
         text: qsTr("Back")
 
         onTriggered: {
@@ -41,38 +41,38 @@ FluidControls.Page {
 
     actions: [
         FluidControls.Action {
-            icon.name: "content/content_cut"
+            icon.source: FluidControls.Utils.iconUrl("content/content_cut")
             text: qsTr("Cut")
             shortcut: StandardKey.Cut
             onTriggered: folderModel.model.cutSelection()
         },
         FluidControls.Action {
-            icon.name: "content/content_copy"
+            icon.source: FluidControls.Utils.iconUrl("content/content_copy")
             text: qsTr("Copy")
             shortcut: StandardKey.Copy
             onTriggered: folderModel.model.copySelection()
         },
         FluidControls.Action {
-            icon.name: "content/content_paste"
+            icon.source: FluidControls.Utils.iconUrl("content/content_paste")
             text: qsTr("Paste")
             shortcut: StandardKey.Paste
             onTriggered: folderModel.model.paste()
             enabled: folderModel.model.clipboardUrlsCounter
         },
         FluidControls.Action {
-            icon.name: "action/delete"
+            icon.source: FluidControls.Utils.iconUrl("action/delete")
             text: qsTr("Move to Trash")
             shortcut: StandardKey.Delete
             onTriggered: folderModel.model.moveSelectionToTrash()
         },
         FluidControls.Action {
-            icon.name: "content/select_all"
+            icon.source: FluidControls.Utils.iconUrl("content/select_all")
             text: qsTr("Select all")
             shortcut: StandardKey.SelectAll
             onTriggered: selectionManager.selectAll()
         },
         FluidControls.Action {
-            icon.name: "content/clear"
+            icon.source: FluidControls.Utils.iconUrl("content/clear")
             text: qsTr("Clear selection")
             shortcut: StandardKey.Deselect
             onTriggered: selectionManager.clear()

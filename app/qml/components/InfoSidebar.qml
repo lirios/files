@@ -72,11 +72,11 @@ PageSidebar {
 
     actions: [
         FluidControls.Action {
-            icon.name: "social/share"
+            icon.source: FluidControls.Utils.iconUrl("social/share")
         },
 
         FluidControls.Action {
-            icon.name: "action/delete"
+            icon.source: FluidControls.Utils.iconUrl("action/delete")
             onTriggered: confirmAction("", qsTr("Are you sure you want to permanently delete \"%1\"?")
                     .arg(infoSidebar.get_role_info("fileName")), qsTr("Delete")).done(function() {
                 folderModel.model.removeIndex(selectedFileIndex)

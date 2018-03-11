@@ -32,7 +32,7 @@ FluidControls.Page {
     appBar.maxActionCount: 0
 
     leftAction: FluidControls.Action {
-        icon.name: "navigation/arrow_back"
+        icon.source: FluidControls.Utils.iconUrl("navigation/arrow_back")
         text: qsTr("Back")
         toolTip: qsTr("Go back")
         enabled: folderModel.canGoBack
@@ -44,7 +44,7 @@ FluidControls.Page {
 
     actions: [
         FluidControls.Action {
-            icon.name: "action/search"
+            icon.source: FluidControls.Utils.iconUrl("action/search")
             text: qsTr("Search")
             toolTip: qsTr("Search files or folders")
             shortcut: StandardKey.Find
@@ -52,18 +52,18 @@ FluidControls.Page {
         },
         // TODO enable when we have other views - ricardomv
         //FluidControls.Action {
-        //    icon.name: "action/list"
+        //    icon.source: FluidControls.Utils.iconUrl("action/list")
         //    text: qsTr("List mode")
         //},
         FluidControls.Action {
-            icon.name: "file/create_new_folder"
+            icon.source: FluidControls.Utils.iconUrl("file/create_new_folder")
             text: qsTr("New folder")
             toolTip: qsTr("Create a new folder")
             shortcut: StandardKey.New
             onTriggered: confirmNewFolder.open()
         },
         FluidControls.Action {
-            icon.name: "content/content_paste"
+            icon.source: FluidControls.Utils.iconUrl("content/content_paste")
             text: qsTr("Paste")
             toolTip: qsTr("Paste")
             shortcut: StandardKey.Paste
@@ -82,11 +82,11 @@ FluidControls.Page {
             onTriggered: folderModel.model.toggleShowHiddenFiles();
         },
         //FluidControls.Action {
-        //    icon.name: "action/open_in_new"
+        //    icon.source: FluidControls.Utils.iconUrl("action/open_in_new")
         //    text: qsTr("Open in Terminal")
         //},
         FluidControls.Action {
-            icon.name: "action/settings"
+            icon.source: FluidControls.Utils.iconUrl("action/settings")
             text: qsTr("Settings")
             toolTip: qsTr("Settings")
             onTriggered: settings.open()
@@ -110,7 +110,7 @@ FluidControls.Page {
         model: folderModel.model
         delegate: FileListItem {}
 
-        FluidControls.InfoBar {
+        FluidControls.SnackBar {
             id: snackbar
             Connections {
                 target: folderModel.model
@@ -215,7 +215,7 @@ FluidControls.Page {
                 }
 
                 ToolButton {
-                    icon.name: "navigation/close"
+                    icon.source: FluidControls.Utils.iconUrl("navigation/close")
                     onClicked: searchCard.state = "inactive"
                 }
             }
