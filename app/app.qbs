@@ -27,7 +27,7 @@ QtGuiApplication {
     }
 
     Group {
-        condition: qbs.hostOS.contains("linux")
+        condition: qbs.targetOS.contains("linux")
         name: "Desktop File"
         files: ["io.liri.Files.desktop"]
         qbs.install: true
