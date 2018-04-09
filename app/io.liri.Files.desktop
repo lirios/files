@@ -10,4 +10,3 @@ Terminal=false
 Type=Application
 StartupWMClass=liri-files
 Categories=X-Liri;Qt;Utility;Core;FileManager;
-OnlyShowIn=X-Liri
