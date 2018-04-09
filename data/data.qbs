@@ -14,4 +14,14 @@ Product {
         qbs.install: true
         qbs.installDir: lirideployment.applicationsDir
     }
+
+    Group {
+        condition: qbs.targetOS.contains("unix") &&
+                   !qbs.targetOS.contains("android") &&
+                   !qbs.targetOS.contains("macos")
+        name: "AppStream Metadata"
+        files: ["io.liri.Files.appdata.xml"]
+        qbs.install: true
+        qbs.installDir: lirideployment.appDataDir
+    }
 }

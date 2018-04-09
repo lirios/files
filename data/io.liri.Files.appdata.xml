@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>io.liri.Files.desktop</id>
+  <name>Files</name>
+  <developer_name>Liri</developer_name>
+  <summary>Access and organize files</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <description>
+    <p>
+      Liri Files is the default file manager of the Liri desktop.
+      It provides a simple way to manage your files and browse your file system.
+    </p>
+  </description>
+  <categories>
+    <category>System</category>
+  </categories>
+  <launchable type="desktop-id">io.liri.Files.desktop</launchable>
+  <provides>
+    <binary>liri-files</binary>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://liri.io/images/apps/files/screen_home_01.png</image>
+    </screenshot>
+  </screenshots>
+  <kudos>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+  <releases>
+    <release date="2017-01-28" version="0.1.0"/>
+  </releases>
+  <url type="homepage">https://liri.io</url>
+  <url type="bugtracker">https://github.com/lirios/files/issues/new</url>
+  <update_contact>info_at_liri.io</update_contact>
+</component>
