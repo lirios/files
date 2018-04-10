@@ -9,7 +9,7 @@ Project {
 
     property bool enableTaglib: true
 
-    minimumQbsVersion: "1.8.0"
+    minimumQbsVersion: "1.9.0"
 
     references: [
         "app/app.qbs",
