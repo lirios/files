@@ -13,7 +13,6 @@ Project {
 
     references: [
         "app/app.qbs",
-        "data/data.qbs",
         "imports/archives/archives.qbs",
         "imports/folderlistmodel/folderlistmodel.qbs",
         "imports/placesmodel/placesmodel.qbs",

@@ -21,6 +21,28 @@ QtGuiApplication {
     }
 
     Group {
+        condition: qbs.targetOS.contains("unix") &&
+                   !qbs.targetOS.contains("android") &&
+                   !qbs.targetOS.contains("macos")
+        name: "Desktop File"
+        prefix: "../data/"
+        files: ["io.liri.Files.desktop"]
+        qbs.install: true
+        qbs.installDir: lirideployment.applicationsDir
+    }
+
+    Group {
+        condition: qbs.targetOS.contains("unix") &&
+                   !qbs.targetOS.contains("android") &&
+                   !qbs.targetOS.contains("macos")
+        name: "AppStream Metadata"
+        prefix: "../data/"
+        files: ["io.liri.Files.appdata.xml"]
+        qbs.install: true
+        qbs.installDir: lirideployment.appDataDir
+    }
+
+    Group {
         qbs.install: true
         qbs.installDir: lirideployment.binDir
         fileTagsFilter: product.type
