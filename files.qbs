@@ -3,7 +3,7 @@ import qbs 1.0
 Project {
     name: "Files"
 
-    readonly property string version: "0.1.0"
+    readonly property string version: "0.2.0"
 
     property bool useStaticAnalyzer: false
 
