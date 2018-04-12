@@ -5,9 +5,9 @@ Files
 
 [![License](https://img.shields.io/badge/license-GPLv3.0%2B-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![GitHub release](https://img.shields.io/github/release/lirios/files.svg)](https://github.com/lirios/files)
-[![Build Status](https://travis-ci.org/lirios/files.svg?branch=develop)](https://travis-ci.org/lirios/files)
+[![Build Status](https://travis-ci.org/lirios/files.svg?branch=master)](https://travis-ci.org/lirios/files)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/files.svg)](https://github.com/lirios/files/issues)
-[![Maintained](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/lirios/files/commits/develop)
+[![Maintained](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/lirios/files/commits/master)
 
 File manager.
 
