@@ -28,6 +28,7 @@
     <kudo>ModernToolkit</kudo>
   </kudos>
   <releases>
+    <release date="2018-04-12" version="0.2.0"/>
     <release date="2017-01-28" version="0.1.0"/>
   </releases>
   <url type="homepage">https://liri.io</url>
