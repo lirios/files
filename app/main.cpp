@@ -28,24 +28,25 @@
 
 #include <QDebug>
 
-#include "config.h"
-
 int main(int argc, char *argv[])
 {
     // HiDPI support
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
+    // Set default style
+    QQuickStyle::setStyle(QLatin1String("Material"));
+
+    // Set the X11 WML_CLASS so X11 desktops can find the desktop file
+    qputenv("RESOURCE_NAME", QByteArrayLiteral("io.liri.Files"));
+
     // Setup application
     QGuiApplication app(argc, argv);
     app.setApplicationName(QLatin1String("Files"));
-    app.setApplicationVersion(QLatin1String(FILES_VERSION_STRING));
+    app.setApplicationVersion(QLatin1String(FILES_VERSION));
     app.setOrganizationDomain(QLatin1String("liri.io"));
     app.setOrganizationName(QLatin1String("Liri"));
     app.setDesktopFileName(QLatin1String("io.liri.Files.desktop"));
-
-    // Set default style
-    if (QQuickStyle::name().isEmpty())
-        QQuickStyle::setStyle(QLatin1String("Material"));
+    app.setQuitOnLastWindowClosed(true);
 
 #if 0
     QString locale = QLocale::system().name();

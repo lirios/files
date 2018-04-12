@@ -22,7 +22,7 @@ import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
-import Fluid.Controls 1.0
+import Fluid.Controls 1.0 as FluidControls
 
 PageSidebar {
     id: infoSidebar
@@ -51,7 +51,7 @@ PageSidebar {
 
             spacing: 3
 
-            SubheadingLabel {
+            FluidControls.SubheadingLabel {
                 Layout.fillWidth: true
 
                 elide: Text.ElideRight
@@ -71,12 +71,12 @@ PageSidebar {
     }
 
     actions: [
-        Action {
-            iconName: "social/share"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("social/share")
         },
 
-        Action {
-            iconName: "action/delete"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("action/delete")
             onTriggered: confirmAction("", qsTr("Are you sure you want to permanently delete \"%1\"?")
                     .arg(infoSidebar.get_role_info("fileName")), qsTr("Delete")).done(function() {
                 folderModel.model.removeIndex(selectedFileIndex)
@@ -99,7 +99,7 @@ PageSidebar {
             source: visible ? infoSidebar.get_role_info("filePath") : ""
         }
 
-        Subheader {
+        FluidControls.Subheader {
             text: qsTr("Info")
         }
 
@@ -160,7 +160,7 @@ PageSidebar {
             }
         }
 
-        ThinDivider {}
+        FluidControls.ThinDivider {}
 
     }
 

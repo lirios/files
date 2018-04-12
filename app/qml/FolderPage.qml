@@ -19,20 +19,22 @@
 */
 
 import QtQuick 2.2
-import QtQuick.Controls 2.0
+import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.2
-import Fluid.Controls 1.0
+import Fluid.Controls 1.0 as FluidControls
 import "components"
 
-Page {
+FluidControls.Page {
     id: folderPage
 
     title: folderModel.title
     appBar.elevation: 0
+    appBar.maxActionCount: 0
 
-    leftAction: Action {
-        iconName: "navigation/arrow_back"
+    leftAction: FluidControls.Action {
+        icon.source: FluidControls.Utils.iconUrl("navigation/arrow_back")
         text: qsTr("Back")
+        toolTip: qsTr("Go back")
         enabled: folderModel.canGoBack
         shortcut: StandardKey.Back
         visible: true
@@ -41,48 +43,52 @@ Page {
     }
 
     actions: [
-        Action {
-            iconName: "action/search"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("action/search")
             text: qsTr("Search")
+            toolTip: qsTr("Search files or folders")
             shortcut: StandardKey.Find
             onTriggered: searchCard.state = (searchCard.state === "active" ? "inactive" : "active")
         },
         // TODO enable when we have other views - ricardomv
-        //Action {
-        //    iconName: "action/list"
+        //FluidControls.Action {
+        //    icon.source: FluidControls.Utils.iconUrl("action/list")
         //    text: qsTr("List mode")
         //},
-        Action {
-            iconName: "file/create_new_folder"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("file/create_new_folder")
             text: qsTr("New folder")
+            toolTip: qsTr("Create a new folder")
             shortcut: StandardKey.New
             onTriggered: confirmNewFolder.open()
         },
-        Action {
-            iconName: "content/content_paste"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("content/content_paste")
             text: qsTr("Paste")
+            toolTip: qsTr("Paste")
             shortcut: StandardKey.Paste
             enabled: folderModel.model.clipboardUrlsCounter
             visible: enabled
             onTriggered: folderModel.model.paste()
         },
-        Action {
+        FluidControls.Action {
             visible: false
             shortcut: "Alt+Up"
             onTriggered: folderModel.model.cdUp()
         },
-        Action {
+        FluidControls.Action {
             visible: false
             shortcut: "Ctrl+H"
             onTriggered: folderModel.model.toggleShowHiddenFiles();
         },
-        //Action {
-        //    iconName: "action/open_in_new"
+        //FluidControls.Action {
+        //    icon.source: FluidControls.Utils.iconUrl("action/open_in_new")
         //    text: qsTr("Open in Terminal")
         //},
-        Action {
-            iconName: "action/settings"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("action/settings")
             text: qsTr("Settings")
+            toolTip: qsTr("Settings")
             onTriggered: settings.open()
         }
     ]
@@ -104,7 +110,7 @@ Page {
         model: folderModel.model
         delegate: FileListItem {}
 
-        InfoBar {
+        FluidControls.SnackBar {
             id: snackbar
             Connections {
                 target: folderModel.model
@@ -112,10 +118,10 @@ Page {
             }
         }
 
-        Card {
+        FluidControls.Card {
             id: searchCard
             width:  300
-            height: 50
+            height: 48 + 2 * FluidControls.Units.smallSpacing
             anchors.top: parent.bottom
             anchors.margins: 8
             anchors.horizontalCenter: parent.horizontalCenter
@@ -172,6 +178,9 @@ Page {
                         duration: 150
                         easing: Easing.OutQuad
                     }
+                    ScriptAction {
+                        script: searchField.forceActiveFocus()
+                    }
                 },
                 Transition {
                     to: "inactive"
@@ -188,7 +197,7 @@ Page {
                 anchors.fill: parent
                 anchors.margins: 8
                 spacing: 16
-                Icon {
+                FluidControls.Icon {
                     name: "action/search"
                 }
                 TextField {
@@ -205,8 +214,8 @@ Page {
                     }
                 }
 
-                IconButton {
-                    iconName: "navigation/close"
+                ToolButton {
+                    icon.source: FluidControls.Utils.iconUrl("navigation/close")
                     onClicked: searchCard.state = "inactive"
                 }
             }
@@ -220,6 +229,14 @@ Page {
     Dialog {
         id: confirmNewFolder
         title: qsTr("Create new folder:")
+        modal: true
+        focus: true
+        standardButtons: Dialog.Ok | Dialog.Cancel
+
+        x: (parent.width - width) / 2
+        y: (parent.height - height) / 2
+
+        width: 280
 
         TextField {
             id: nameField

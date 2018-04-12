@@ -20,16 +20,16 @@
 
 import QtQuick 2.2
 import QtQuick.Controls.Material 2.0
-import Fluid.Controls 1.0
+import Fluid.Controls 1.0 as FluidControls
 import "components"
 
-Page {
+FluidControls.Page {
     id: folderPage
 
     title: qsTr("Select files...")
 
-    leftAction: Action {
-        iconName: "navigation/arrow_back"
+    leftAction: FluidControls.Action {
+        icon.source: FluidControls.Utils.iconUrl("navigation/arrow_back")
         text: qsTr("Back")
 
         onTriggered: {
@@ -40,39 +40,39 @@ Page {
     }
 
     actions: [
-        Action {
-            iconName: "content/content_cut"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("content/content_cut")
             text: qsTr("Cut")
             shortcut: StandardKey.Cut
             onTriggered: folderModel.model.cutSelection()
         },
-        Action {
-            iconName: "content/content_copy"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("content/content_copy")
             text: qsTr("Copy")
             shortcut: StandardKey.Copy
             onTriggered: folderModel.model.copySelection()
         },
-        Action {
-            iconName: "content/content_paste"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("content/content_paste")
             text: qsTr("Paste")
             shortcut: StandardKey.Paste
             onTriggered: folderModel.model.paste()
             enabled: folderModel.model.clipboardUrlsCounter
         },
-        Action {
-            iconName: "action/delete"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("action/delete")
             text: qsTr("Move to Trash")
             shortcut: StandardKey.Delete
             onTriggered: folderModel.model.moveSelectionToTrash()
         },
-        Action {
-            iconName: "content/select_all"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("content/select_all")
             text: qsTr("Select all")
             shortcut: StandardKey.SelectAll
             onTriggered: selectionManager.selectAll()
         },
-        Action {
-            iconName: "content/clear"
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("content/clear")
             text: qsTr("Clear selection")
             shortcut: StandardKey.Deselect
             onTriggered: selectionManager.clear()
