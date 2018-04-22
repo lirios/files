@@ -54,8 +54,8 @@ FluidControls.Page {
 
     appBar {
         elevation: 0
-        //backgroundColor: Material.color(Material.Green, Material.Shade500)
-        //decorationColor: Material.color(Material.Green, Material.Shade700)
+        backgroundColor: Material.color(Material.Green, Material.Shade500)
+        decorationColor: Material.color(Material.Green, Material.Shade700)
     }
 
     FolderListView {
