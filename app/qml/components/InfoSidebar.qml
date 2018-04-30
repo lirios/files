@@ -57,7 +57,6 @@ PageSidebar {
                 elide: Text.ElideRight
 
                 text: infoSidebar.get_role_info("fileName")
-                //color: Theme.dark.textColor
             }
 
             Label {
@@ -65,7 +64,7 @@ PageSidebar {
 
                 elide: Text.ElideRight
                 text: qsTr("Edited ") + DateUtils.friendlyTime(infoSidebar.get_role_info("modifiedDate"))
-                //color: Theme.dark.subTextColor
+                color: Material.secondaryTextColor
             }
         }
     }
@@ -127,7 +126,7 @@ PageSidebar {
                     Layout.fillWidth: true
 
                     text: folderModel.path
-                    //color: Theme.light.subTextColor
+                    color: Material.secondaryTextColor
                 }
 
                 Label {
@@ -143,7 +142,7 @@ PageSidebar {
                         return description.substring(0, 1).toUpperCase() +
                                description.substring(1)
                     }
-                    //color: Theme.light.subTextColor
+                    color: Material.secondaryTextColor
                 }
 
                 Label {
@@ -155,7 +154,7 @@ PageSidebar {
                     Layout.fillWidth: true
 
                     text:  infoSidebar.get_role_info("fileSize")
-                    //color: Theme.light.subTextColor
+                    color: Material.secondaryTextColor
                 }
             }
         }

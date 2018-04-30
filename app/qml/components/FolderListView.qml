@@ -33,8 +33,6 @@ Item {
         id: header
 
         visible: listView.count > 0
-        //backgroundColor: Theme.backgroundColor
-        //fullWidth: true
 
         Material.elevation: 1
 
@@ -61,7 +59,7 @@ Item {
                 Layout.fillWidth: true
 
                 text: qsTr("Name")
-                //color: Theme.light.subTextColor
+                color: Material.secondaryTextColor
             }
 
             Label {
@@ -69,7 +67,7 @@ Item {
                 Layout.preferredWidth: 100
 
                 text: qsTr("Type")
-                //color: Theme.light.subTextColor
+                color: Material.secondaryTextColor
             }
 
             Label {
@@ -77,7 +75,7 @@ Item {
                 Layout.preferredWidth: 100
 
                 text: qsTr("Last modified")
-                //color: Theme.light.subTextColor
+                color: Material.secondaryTextColor
             }
         }
     }
@@ -109,7 +107,7 @@ Item {
         anchors.centerIn: parent
 
         text: qsTr("No files")
-        //color: Theme.light.hintColor
+        color: Material.hintTextColor
         font.pixelSize: 25
 
         visible: listView.count == 0
