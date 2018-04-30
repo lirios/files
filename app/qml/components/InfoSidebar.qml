@@ -32,7 +32,7 @@ PageSidebar {
     actionBar.backgroundColor: Material.color(Material.Blue, Material.Shade600)
     width: 320
 
-    showing: selectionManager.mode == 0 && selectionManager.counter == 1
+    showing: selectionManager.mode === 0 && selectionManager.counter === 1
 
     Connections {
         target: selectionManager
@@ -93,7 +93,7 @@ PageSidebar {
             height: Math.min(width * sourceSize.height/sourceSize.width,
                              width)
 
-            visible: infoSidebar.get_role_info("mimeType").indexOf("image/") == 0
+            visible: infoSidebar.get_role_info("mimeType").indexOf("image/") === 0
 
             source: visible ? infoSidebar.get_role_info("filePath") : ""
         }
