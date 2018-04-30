@@ -44,15 +44,15 @@ FluidControls.ApplicationWindow {
     Material.accent: Material.LightBlue
 
     function confirmAction(title, text, primaryButton, color) {
-        confirmDialog.promise = new Promises.Promise()
+        confirmDialog.promise = new Promises.Promise();
 
-        confirmDialog.title = title
-        confirmDialog.text = text
-        confirmDialog.positiveButtonText = primaryButton
+        confirmDialog.title = title;
+        confirmDialog.text = text;
+        confirmDialog.positiveButtonText = primaryButton;
 
-        confirmDialog.show()
+        confirmDialog.show();
 
-        return confirmDialog.promise
+        return confirmDialog.promise;
     }
 
     FolderModel {

@@ -43,7 +43,7 @@ FluidControls.ListItem {
             if (mouse.button === Qt.RightButton)
                 selectionManager.toggleIndex(index);
             else
-                folderModel.model.openIndex(index)
+                folderModel.model.openIndex(index);
         }
 
         onPressAndHold: {

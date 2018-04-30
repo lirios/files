@@ -32,10 +32,10 @@ FluidControls.Page {
         text: qsTr("Back")
 
         onTriggered: {
-            selectionManager.clear()
-            selectionManager.setMultiSelection(false)
-            folderModel.goBack()
-            folderPage.pop()
+            selectionManager.clear();
+            selectionManager.setMultiSelection(false);
+            folderModel.goBack();
+            folderPage.pop();
         }
     }
 
