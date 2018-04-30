@@ -18,8 +18,8 @@
 */
 
 import QtQuick 2.2
-import QtQuick.Controls 2.0
-import QtQuick.Controls.Material 2.0
+import QtQuick.Controls 2.3
+import QtQuick.Controls.Material 2.3
 import QtQuick.Layouts 1.1
 import Fluid.Controls 1.0 as FluidControls
 
@@ -80,9 +80,7 @@ Item {
         }
     }
 
-    ListView {
-        id: listView
-
+    ScrollView {
         anchors {
             left: parent.left
             right: parent.right
@@ -92,15 +90,16 @@ Item {
 
         clip: true
 
-        section.property: "isDir"
-        section.criteria: ViewSection.FullString
-        section.delegate: FluidControls.Subheader {
-            text: section === "true" ? qsTr("Directories")
-                                     : qsTr("Files")
-        }
+        ListView {
+            id: listView
 
-        ScrollBar.horizontal: ScrollBar {}
-        ScrollBar.vertical: ScrollBar {}
+            section.property: "isDir"
+            section.criteria: ViewSection.FullString
+            section.delegate: FluidControls.Subheader {
+                text: section === "true" ? qsTr("Directories")
+                                         : qsTr("Files")
+            }
+        }
     }
 
     Label {
