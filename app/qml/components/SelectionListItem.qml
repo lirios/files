@@ -1,6 +1,7 @@
 /*
 * This file is part of Liri.
  *
+* Copyright (C) 2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 * Copyright (C) 2015 Michael Spencer <sonrisesoftware@gmail.com>
 *               2015 Ricardo Vieira <ricardo.vieira@tecnico.ulisboa.pt>
 *
@@ -19,11 +20,12 @@
 */
 
 import QtQuick 2.2
-import QtQuick.Layouts 1.1
-import Fluid.Core 1.0
-import Fluid.Controls 1.0
+import QtQuick.Controls 2.0
+import QtQuick.Controls.Material 2.0
+import Fluid.Core 1.0 as FluidCore
+import Fluid.Controls 1.0 as FluidControls
 
-ListItem.Standard {
+FluidControls.ListItem {
     id: listItem
 
     // TODO : select the right icon for file type.
@@ -33,7 +35,7 @@ ListItem.Standard {
         selectionManager.toggleIndex(index);
     }
 
-    action: CheckBox {
+    leftItem: CheckBox {
         id: checkBox
         anchors {
             verticalCenter: parent.verticalCenter
@@ -43,29 +45,21 @@ ListItem.Standard {
         enabled: false
     }
 
-    secondaryItem: RowLayout {
-        height: parent.height - 1
+    secondaryItem: Row {
         spacing: 16
 
         Label {
-            Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: 100
-
+            width: 100
+            text: folderModel.fileType(mimeType, mimeTypeDescription)
             elide: Text.ElideRight
-
-            text: folderModel.fileType(mimeType,
-                mimeTypeDescription)
-                //color: Theme.light.subTextColor
+            color: Material.secondaryTextColor
         }
 
         Label {
-            Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: 100
-
+            width: 100
+            text: FluidCore.DateUtils.friendlyTime(modifiedDate, true)
             elide: Text.ElideRight
-
-            //text: DateUtils.friendlyTime(modifiedDate, true)
-            //color: Theme.light.subTextColor
+            color: Material.secondaryTextColor
         }
     }
 }
