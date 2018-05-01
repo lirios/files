@@ -19,7 +19,7 @@
 */
 
 import QtQuick 2.2
-import Fluid.Controls 1.0 as FluidControls
+import Fluid.Controls 1.1 as FluidControls
 
 FluidControls.Sidebar {
     id: placesSidebar

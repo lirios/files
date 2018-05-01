@@ -21,7 +21,7 @@
 import QtQuick 2.2
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.2
-import Fluid.Controls 1.0 as FluidControls
+import Fluid.Controls 1.1 as FluidControls
 import "components"
 
 FluidControls.Page {
