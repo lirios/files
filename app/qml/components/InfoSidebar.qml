@@ -166,6 +166,14 @@ FluidControls.PageSidebar {
     }
 
     function get_role_info(role) {
-        return folderModel.model.data(infoSidebar.selectedFileIndex, role) || "";
+        var result = folderModel.model.data(infoSidebar.selectedFileIndex, role) || "";
+
+        // Return valid URLs for filePath
+        if (role === "filePath") {
+            if (result.startsWith("/"))
+                return "file://" + result;
+        }
+
+        return result;
     }
 }
