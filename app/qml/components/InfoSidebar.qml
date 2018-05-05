@@ -21,29 +21,21 @@ import QtQuick 2.2
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.0
+import Fluid.Core 1.0 as FluidCore
 import Fluid.Controls 1.1 as FluidControls
 
-PageSidebar {
+FluidControls.PageSidebar {
     id: infoSidebar
 
     property var selectedFileIndex
 
-    actionBar.backgroundColor: Material.color(Material.Blue, Material.Shade600)
+    appBar.backgroundColor: Material.color(Material.Blue, Material.Shade600)
+
     width: 320
 
-    showing: selectionManager.mode === 0 && selectionManager.counter === 1
-
-    Connections {
-        target: selectionManager
-        onSelectionChanged: {
-            selectedFileIndex = selectionManager.selectedIndexes()[0]
-        }
-    }
-
-    actionBar.extendedContent: Item {
-        height: 72
+    appBar.extendedContent: Item {
         width: parent.width
+        height: 72
 
         ColumnLayout {
             anchors.verticalCenter: parent.verticalCenter
@@ -63,7 +55,7 @@ PageSidebar {
                 Layout.fillWidth: true
 
                 elide: Text.ElideRight
-                text: qsTr("Edited ") + DateUtils.friendlyTime(infoSidebar.get_role_info("modifiedDate"))
+                text: qsTr("Edited ") + FluidCore.DateUtils.friendlyTime(infoSidebar.get_role_info("modifiedDate"), true)
                 color: Material.secondaryTextColor
             }
         }
@@ -72,16 +64,26 @@ PageSidebar {
     actions: [
         FluidControls.Action {
             icon.source: FluidControls.Utils.iconUrl("social/share")
+            toolTip: qsTr("Share")
         },
-
         FluidControls.Action {
             icon.source: FluidControls.Utils.iconUrl("action/delete")
+            toolTip: qsTr("Delete")
             onTriggered: confirmAction("", qsTr("Are you sure you want to permanently delete \"%1\"?")
                     .arg(infoSidebar.get_role_info("fileName")), qsTr("Delete")).done(function() {
                 folderModel.model.removeIndex(selectedFileIndex)
             })
         }
     ]
+
+    showing: selectionManager.mode === 0 && selectionManager.counter === 1
+
+    Connections {
+        target: selectionManager
+        onSelectionChanged: {
+            selectedFileIndex = selectionManager.selectedIndexes()[0];
+        }
+    }
 
     Column {
         anchors.fill: parent
@@ -105,8 +107,8 @@ PageSidebar {
         Item {
             id: infoItem
 
-            height: infoGrid.height + 16
             width: parent.width
+            height: infoGrid.height + 16
 
             GridLayout {
                 id: infoGrid
@@ -137,10 +139,11 @@ PageSidebar {
                     Layout.fillWidth: true
 
                     text: {
-                        var description = infoSidebar.get_role_info("mimeTypeDescription")
-
+                        var description = infoSidebar.get_role_info("mimeTypeDescription");
+                        if (!description)
+                            return "";
                         return description.substring(0, 1).toUpperCase() +
-                               description.substring(1)
+                               description.substring(1);
                     }
                     color: Material.secondaryTextColor
                 }
@@ -153,22 +156,16 @@ PageSidebar {
                 Label {
                     Layout.fillWidth: true
 
-                    text:  infoSidebar.get_role_info("fileSize")
+                    text: infoSidebar.get_role_info("fileSize") || ""
                     color: Material.secondaryTextColor
                 }
             }
         }
 
         FluidControls.ThinDivider {}
-
     }
 
     function get_role_info(role) {
-        return folderModel.model.data(infoSidebar.selectedFileIndex, role)
-    }
-
-    onShowingChanged: {
-        if (showing)
-            app.width = Math.max(app.width, 1000)
+        return folderModel.model.data(infoSidebar.selectedFileIndex, role) || "";
     }
 }

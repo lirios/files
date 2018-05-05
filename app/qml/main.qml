@@ -32,7 +32,7 @@ FluidControls.ApplicationWindow {
     property FolderListSelection selectionManager: folderModel.model.selectionObject()
 
     title: qsTr("Files")
-    width: 800
+    width: 1000
     height: 800
     visible: true
 

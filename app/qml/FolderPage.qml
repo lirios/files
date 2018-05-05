@@ -93,11 +93,9 @@ FluidControls.Page {
         }
     ]
 
-    /*
     rightSidebar: InfoSidebar {
         id: infoSidebar
     }
-    */
 
     FolderListView {
         anchors {
