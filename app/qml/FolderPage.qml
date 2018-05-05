@@ -176,7 +176,7 @@ FluidControls.Page {
                     AnchorAnimation {
                         targets: [searchCard]
                         duration: 150
-                        easing: Easing.OutQuad
+                        easing.type: Easing.OutQuad
                     }
                     ScriptAction {
                         script: searchField.forceActiveFocus()
@@ -187,7 +187,7 @@ FluidControls.Page {
                     AnchorAnimation {
                         targets: [searchCard]
                         duration: 250
-                        easing: Easing.InQuad
+                        easing.type: Easing.InQuad
                     }
                 }
             ]
