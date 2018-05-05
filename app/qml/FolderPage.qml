@@ -198,7 +198,7 @@ FluidControls.Page {
                 anchors.margins: 8
                 spacing: 16
                 FluidControls.Icon {
-                    name: "action/search"
+                    source: FluidControls.Utils.iconUrl("action/search")
                 }
                 TextField {
                     id: searchField
