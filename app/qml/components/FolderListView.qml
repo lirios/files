@@ -96,8 +96,20 @@ Item {
         ListView {
             id: listView
 
-            Keys.onUpPressed: decrementCurrentIndex()
-            Keys.onDownPressed: incrementCurrentIndex()
+            Keys.onUpPressed: {
+                var newIndex = currentIndex - 1;
+                if (newIndex < 0)
+                    newIndex = 0;
+                if (currentIndex != newIndex)
+                    selectionManager.toggleIndex(newIndex);
+            }
+            Keys.onDownPressed: {
+                var newIndex = currentIndex + 1;
+                if (newIndex > count - 1)
+                    newIndex = count - 1;
+                if (currentIndex != newIndex)
+                    selectionManager.toggleIndex(newIndex);
+            }
             Keys.onEnterPressed: folderModel.model.openIndex(currentIndex)
             Keys.onReturnPressed: folderModel.model.openIndex(currentIndex)
 
@@ -108,6 +120,15 @@ Item {
             section.delegate: FluidControls.Subheader {
                 text: section === "true" ? qsTr("Directories")
                                          : qsTr("Files")
+            }
+        }
+
+        Connections {
+            target: selectionManager
+            onSelectionChanged: {
+                var indexes = selectionManager.selectedIndexes();
+                if (indexes.length === 1)
+                    listView.currentIndex = indexes[0];
             }
         }
     }
