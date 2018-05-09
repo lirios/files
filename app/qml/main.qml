@@ -19,8 +19,8 @@
 */
 
 import QtQuick 2.2
-import QtQuick.Controls 2.1
-import QtQuick.Controls.Material 2.1
+import QtQuick.Controls 2.3
+import QtQuick.Controls.Material 2.3
 import Fluid.Controls 1.1 as FluidControls
 import Liri.Files.FolderListModel 1.0
 import "backend"
@@ -43,16 +43,12 @@ FluidControls.ApplicationWindow {
     Material.primary: Material.Blue
     Material.accent: Material.LightBlue
 
-    function confirmAction(title, text, primaryButton, color) {
-        confirmDialog.promise = new Promises.Promise();
-
+    function confirmAction(title, text, primaryButton, callback) {
         confirmDialog.title = title;
         confirmDialog.text = text;
-        confirmDialog.positiveButtonText = primaryButton;
-
-        confirmDialog.show();
-
-        return confirmDialog.promise;
+        confirmDialog.standardButton(Dialog.Yes).text = primaryButton;
+        confirmDialog.callback = callback;
+        confirmDialog.open();
     }
 
     FolderModel {
@@ -68,15 +64,17 @@ FluidControls.ApplicationWindow {
     FluidControls.AlertDialog {
         id: confirmDialog
 
-        property var promise
+        property var callback
 
         modal: true
         focus: true
+        standardButtons: Dialog.Yes | Dialog.No
 
         x: (parent.width - width) / 2
         y: (parent.height - height) / 2
 
-        onAccepted: promise.resolve()
-        onRejected: promise.reject()
+        width: 400
+
+        onAccepted: callback()
     }
 }

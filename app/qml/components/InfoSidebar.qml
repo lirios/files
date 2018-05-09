@@ -69,10 +69,13 @@ FluidControls.PageSidebar {
         FluidControls.Action {
             icon.source: FluidControls.Utils.iconUrl("action/delete")
             toolTip: qsTr("Delete")
-            onTriggered: confirmAction("", qsTr("Are you sure you want to permanently delete \"%1\"?")
-                    .arg(infoSidebar.get_role_info("fileName")), qsTr("Delete")).done(function() {
-                folderModel.model.removeIndex(selectedFileIndex)
-            })
+            onTriggered: {
+                var callback = function() {
+                    folderModel.model.removeIndex(selectedFileIndex);
+                };
+                confirmAction("", qsTr("Are you sure you want to permanently delete \"%1\"?")
+                    .arg(infoSidebar.get_role_info("fileName")), qsTr("Delete"), callback);
+            }
         }
     ]
 
