@@ -245,6 +245,7 @@ FluidControls.Page {
             width: parent.width
             placeholderText: qsTr("New Folder")
             focus: true
+            onAccepted: confirmNewFolder.accept()
         }
 
         onAccepted: folderModel.model.mkdir(nameField.text ||
