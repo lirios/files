@@ -32,7 +32,7 @@ FluidControls.ListItem {
     text: folderModel.pathTitle(filePath)
     subText: folderModel.fileType(mimeType, mimeTypeDescription)
     valueText: FluidCore.DateUtils.friendlyTime(modifiedDate, true)
-    highlighted: isSelected
+    highlighted: ListView.isCurrentItem
 
     MouseArea {
         anchors.fill: parent
