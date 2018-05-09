@@ -1,6 +1,7 @@
 /*
 * This file is part of Liri.
  *
+* Copyright (C) 2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 * Copyright (C) 2015 Michael Spencer <sonrisesoftware@gmail.com>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -28,6 +29,8 @@ Item {
 
     property alias model: listView.model
     property alias delegate: listView.delegate
+
+    Keys.forwardTo: listView
 
     Pane {
         id: header
@@ -92,6 +95,13 @@ Item {
 
         ListView {
             id: listView
+
+            Keys.onUpPressed: decrementCurrentIndex()
+            Keys.onDownPressed: incrementCurrentIndex()
+            Keys.onEnterPressed: folderModel.model.openIndex(currentIndex)
+            Keys.onReturnPressed: folderModel.model.openIndex(currentIndex)
+
+            currentIndex: -1
 
             section.property: "isDir"
             section.criteria: ViewSection.FullString

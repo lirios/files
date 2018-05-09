@@ -97,7 +97,11 @@ FluidControls.Page {
         id: infoSidebar
     }
 
+    Keys.forwardTo: folderListView
+
     FolderListView {
+        id: folderListView
+
         anchors {
             left: placesSidebar.right
             right: parent.right
