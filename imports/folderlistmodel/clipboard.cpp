@@ -249,14 +249,14 @@ bool DirModelMimeData::fillClipboard(const QStringList& files, const QString &pa
     m_urls.clear();
     m_gnomeData.clear();
     m_gnomeData += operation == ClipboardCut ?
-                                    QLatin1String("cut") :
-                                    QLatin1String("copy");
+                                    QByteArrayLiteral("cut") :
+                                    QByteArrayLiteral("copy");
     QStringList fullPaths = makeFullPath(files, path);
     for(int counter = 0; counter < fullPaths.count(); counter++)
     {
         QUrl item = QUrl::fromLocalFile(fullPaths.at((counter)));
         m_urls.append(item);
-        m_gnomeData += QLatin1Char('\n') + item.toEncoded() ;
+        m_gnomeData += QByteArrayLiteral('\n') + item.toEncoded() ;
     }
     setData(GNOME_COPIED_MIME_TYPE, m_gnomeData);
     setUrls(m_urls);

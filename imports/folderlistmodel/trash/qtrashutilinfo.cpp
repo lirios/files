@@ -128,9 +128,9 @@ bool QTrashUtilInfo::createTrashInfoFile(const QString& orignalPathname)
     if (ret)
     {
         QByteArray content("[Trash Info]\nPath=");
-        content += orignalPathname + QLatin1Char('\n');
+        content += orignalPathname.toUtf8() + QByteArrayLiteral('\n');
         content += "DeletionDate=";
-        content += QDateTime::currentDateTime().toString(Qt::ISODate) + QLatin1Char('\n');
+        content += QDateTime::currentDateTime().toString(Qt::ISODate).toUtf8() + QByteArrayLiteral('\n');
         QFile f(absInfo);
         ret = f.open(QFile::WriteOnly | QFile::Truncate) &&
               f.write(content) == content.size();

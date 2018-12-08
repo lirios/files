@@ -349,10 +349,10 @@ QVariant DirModel::data(const QModelIndex &index, int role) const
 
             if (fileName.endsWith(QLatin1String(".jpg"), Qt::CaseInsensitive) ||
                 fileName.endsWith(QLatin1String(".png"), Qt::CaseInsensitive)) {
-                return QLatin1String("image://nemoThumbnail/") + fi.filePath();
+                return QStringLiteral("image://nemoThumbnail/%1").arg(fi.filePath());
             }
 
-            return "image://theme/icon-m-content-document";
+            return QLatin1String("image://theme/icon-m-content-document");
         }
         case FilePathRole:
             return fi.filePath();

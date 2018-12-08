@@ -1,0 +1,17 @@
+liri_add_qml_plugin(placesmodel
+    MODULE_PATH
+        "Liri/Files/PlacesModel"
+    SOURCES
+        placesmodel.cpp
+        placesmodel.h
+        placesmodel_plugin.cpp
+        placesmodel_plugin.h
+        placesmodel.qbs
+        qmtabparser.cpp
+        qmtabparser.h
+    QML_FILES
+        qmldir
+    #DEFINES
+        #QT_NO_CAST_FROM_ASCII
+        #QT_NO_FOREACH
+)

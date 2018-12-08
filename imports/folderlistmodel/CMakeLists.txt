@@ -1,0 +1,66 @@
+if(FILES_ENABLE_TAGLIB)
+    set(Files_DEFINES)
+else()
+    set(Files_DEFINES DO_NOT_USE_TAG_LIB)
+endif()
+
+liri_add_qml_plugin(folderlistmodel
+    MODULE_PATH
+        "Liri/Files/FolderListModel"
+    SOURCES
+        clipboard.cpp
+        clipboard.h
+        diritemabstractlistmodel.h
+        diriteminfo.cpp
+        diriteminfo.h
+        dirmodel.cpp
+        dirmodel.h
+        dirselection.cpp
+        dirselection.h
+        disk/disklocation.cpp
+        disk/disklocation.h
+        externalfswatcher.cpp
+        externalfswatcher.h
+        filecompare.cpp
+        filecompare.h
+        filesystemaction.cpp
+        filesystemaction.h
+        fmutil.cpp
+        fmutil.h
+        folderlistmodel.qbs
+        imageprovider.cpp
+        imageprovider.h
+        iorequest.cpp
+        iorequest.h
+        iorequestworker.cpp
+        iorequestworker.h
+        ioworkerthread.cpp
+        ioworkerthread.h
+        location.cpp
+        location.h
+        locationsfactory.cpp
+        locationsfactory.h
+        locationurl.cpp
+        locationurl.h
+        plugin.cpp
+        plugin.h
+        trash/qtrashdir.cpp
+        trash/qtrashdir.h
+        trash/qtrashutilinfo.cpp
+        trash/qtrashutilinfo.h
+        trash/trashiteminfo.cpp
+        trash/trashiteminfo.h
+        trash/trashlocation.cpp
+        trash/trashlocation.h
+    QML_FILES
+        qmldir
+    DEFINES
+        #QT_NO_CAST_FROM_ASCII
+        #QT_NO_FOREACH
+        ${Files_DEFINES}
+    INCLUDE_DIRECTORIES
+        "${CMAKE_CURRENT_SOURCE_DIR}/disk"
+        "${CMAKE_CURRENT_SOURCE_DIR}/trash"
+    LIBRARIES
+        Qt5::Widgets
+)

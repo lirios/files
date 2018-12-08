@@ -1,0 +1,13 @@
+liri_add_qml_plugin(archives
+    MODULE_PATH
+        "Liri/Files/Archives"
+    SOURCES
+        archives.cpp
+        archives.h
+        plugin.cpp
+    QML_FILES
+        qmldir
+    DEFINES
+        #QT_NO_CAST_FROM_ASCII
+        QT_NO_FOREACH
+)
