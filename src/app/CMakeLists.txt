@@ -10,9 +10,9 @@ liri_add_executable(LiriFiles
         QT_NO_FOREACH
         FILES_VERSION="${PROJECT_VERSION}"
     APPDATA
-        "${CMAKE_CURRENT_SOURCE_DIR}/../data/io.liri.Files.appdata.xml"
+        "${CMAKE_CURRENT_SOURCE_DIR}/io.liri.Files.appdata.xml"
     DESKTOP
-        "${CMAKE_CURRENT_SOURCE_DIR}/../data/io.liri.Files.desktop"
+        "${CMAKE_CURRENT_SOURCE_DIR}/io.liri.Files.desktop"
     LIBRARIES
         Qt5::Core
         Qt5::Gui

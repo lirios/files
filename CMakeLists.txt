@@ -35,7 +35,7 @@ find_package(Qt5 "${QT_MIN_VERSION}"
 )
 
 ## Add subdirectories:
-add_subdirectory(app)
-add_subdirectory(imports/archives)
-add_subdirectory(imports/folderlistmodel)
-add_subdirectory(imports/placesmodel)
+add_subdirectory(src/app)
+add_subdirectory(src/imports/archives)
+add_subdirectory(src/imports/folderlistmodel)
+add_subdirectory(src/imports/placesmodel)
