@@ -28,6 +28,45 @@
 
 #include <QDebug>
 
+static void loadQtTranslations()
+{
+#ifndef QT_NO_TRANSLATION
+    QString locale = QLocale::system().name();
+
+    // Load Qt translations
+    QTranslator *qtTranslator = new QTranslator(QCoreApplication::instance());
+    if (qtTranslator->load(QStringLiteral("qt_%1").arg(locale), QLibraryInfo::location(QLibraryInfo::TranslationsPath))) {
+        qApp->installTranslator(qtTranslator);
+    } else {
+        delete qtTranslator;
+    }
+#endif
+}
+
+static void loadAppTranslations()
+{
+#ifndef QT_NO_TRANSLATION
+    QString locale = QLocale::system().name();
+
+    // Find the translations directory
+    const QString path = QLatin1String("liri-files/translations");
+    const QString translationsDir =
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                               path,
+                               QStandardPaths::LocateDirectory);
+
+    // Load shell translations
+    QTranslator *appTranslator = new QTranslator(QCoreApplication::instance());
+    if (appTranslator->load(QStringLiteral("%1/files_%3").arg(translationsDir, locale))) {
+        QCoreApplication::installTranslator(appTranslator);
+    } else if (locale == QLatin1String("C") ||
+                locale.startsWith(QLatin1String("en"))) {
+        // English is the default, it's translated anyway
+        delete appTranslator;
+    }
+#endif
+}
+
 int main(int argc, char *argv[])
 {
     // HiDPI support
@@ -48,18 +87,9 @@ int main(int argc, char *argv[])
     app.setDesktopFileName(QLatin1String("io.liri.Files.desktop"));
     app.setQuitOnLastWindowClosed(true);
 
-#if 0
-    QString locale = QLocale::system().name();
-
-    QTranslator qtTranslator;
-    qtTranslator.load("qt_" + locale,
-                      QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    app.installTranslator(&qtTranslator);
-
-    QTranslator liriFilesTranslator;
-    liriFilesTranslator.load(locale, DATA_INSTALL_DIR "/translations");
-    app.installTranslator(&liriFilesTranslator);
-#endif
+    // Load translations
+    loadQtTranslations();
+    loadAppTranslations();
 
     // Setup QML engine and show the main window
     QQmlApplicationEngine engine(QUrl(QLatin1String("qrc:/qml/main.qml")));

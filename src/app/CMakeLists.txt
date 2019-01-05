@@ -1,8 +1,15 @@
+# Translations
+file(GLOB LiriFiles_TRANSLATIONS "${CMAKE_CURRENT_SOURCE_DIR}/translations/*_*.ts")
+qt5_add_translation(LiriFiles_QM_FILES ${LiriFiles_TRANSLATIONS})
+install(FILES ${LiriFiles_QM_FILES}
+        DESTINATION "${INSTALL_DATADIR}/liri-files/translations")
+
 liri_add_executable(LiriFiles
     OUTPUT_NAME
         "liri-files"
     SOURCES
         main.cpp
+        ${LiriFiles_QM_FILES}
     RESOURCES
         files.qrc
     DEFINES
