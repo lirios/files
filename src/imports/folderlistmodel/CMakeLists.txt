@@ -1,5 +1,7 @@
 if(FILES_ENABLE_TAGLIB)
     set(Files_DEFINES)
+    find_package(Taglib REQUIRED)
+    set(Files_LIBRARIES PkgConfig::Taglib)
 else()
     set(Files_DEFINES DO_NOT_USE_TAG_LIB)
 endif()
@@ -63,4 +65,5 @@ liri_add_qml_plugin(folderlistmodel
         "${CMAKE_CURRENT_SOURCE_DIR}/trash"
     LIBRARIES
         Qt5::Widgets
+        ${Files_LIBRARIES}
 )
