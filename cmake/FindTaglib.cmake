@@ -1,3 +1,3 @@
 find_package(PkgConfig)
 
-pkg_check_modules(Taglib taglib REQUIRED IMPORTED_TARGET)
+pkg_check_modules(Taglib taglib IMPORTED_TARGET)
