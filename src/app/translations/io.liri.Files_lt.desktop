@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Liri Files
+GenericName=File Manager
+Comment=Access and organize files
+Keywords=folder;manager;explore;disk;filesystem;
+Exec=liri-files
+Icon=system-file-manager
+Terminal=false
+Type=Application
+StartupWMClass=liri-files
+Categories=X-Liri;Qt;Utility;Core;FileManager;
+
+
+# Translations
+Icon[lt]=system-file-manager
+Name[lt]=Liri failai
+Comment[lt]=Gauti prieigą prie failų ir juos tvarkyti
+GenericName[lt]=Failų tvarkytuvė
