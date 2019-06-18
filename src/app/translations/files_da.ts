@@ -173,7 +173,7 @@
     <message>
         <location filename="../qml/SelectionPage.qml" line="29"/>
         <source>Select files...</source>
-        <translation>Vælg filer...</translation>
+        <translation>Vælg filer ...</translation>
     </message>
     <message>
         <location filename="../qml/SelectionPage.qml" line="33"/>
