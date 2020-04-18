@@ -4,13 +4,11 @@ host = https://www.transifex.com
 [liri-files.app]
 type = QT
 source_lang = en
-liri_source_directory = src/app
-source_file = src/app/translations/files.ts
-file_filter = src/app/translations/files_<lang>.ts
+source_file = translations/files.ts
+file_filter = translations/files_<lang>.ts
 
 [liri-files.desktop-file]
 type = DESKTOP
 source_lang = en
 source_file = src/app/io.liri.Files.desktop.in
-liri_dest_file = src/app/io.liri.Files.desktop
-file_filter = src/app/translations/io.liri.Files_<lang>.desktop
+file_filter = translations/io.liri.Files_<lang>.desktop

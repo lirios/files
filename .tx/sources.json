@@ -1,0 +1,13 @@
+[
+  {
+    "type": "ts",
+    "directory": "src/app",
+    "output_path": "translations/files.ts"
+  },
+  {
+    "type": "desktop",
+    "source_file": "src/app/io.liri.Files.desktop.in",
+    "file_filter": "translations/io.liri.Files_<lang>.desktop",
+    "output_path": "src/app/io.liri.Files.desktop"
+  }
+]

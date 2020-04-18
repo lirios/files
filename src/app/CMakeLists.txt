@@ -1,5 +1,5 @@
 # Translations
-file(GLOB LiriFiles_TRANSLATIONS "${CMAKE_CURRENT_SOURCE_DIR}/translations/*_*.ts")
+file(GLOB LiriFiles_TRANSLATIONS "${CMAKE_SOURCE_DIR}/translations/*_*.ts")
 qt5_add_translation(LiriFiles_QM_FILES ${LiriFiles_TRANSLATIONS})
 install(FILES ${LiriFiles_QM_FILES}
         DESTINATION "${INSTALL_DATADIR}/liri-files/translations")
