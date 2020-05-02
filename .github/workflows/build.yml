@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  neon:
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    strategy:
+      matrix:
+        compiler:
+          - gcc
+          - clang
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Extract branch name
+        id: extract_branch
+        shell: bash
+        run: |
+          if [ -n "${{ github.base_ref }}" ]; then
+            echo "##[set-output name=branch;]${{ github.base_ref }}"
+          else
+            github_ref=${{ github.ref }}
+            echo "##[set-output name=branch;]${github_ref##*/}"
+          fi
+      - name: Install dependencies
+        run: |
+          set -x
+          wget -qO - 'http://archive.neon.kde.org/public.key' | sudo apt-key add -
+          sudo apt-add-repository http://archive.neon.kde.org/user
+          sudo apt-get update
+          sudo apt-get install -y \
+            extra-cmake-modules \
+            dbus-x11 \
+            xvfb \
+            libtag1-dev \
+            qtbase5-dev \
+            qtdeclarative5-dev \
+            qtquickcontrols2-5-dev \
+            qttools5-dev
+      - name: Fetch cmake-shared artifact
+        uses: liri-infra/fetch-artifact@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: lirios/cmake-shared
+          workflow_path: .github/workflows/build.yml
+          artifact_name: artifacts-${{ steps.extract_branch.outputs.branch }}
+          save_as: cmake-shared.zip
+      - name: Fetch fluid artifact
+        uses: liri-infra/fetch-artifact@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: lirios/fluid
+          workflow_path: .github/workflows/build.yml
+          artifact_name: artifacts-${{ matrix.compiler }}-${{ steps.extract_branch.outputs.branch }}
+          save_as: fluid.zip
+      - name: Uncompress artifacts
+        run: |
+          set -x
+          for what in cmake-shared fluid; do
+              sudo tar xf ${what}.tar.gz -C /
+              rm -f ${what}.zip ${what}.tar.gz
+          done
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          set -x
+          if [ "${{ matrix.compiler }}" == "clang" ]; then
+            export CC=clang
+            export CXX=clang++
+          fi
+          mkdir -p build
+          cd build
+          cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+          make -j $(getconf _NPROCESSORS_ONLN)
+          sudo make install
