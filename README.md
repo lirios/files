@@ -3,8 +3,8 @@ Files
 
 [![License](https://img.shields.io/badge/license-GPLv3.0%2B-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![GitHub release](https://img.shields.io/github/release/lirios/files.svg)](https://github.com/lirios/files)
-[![CI](https://github.com/lirios/files/workflows/CI/badge.svg?branch=develop)](https://github.com/lirios/files/actions?query=workflow%3ACI)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/files.svg)](https://github.com/lirios/files/issues)
+[![CI](https://github.com/lirios/files/workflows/CI/badge.svg?branch=develop)](https://github.com/lirios/files/actions?query=workflow%3ACI)
 
 File manager.
 
