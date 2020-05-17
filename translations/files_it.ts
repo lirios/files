@@ -1,35 +1,35 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>FolderListView</name>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="64"/>
         <source>Name</source>
-        <translation type="unfinished"/>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="72"/>
         <source>Type</source>
-        <translation type="unfinished"/>
+        <translation>Tipo</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="80"/>
         <source>Last modified</source>
-        <translation type="unfinished"/>
+        <translation>Ultima modifica</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="121"/>
         <source>Directories</source>
-        <translation type="unfinished"/>
+        <translation>Cartelle</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="122"/>
         <source>Files</source>
-        <translation type="unfinished"/>
+        <translation>File</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="139"/>
         <source>No files</source>
-        <translation type="unfinished"/>
+        <translation>Nessun file</translation>
     </message>
 </context>
 <context>
@@ -37,17 +37,17 @@
     <message>
         <location filename="../src/app/qml/backend/FolderModel.qml" line="169"/>
         <source>Home</source>
-        <translation type="unfinished"/>
+        <translation>Home</translation>
     </message>
     <message>
         <location filename="../src/app/qml/backend/FolderModel.qml" line="240"/>
         <source>%1 file</source>
-        <translation type="unfinished"/>
+        <translation>file %1</translation>
     </message>
     <message>
         <location filename="../src/app/qml/backend/FolderModel.qml" line="241"/>
         <source>%1 files</source>
-        <translation type="unfinished"/>
+        <translation>file %1</translation>
     </message>
 </context>
 <context>
@@ -55,55 +55,55 @@
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="36"/>
         <source>Back</source>
-        <translation type="unfinished"/>
+        <translation>Indietro</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="37"/>
         <source>Go back</source>
-        <translation type="unfinished"/>
+        <translation>Torna indietro</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="48"/>
         <location filename="../src/app/qml/FolderPage.qml" line="208"/>
         <source>Search</source>
-        <translation type="unfinished"/>
+        <translation>Ricerca</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="49"/>
         <source>Search files or folders</source>
-        <translation type="unfinished"/>
+        <translation>Cerca file o cartelle</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="60"/>
         <source>New folder</source>
-        <translation>Новая папка</translation>
+        <translation>Nuova cartella</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="61"/>
         <source>Create a new folder</source>
-        <translation>Создать новую папку</translation>
+        <translation>Crea nuova cartella</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="67"/>
         <location filename="../src/app/qml/FolderPage.qml" line="68"/>
         <source>Paste</source>
-        <translation>Вставить</translation>
+        <translation>Incolla</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="90"/>
         <location filename="../src/app/qml/FolderPage.qml" line="91"/>
         <source>Settings</source>
-        <translation>Настройки</translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="233"/>
         <source>Create new folder:</source>
-        <translation>Создать нлвую папку:</translation>
+        <translation>Crea nuova cartella:</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="246"/>
         <source>New Folder</source>
-        <translation>Новая папка</translation>
+        <translation>Nuova cartella</translation>
     </message>
 </context>
 <context>
@@ -111,48 +111,48 @@
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="58"/>
         <source>Edited </source>
-        <translation type="unfinished"/>
+        <translation>Modificato</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="67"/>
         <source>Share</source>
-        <translation>Поделиться</translation>
+        <translation>Condividi</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="71"/>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="77"/>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="76"/>
         <source>Are you sure you want to permanently delete &quot;%1&quot;?</source>
-        <translation>Вы действительно хотите безвозвратно удалить &quot;%1&quot;?</translation>
+        <translation>Sei sicuro di voler cancellare definitivamente &quot;%1&quot;?</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="107"/>
         <source>Info</source>
-        <translation type="unfinished"/>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="127"/>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation>Posizione</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="138"/>
         <source>Type</source>
-        <translation type="unfinished"/>
+        <translation>Tipo</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="156"/>
         <source>Contents</source>
-        <translation type="unfinished"/>
+        <translation>Contenuti</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="156"/>
         <source>Size</source>
-        <translation type="unfinished"/>
+        <translation>Dimensioni</translation>
     </message>
 </context>
 <context>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../src/app/qml/components/PlacesSidebar.qml" line="55"/>
         <source>Trash</source>
-        <translation type="unfinished"/>
+        <translation>Cestino</translation>
     </message>
 </context>
 <context>
@@ -173,42 +173,42 @@
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="29"/>
         <source>Select files...</source>
-        <translation type="unfinished"/>
+        <translation>Seleziona file...</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="33"/>
         <source>Back</source>
-        <translation type="unfinished"/>
+        <translation>Indietro</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="45"/>
         <source>Cut</source>
-        <translation type="unfinished"/>
+        <translation>Taglia</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="51"/>
         <source>Copy</source>
-        <translation type="unfinished"/>
+        <translation>Copia</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="57"/>
         <source>Paste</source>
-        <translation type="unfinished"/>
+        <translation>Incolla</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="64"/>
         <source>Move to Trash</source>
-        <translation type="unfinished"/>
+        <translation>Sposta nel cestino</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="70"/>
         <source>Select all</source>
-        <translation type="unfinished"/>
+        <translation>Seleziona tutto</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="76"/>
         <source>Clear selection</source>
-        <translation type="unfinished"/>
+        <translation>Annulla selezione</translation>
     </message>
 </context>
 <context>
@@ -216,42 +216,42 @@
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="25"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="40"/>
         <source>Show hidden files</source>
-        <translation type="unfinished"/>
+        <translation>Mostra file nascosti</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="53"/>
         <source>Sort by:</source>
-        <translation type="unfinished"/>
+        <translation>Ordina per:</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="57"/>
         <source>Name</source>
-        <translation type="unfinished"/>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="57"/>
         <source>Date</source>
-        <translation type="unfinished"/>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="63"/>
         <source>Sort order:</source>
-        <translation type="unfinished"/>
+        <translation>Direzione di ordinamento:</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="67"/>
         <source>Ascending</source>
-        <translation type="unfinished"/>
+        <translation>Crescente</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="67"/>
         <source>Descending</source>
-        <translation type="unfinished"/>
+        <translation>Decrescente</translation>
     </message>
 </context>
 <context>
@@ -259,22 +259,22 @@
     <message>
         <location filename="../src/app/qml/TrashPage.qml" line="28"/>
         <source>Trash</source>
-        <translation type="unfinished"/>
+        <translation>Cestino</translation>
     </message>
     <message>
         <location filename="../src/app/qml/TrashPage.qml" line="32"/>
         <source>Back</source>
-        <translation type="unfinished"/>
+        <translation>Indietro</translation>
     </message>
     <message>
         <location filename="../src/app/qml/TrashPage.qml" line="45"/>
         <source>Empty trash</source>
-        <translation type="unfinished"/>
+        <translation>Svuota cestino</translation>
     </message>
     <message>
         <location filename="../src/app/qml/TrashPage.qml" line="50"/>
         <source>Restore trash</source>
-        <translation type="unfinished"/>
+        <translation>Ripristina cestino</translation>
     </message>
 </context>
 <context>
@@ -282,7 +282,7 @@
     <message>
         <location filename="../src/app/qml/main.qml" line="34"/>
         <source>Files</source>
-        <translation>Файлы</translation>
+        <translation>File</translation>
     </message>
 </context>
 </TS>
