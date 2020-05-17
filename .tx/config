@@ -8,7 +8,7 @@ source_file = translations/files.ts
 file_filter = translations/files_<lang>.ts
 
 [liri-files.desktop-file]
-type = DESKTOP
+type = PO
 source_lang = en
-source_file = src/app/io.liri.Files.desktop.in
-file_filter = translations/io.liri.Files_<lang>.desktop
+source_file = translations/data/desktop/desktop.pot
+file_filter = translations/data/desktop/<lang>.po

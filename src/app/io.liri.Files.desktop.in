@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
-Name=Liri Files
-GenericName=File Manager
-Comment=Access and organize files
-Keywords=folder;manager;explore;disk;filesystem;
+_Name=Liri Files
+_GenericName=File Manager
+_Comment=Access and organize files
+_Keywords=folder;manager;explore;disk;filesystem;
 Exec=liri-files
 Icon=system-file-manager
 Terminal=false
