@@ -3,13 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Moo, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-17 11:25+0200\n"
+"POT-Creation-Date: 2020-05-22 00:16+0000\n"
 "PO-Revision-Date: 2020-05-17 09:27+0000\n"
+"Last-Translator: Moo, 2020\n"
 "Language-Team: Lithuanian (https://www.transifex.com/lirios/teams/71982/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,22 +25,22 @@ msgstr ""
 #: io.liri.Files.desktop.in:3
 msgctxt "Name entry"
 msgid "Liri Files"
-msgstr ""
+msgstr "Liri failai"
 
 #. (desktop-to-pot) "GenericName" entry
 #: io.liri.Files.desktop.in:4
 msgctxt "GenericName entry"
 msgid "File Manager"
-msgstr ""
+msgstr "Failų tvarkytuvė"
 
 #. (desktop-to-pot) "Comment" entry
 #: io.liri.Files.desktop.in:5
 msgctxt "Comment entry"
 msgid "Access and organize files"
-msgstr ""
+msgstr "Gauti prieigą prie failų ir juos tvarkyti"
 
 #. (desktop-to-pot) "Keywords" entry
 #: io.liri.Files.desktop.in:6
 msgctxt "Keywords entry"
 msgid "folder;manager;explore;disk;filesystem;"
-msgstr ""
+msgstr "aplankas;tvarkytuvė;naršyti;diskas;failų sistema;"
