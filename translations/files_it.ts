@@ -160,7 +160,7 @@
     <message>
         <location filename="../src/app/qml/components/PlacesSidebar.qml" line="34"/>
         <source>Places</source>
-        <translation type="unfinished"/>
+        <translation>Posizioni</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/PlacesSidebar.qml" line="55"/>
