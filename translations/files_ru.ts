@@ -4,32 +4,32 @@
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="64"/>
         <source>Name</source>
-        <translation type="unfinished"/>
+        <translation>Имя</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="72"/>
         <source>Type</source>
-        <translation type="unfinished"/>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="80"/>
         <source>Last modified</source>
-        <translation type="unfinished"/>
+        <translation>Последнее измененное</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="121"/>
         <source>Directories</source>
-        <translation type="unfinished"/>
+        <translation>Директории</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="122"/>
         <source>Files</source>
-        <translation type="unfinished"/>
+        <translation>Файлы</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="139"/>
         <source>No files</source>
-        <translation type="unfinished"/>
+        <translation>Не файлы</translation>
     </message>
 </context>
 <context>
@@ -37,7 +37,7 @@
     <message>
         <location filename="../src/app/qml/backend/FolderModel.qml" line="169"/>
         <source>Home</source>
-        <translation type="unfinished"/>
+        <translation>Домой</translation>
     </message>
     <message>
         <location filename="../src/app/qml/backend/FolderModel.qml" line="240"/>
@@ -55,23 +55,23 @@
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="36"/>
         <source>Back</source>
-        <translation type="unfinished"/>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="37"/>
         <source>Go back</source>
-        <translation type="unfinished"/>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="48"/>
         <location filename="../src/app/qml/FolderPage.qml" line="208"/>
         <source>Search</source>
-        <translation type="unfinished"/>
+        <translation>Поиск</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="49"/>
         <source>Search files or folders</source>
-        <translation type="unfinished"/>
+        <translation>Поиск файлов или папок</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="60"/>
@@ -98,7 +98,7 @@
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="233"/>
         <source>Create new folder:</source>
-        <translation>Создать нлвую папку:</translation>
+        <translation>Создать новую папку:</translation>
     </message>
     <message>
         <location filename="../src/app/qml/FolderPage.qml" line="246"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="58"/>
         <source>Edited </source>
-        <translation type="unfinished"/>
+        <translation>Изменено</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="67"/>
@@ -132,7 +132,7 @@
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="107"/>
         <source>Info</source>
-        <translation type="unfinished"/>
+        <translation>Инфо</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="127"/>
@@ -142,17 +142,17 @@
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="138"/>
         <source>Type</source>
-        <translation type="unfinished"/>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="156"/>
         <source>Contents</source>
-        <translation type="unfinished"/>
+        <translation>Содержимое</translation>
     </message>
     <message>
         <location filename="../src/app/qml/components/InfoSidebar.qml" line="156"/>
         <source>Size</source>
-        <translation type="unfinished"/>
+        <translation>Размер</translation>
     </message>
 </context>
 <context>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../src/app/qml/components/PlacesSidebar.qml" line="55"/>
         <source>Trash</source>
-        <translation type="unfinished"/>
+        <translation>Корзина</translation>
     </message>
 </context>
 <context>
@@ -173,42 +173,42 @@
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="29"/>
         <source>Select files...</source>
-        <translation type="unfinished"/>
+        <translation>Выбрать файлы...</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="33"/>
         <source>Back</source>
-        <translation type="unfinished"/>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="45"/>
         <source>Cut</source>
-        <translation type="unfinished"/>
+        <translation>Вырезать</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="51"/>
         <source>Copy</source>
-        <translation type="unfinished"/>
+        <translation>Копировать</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="57"/>
         <source>Paste</source>
-        <translation type="unfinished"/>
+        <translation>Вставить</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="64"/>
         <source>Move to Trash</source>
-        <translation type="unfinished"/>
+        <translation>Переместить в корзину</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="70"/>
         <source>Select all</source>
-        <translation type="unfinished"/>
+        <translation>Выбрать все</translation>
     </message>
     <message>
         <location filename="../src/app/qml/SelectionPage.qml" line="76"/>
         <source>Clear selection</source>
-        <translation type="unfinished"/>
+        <translation>Очистить выделение</translation>
     </message>
 </context>
 <context>
@@ -216,32 +216,32 @@
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="25"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="40"/>
         <source>Show hidden files</source>
-        <translation type="unfinished"/>
+        <translation>Показать скрытые файлы</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="53"/>
         <source>Sort by:</source>
-        <translation type="unfinished"/>
+        <translation>Сортировка по:</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="57"/>
         <source>Name</source>
-        <translation type="unfinished"/>
+        <translation>Имя</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="57"/>
         <source>Date</source>
-        <translation type="unfinished"/>
+        <translation>Дата</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="63"/>
         <source>Sort order:</source>
-        <translation type="unfinished"/>
+        <translation>Сортировка по:</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="67"/>
@@ -259,22 +259,22 @@
     <message>
         <location filename="../src/app/qml/TrashPage.qml" line="28"/>
         <source>Trash</source>
-        <translation type="unfinished"/>
+        <translation>Корзина</translation>
     </message>
     <message>
         <location filename="../src/app/qml/TrashPage.qml" line="32"/>
         <source>Back</source>
-        <translation type="unfinished"/>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../src/app/qml/TrashPage.qml" line="45"/>
         <source>Empty trash</source>
-        <translation type="unfinished"/>
+        <translation>Очистить корзину</translation>
     </message>
     <message>
         <location filename="../src/app/qml/TrashPage.qml" line="50"/>
         <source>Restore trash</source>
-        <translation type="unfinished"/>
+        <translation>Восстановить содержимое корзины</translation>
     </message>
 </context>
 <context>
