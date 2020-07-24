@@ -42,4 +42,4 @@ msgstr ""
 #: io.liri.Files.desktop.in:6
 msgctxt "Keywords entry"
 msgid "folder;manager;explore;disk;filesystem;"
-msgstr ""
+msgstr "folder;manager;explore;disk;filesystem;"

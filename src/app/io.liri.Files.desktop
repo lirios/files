@@ -25,6 +25,7 @@ Keywords[da]=mappe;håndtering;udforsk;disk;filsystem;
 Keywords[it]=cartella;gestore;esplora;disco;filesystem
 Keywords[lt]=aplankas;tvarkytuvė;naršyti;diskas;failų sistema;
 Keywords[pt_BR]=pasta;gerenciador;explorar;disco;sistema de arquivos;
+Keywords[ru]=folder;manager;explore;disk;filesystem;
 Keywords[tr]=klasör;yönetici;keşfet;disk;dosyasistemi;
 Exec=liri-files
 Icon=system-file-manager

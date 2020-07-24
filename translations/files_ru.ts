@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/app/qml/components/FolderListView.qml" line="139"/>
         <source>No files</source>
-        <translation>Не файлы</translation>
+        <translation>Нет файлов</translation>
     </message>
 </context>
 <context>
@@ -42,12 +42,12 @@
     <message>
         <location filename="../src/app/qml/backend/FolderModel.qml" line="240"/>
         <source>%1 file</source>
-        <translation type="unfinished"/>
+        <translation>%1 файл</translation>
     </message>
     <message>
         <location filename="../src/app/qml/backend/FolderModel.qml" line="241"/>
         <source>%1 files</source>
-        <translation type="unfinished"/>
+        <translation>%1 файлов</translation>
     </message>
 </context>
 <context>
@@ -246,12 +246,12 @@
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="67"/>
         <source>Ascending</source>
-        <translation type="unfinished"/>
+        <translation>По возрастанию</translation>
     </message>
     <message>
         <location filename="../src/app/qml/dialogs/SettingsDialog.qml" line="67"/>
         <source>Descending</source>
-        <translation type="unfinished"/>
+        <translation>По убыванию</translation>
     </message>
 </context>
 <context>
