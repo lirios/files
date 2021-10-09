@@ -71,3 +71,5 @@ liri_add_qml_plugin(folderlistmodel
         Qt5::Widgets
         ${Files_LIBRARIES}
 )
+
+liri_finalize_qml_plugin(folderlistmodel)

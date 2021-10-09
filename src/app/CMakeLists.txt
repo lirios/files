@@ -28,3 +28,5 @@ liri_add_executable(LiriFiles
         Qt5::QuickControls2
     GUI
 )
+
+liri_finalize_executable(LiriFiles)
