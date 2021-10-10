@@ -1,6 +1,8 @@
-liri_add_qml_plugin(archives
+liri_add_qml_plugin(FilesArchivesQmlPlugin
     MODULE_PATH
         "Liri/Files/Archives"
+    OUTPUT_NAME
+        archivesplugin
     SOURCES
         archives.cpp
         archives.h
@@ -12,4 +14,4 @@ liri_add_qml_plugin(archives
         QT_NO_FOREACH
 )
 
-liri_finalize_qml_plugin(archives)
+liri_finalize_qml_plugin(FilesArchivesQmlPlugin)

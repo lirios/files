@@ -10,9 +10,11 @@ else()
     set(Files_DEFINES DO_NOT_USE_TAG_LIB)
 endif()
 
-liri_add_qml_plugin(folderlistmodel
+liri_add_qml_plugin(FilesFolderListModelQmlPlugin
     MODULE_PATH
         "Liri/Files/FolderListModel"
+    OUTPUT_NAME
+        folderlistmodelplugin
     SOURCES
         clipboard.cpp
         clipboard.h
@@ -72,4 +74,4 @@ liri_add_qml_plugin(folderlistmodel
         ${Files_LIBRARIES}
 )
 
-liri_finalize_qml_plugin(folderlistmodel)
+liri_finalize_qml_plugin(FilesFolderListModelQmlPlugin)

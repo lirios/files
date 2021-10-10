@@ -1,6 +1,8 @@
-liri_add_qml_plugin(placesmodel
+liri_add_qml_plugin(FilesPlacesModelQmlPlugin
     MODULE_PATH
         "Liri/Files/PlacesModel"
+    OUTPUT_NAME
+        placesmodelplugin
     SOURCES
         placesmodel.cpp
         placesmodel.h
@@ -16,4 +18,4 @@ liri_add_qml_plugin(placesmodel
         #QT_NO_FOREACH
 )
 
-liri_finalize_qml_plugin(placesmodel)
+liri_finalize_qml_plugin(FilesPlacesModelQmlPlugin)
